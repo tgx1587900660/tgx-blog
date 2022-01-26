@@ -1,6 +1,6 @@
 <!--  -->
 <template>
     <div class='Bar'>
-        Bar.vue
+        --------------------------- 这里是 Foo/Bar.vue 组件的内容 ---------------------------
     </div>
 </template>

@@ -1,24 +1,15 @@
+// vuepress 的文档地址 https://vuepress.vuejs.org/zh/config/
 module.exports = {
-    // vuepress 的文档地址 https://vuepress.vuejs.org/zh/config/
-
-    /**
-     * 部署站点的基准路径 (类型: string 默认值: /)
-     */
+    // 部署站点的基准路径, 默认是 /
     base: '/txg-blog/',
 
-    /**
-     * 网站的标题 (类型: string 默认值: undefined)
-     */
-    title: '谭竿霄',
+    // 左上角的标题
+    title: 'telctron的博客',
 
-    /**
-     * 网站的 SEO 描述 (类型: string 默认值: undefined)
-     */
-    description: '一个普通上班族的前端博客',
+    // 网站的 SEO 描述
+    description: '唐干宵的前端博客',
 
-    /**
-     * 需要被注入到 HTML <head> 中的标签 (类型: Array 默认值: [])
-     */
+    // 需要被注入到 <head> 标签的内容
     head: [
         [
             // 添加一个 link 标签到 <head> 中
@@ -32,102 +23,60 @@ module.exports = {
         ]
     ],
 
-    /**
-     * 指定用于 dev server 的主机名 (类型: string 默认值: '0.0.0.0')
-     * 0.0.0.0 , 127.0.0.1 , localhost 三者的区别 ?
-     */
-    host: 'localhost',
-
-    /**
-     * 指定 dev server 的端口 (类型: number 默认值: 8080)
-     */
-    port: 3000,
-
-    /**
-     * 指定客户端文件的临时目录 (类型: string 默认值: /path/to/@vuepress/core/.temp)
-     */
-    // temp: '/path/to/@vuepress/core/.temp'
-
-    /**
-     * 指定 vuepress build 的输出目录 (类型: string 默认值: .vuepress/dist)
-     * 如果传入的是相对路径，则会基于 process.cwd() 进行解析
-     */
+    // 指定 build 的输出目录, 默认打包到 .vuepress/dist 下
     // dest:
 
-    /**
-     * 提供多语言支持的语言配置 (类型: { [path: string]: Object } 默认值: undefined)
-     * 配置文档: https://vuepress.vuejs.org/zh/guide/i18n.html
-     */
-    // locales: undefined,
-
-    /**
-     * 一个函数，用来控制对于哪些文件，是需要生成 <link rel="prefetch"> 资源提示的 (类型: Function 默认值: () => true)
-     * 配置文档: https://ssr.vuejs.org/zh/api/#shouldpreload
-     */
-    // shouldPrefetch: () => true,
-
-    /**
-     * 是否缓存 (类型: boolean|string 默认值: true)
-     * VuePress 默认使用了 cache-loader 来加快 webpack 的编译速度
-     */
-    cache: true,
-
-    /**
-     * 指定额外的需要被监听的文件 (类型: Array 默认值: [])
-     * 文件变动将会触发 vuepress 重新构建 并实时更新
-     */
-    extraWatchFiles: [
-        '.vuepress/foo.js', // 使用相对路径
-        '/path/to/bar.js' // 使用绝对路径
-    ],
-
-    // 指定要解析的文件模式 (类型: Array 默认值: ['**/*.md', '**/*.vue'])
-    // patterns: ['**/*.md', '**/*.vue'],
-
+    // vuepress 默认主题 的配置
     themeConfig: {
-        // 网站 Logo
+        // 左上角网站 Logo
         logo: '/img/logo.jpg',
-        // 顶部右侧导航栏
+        // 顶部导航栏
         nav: [
-            { text: '前端基础', link: '/accumulate/' },
-            { text: '算法题库', link: '/algorithm/' },
-            { text: '微信', link: 'https://www.baidu.com' },
             {
-                text: '语言',
-                ariaLabel: '语言菜单',
+                text: '前端学习',
                 items: [
-                    { text: '中文简体', link: '/language/chinese/' },
-                    { text: '英语', link: '/language/english/' }
+                    // 1️. 如果 link 为 '/test/', vuepress 会去 docs/test 文件夹中查找 README.md
+                    // 2. 如果 link 为 '/test/README', 会出错404(即使有 README.md 文件)
+                    // 3. 如果 link 为 '/test/README.md', 会出错404(即使有 README.md 文件)
+                    // 4. 如果 link 为 '/test/test-001', vuepress 会去 docs/test 文件夹中查找 test-001.md
+                    // 5. 如果 link 为 '/test/test-001.md', vuepress 会去 docs/test 文件夹中查找 test-001.md
+                    // { text: 'test', link: '/test/test-001' },
+                    // 我们将采取 方案4 来管理文章
+                    { text: 'vue2', link: '/frontend/vue2/eslint-upgrade' },
+                    // { text: 'vue3', link: '/frontend/vue3/' }
                 ]
             }
         ],
+        // 侧边栏菜单
         sidebar: [
             {
-                title: '前端基础', // 必要的
-                path: '/foo/', // 可选的, 标题的跳转链接，应为绝对路径且必须存在
-                collapsable: false, // 可选的, 默认值是 true,
-                sidebarDepth: 1 // 可选的, 默认值是 1
-                // children: ['/']
-            },
-            {
-                title: '算法题库',
-                path: '/bar/', // 可选的, 标题的跳转链接，应为绝对路径且必须存在
-                children: [
-                    {
-                        title: '冒泡排序',
-                        path: '/bar-children/'
-                    }
-                ],
-                initialOpenGroupIndex: -1 // 可选的, 默认值是 0
+                // 设置一级标题(子标题会从.md文档中自动提取)
+                title: 'eslint 升级指南',
+                // 对应的文章路径(同 nav 里面的 link, 采取方案4)
+                path: '/frontend/vue2/eslint-upgrade', 
             }
         ],
-        sidebarDepth: 2 // 侧边栏显示2级
+        // 标题深度，2 表示提取 h2 和 h3 标题
+        // sidebarDepth: 2,
+    
+        // 是否启用页面滚动效果
+        smoothScroll: true,
+    
+        // 最后更新时间
+        // lastUpdated: 'Last Updated',
+    
+        // 是否开启页面底部的 下一篇 链接
+        nextLinks: false,
+        // 是否开启页面底部的 上一篇 链接
+        prevLinks: false,
+        
+        // 仓库链接文字
+        repoLabel: 'Gitee 仓库',
+        // 仓库地址
+        repo: 'https://gitee.com/tgx-1587900660/tgx-blog',
     },
-    configureWebpack: {
-        resolve: {
-            alias: { '@alias': 'path/to/some/dir' }
-        }
-    },
+    
+    // markdown 内容的相关配置
     markdown: {
         // 给 .md 文件中每个代码块显示行号
         lineNumbers: true

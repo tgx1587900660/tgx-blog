@@ -1,6 +1,6 @@
 <!--  -->
 <template>
     <div class='OtherComponent'>
-        OtherComponent.vue
+        ---------------- 这里是 OtherComponent.vue 组件的内容 ---------------------
     </div>
 </template>
