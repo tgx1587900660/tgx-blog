@@ -4,7 +4,7 @@ module.exports = {
     base: '/txg-blog/',
 
     // 左上角的标题
-    title: 'telctron的博客',
+    title: 'telectron 的博客',
 
     // 网站的 SEO 描述
     description: '唐干宵的前端博客',

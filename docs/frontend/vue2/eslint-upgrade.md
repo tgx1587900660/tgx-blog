@@ -1387,14 +1387,21 @@ module.exports = {
 
 ## 旧代码处理步骤
 
-- `eslintignore`先忽略以前的代码
-- 循序渐进，一个个修复
-- 先使用命令工具修复执行，再手动处理(公司项目都比较庞大，手动修复不太现实)
-- `npx eslint ./src/xxx.vue --fix`
-
 ::: tip 建议用 VS Code 的 eslint 插件修复
-与 node_modules 平级的目录下可创建一个`.eslintignore`文件，用来设置哪些不被`eslint`检测的文件(或文件夹)。
 但一般情况下忽略了，就没人管了。
 所以我们应该 <tgx-link :href="'https://gitee.com/tgx-1587900660'">配置eslint插件</tgx-link> 
 在每次保存代码时自动修复
 :::
+
+- `eslintignore`先忽略以前的代码
+> 与 node_modules 平级的目录下可创建一个`.eslintignore`文件，用来设置哪些`不想被 eslint 检测`的文件(或文件夹)。
+
+```xml
+/dist/
+/node_modules/
+```
+
+- 先使用命令工具循序渐进执行，再手动处理(公司项目都比较庞大，手动修复不太现实)
+```xml
+npx eslint ./src/xxx.vue --fix
+```
