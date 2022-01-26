@@ -1,11 +1,13 @@
 # eslint 版本升级
+
 ::: tip 起因
 我们项目使用的 webpack 版本是 3.12.0，代码检测功能也不够完善，eslint 并不是最新版本。
 然后公司来了个前端 leader，要求我们把所有项目的 eslint 升级到最新版本，并且配置团队规定的 eslint 检测规范。
 因此有了这次的升级体验。
 :::
 
-## 升级`eslint`及其依赖包的版本
+## 1.升级`eslint`及其依赖包的版本
+
 ::: tip 包管理工具
 这里我选择了`cnpm`作为包管理工具，因为`npm`经常会因为版本问题而报错，其中`i`是`install`的缩写
 :::
@@ -18,14 +20,15 @@ cnpm i eslint-plugin-standard@3.0.1
 cnpm i eslint-plugin-vue@7.12.1
 ```
 
-## 写入`eslint`的规则
+## 2.写入`eslint`的规则
+
 ::: tip 规则文件的位置
 与 node_modules 平级的目录下应该存在一个 .eslintrc.js 文件，以下就是这个文件的内容，也就是我们团队的代码规范约定
 :::
 
 ::: details 点击查看具体规则
-```js
 
+```js
 /**
  * @file eslint config
  * @author
@@ -46,15 +49,10 @@ module.exports = {
     },
 
     // 数组形式，每个配置继承它前面的配置
-    extends: [
-        'plugin:vue/recommended',
-        'standard'
-    ],
+    extends: ['plugin:vue/recommended', 'standard'],
     // 省略包名的前缀 eslint-plugin-
     // required to lint *.vue files
-    plugins: [
-        'vue'
-    ],
+    plugins: ['vue'],
 
     // 配置额外的全局变量
     globals: {
@@ -72,7 +70,7 @@ module.exports = {
             // good code
             let str = 'hello world'
         */
-        'quotes': ['error', 'single'],
+        quotes: ['error', 'single'],
 
         // 三等号
         /* 示例
@@ -82,7 +80,7 @@ module.exports = {
             // good code
             if (a === b) {}
         */
-        'eqeqeq': ['error', 'always'],
+        eqeqeq: ['error', 'always'],
 
         // 禁止出现未使用过的变量
         'no-unused-vars': 'error',
@@ -110,32 +108,36 @@ module.exports = {
         'keyword-spacing': [
             'error',
             {
-                'overrides': {
-                    'if': {
-                        'after': true
+                overrides: {
+                    if: {
+                        after: true
                     },
-                    'for': {
-                        'after': true
+                    for: {
+                        after: true
                     },
-                    'while': {
-                        'after': true
+                    while: {
+                        after: true
                     },
-                    'else': {
-                        'after': true
+                    else: {
+                        after: true
                     }
                 }
             }
         ],
 
         // https://eslint.org/docs/rules/camelcase
-        'camelcase': ['error', {'properties': 'never'}],
+        camelcase: ['error', { properties: 'never' }],
 
         // 缩进使用 4 个空格，并且 switch 语句中的 Case 需要缩进
         // https://eslint.org/docs/rules/indent
-        'indent': ['error', 4, {
-            'SwitchCase': 1,
-            'flatTernaryExpressions': true
-        }],
+        indent: [
+            'error',
+            4,
+            {
+                SwitchCase: 1,
+                flatTernaryExpressions: true
+            }
+        ],
 
         // 数组的括号内的前后禁止有空格
         // https://eslint.org/docs/rules/array-bracket-spacing
@@ -179,7 +181,7 @@ module.exports = {
                 // empty
             }
         */
-        'no-empty': ['error', {'allowEmptyCatch': true}],
+        'no-empty': ['error', { allowEmptyCatch: true }],
 
         // 禁止在语句末尾使用分号
         // https://eslint.org/docs/rules/semi
@@ -190,7 +192,7 @@ module.exports = {
             // good code
             const obj = {}
         */
-        'semi': ['error', 'never'],
+        semi: ['error', 'never'],
 
         // 函数圆括号之前没有空格（挺有争议的）
         // https://eslint.org/docs/rules/space-before-function-paren
@@ -213,11 +215,14 @@ module.exports = {
                 // ...
             }
         */
-        'space-before-function-paren': ['error', {
-            'anonymous': 'never', // 匿名函数表达式
-            'named': 'never', // 命名的函数表达式
-            'asyncArrow': 'never' // 异步的箭头函数表达式
-        }],
+        'space-before-function-paren': [
+            'error',
+            {
+                anonymous: 'never', // 匿名函数表达式
+                named: 'never', // 命名的函数表达式
+                asyncArrow: 'never' // 异步的箭头函数表达式
+            }
+        ],
 
         // 禁止行尾有空格
         // https://eslint.org/docs/rules/no-trailing-spaces
@@ -232,17 +237,21 @@ module.exports = {
             // good code
             // This is a comment with a whitespace at the beginning
         */
-        'spaced-comment': ['error', 'always', {
-            'line': {
-                'markers': ['*package', '!', '/', ',', '=']
-            },
-            'block': {
-                // 前后空格是否平衡
-                'balanced': false,
-                'markers': ['*package', '!', ',', ':', '::', 'flow-include'],
-                'exceptions': ['*']
+        'spaced-comment': [
+            'error',
+            'always',
+            {
+                line: {
+                    markers: ['*package', '!', '/', ',', '=']
+                },
+                block: {
+                    // 前后空格是否平衡
+                    balanced: false,
+                    markers: ['*package', '!', ',', ':', '::', 'flow-include'],
+                    exceptions: ['*']
+                }
             }
-        }],
+        ],
 
         // https://eslint.org/docs/rules/no-template-curly-in-string
         // 禁止在字符串中使用字符串模板。不限制
@@ -317,7 +326,7 @@ module.exports = {
          * a => a;
          * () => {'\n'};
          */
-        'vue/arrow-spacing': ['error', {'before': true, 'after': true}],
+        'vue/arrow-spacing': ['error', { before: true, after: true }],
 
         // https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/attribute-hyphenation.md
         // vue html 属性小写，连字符
@@ -369,7 +378,7 @@ module.exports = {
          * var _myFavoriteColor  = "#112C85";
          * var myFavoriteColor_  = "#112C85";
          */
-        'vue/camelcase': ['error', {'properties': 'never'}],
+        'vue/camelcase': ['error', { properties: 'never' }],
 
         // https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/comma-dangle.md
         // 禁止使用拖尾逗号，如 {demo: 'test',}
@@ -424,7 +433,7 @@ module.exports = {
          * bananas !== 1
          * value === undefined
          */
-        'vue/eqeqeq': ['error', 'always', {'null': 'ignore'}],
+        'vue/eqeqeq': ['error', 'always', { null: 'ignore' }],
 
         // https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/html-closing-bracket-newline.md
         // 单行写法不需要换行，多行需要，不限制
@@ -447,11 +456,14 @@ module.exports = {
             <div foo />
             <div foo="bar" />
         */
-        'vue/html-closing-bracket-spacing': ['error', {
-            'startTag': 'never',
-            'endTag': 'never',
-            'selfClosingTag': 'always'
-        }],
+        'vue/html-closing-bracket-spacing': [
+            'error',
+            {
+                startTag: 'never',
+                endTag: 'never',
+                selfClosingTag: 'always'
+            }
+        ],
 
         // 标签必须有结束标签
         // https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/html-end-tags.md
@@ -481,13 +493,17 @@ module.exports = {
                 some-attr=""
             />
         */
-        'vue/html-indent': ['error', 4, {
-            'attribute': 1,
-            'baseIndent': 1,
-            'closeBracket': 0,
-            'alignAttributesVertically': false, // 在多行情况下，属性是否应与第一个属性垂直对齐
-            'ignores': []
-        }],
+        'vue/html-indent': [
+            'error',
+            4,
+            {
+                attribute: 1,
+                baseIndent: 1,
+                closeBracket: 0,
+                alignAttributesVertically: false, // 在多行情况下，属性是否应与第一个属性垂直对齐
+                ignores: []
+            }
+        ],
 
         // html属性引用采用双引号
         // https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/html-quotes.md
@@ -529,7 +545,7 @@ module.exports = {
             // good code
             const obj = { a: 1 }
         */
-        'vue/key-spacing': ['error', {'beforeColon': false, 'afterColon': true}],
+        'vue/key-spacing': ['error', { beforeColon: false, afterColon: true }],
 
         // https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/match-component-file-name.md
         // 组件名称属性与其文件名匹配，不限制
@@ -802,29 +818,32 @@ module.exports = {
 
         // https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/order-in-components.md
         // 官方推荐顺序
-        'vue/order-in-components': ['error', {
-            'order': [
-                'el',
-                'name',
-                'parent',
-                'functional',
-                ['delimiters', 'comments'],
-                ['components', 'directives', 'filters'],
-                'extends',
-                'mixins',
-                'inheritAttrs',
-                'model',
-                ['props', 'propsData'],
-                'data',
-                'computed',
-                'watch',
-                // LIFECYCLE_HOOKS: ['beforeCreate', 'created', 'beforeMount', 'mounted', 'beforeUpdate', 'updated', 'activated', 'deactivated', 'beforeDestroy', 'destroyed']
-                'LIFECYCLE_HOOKS',
-                'methods',
-                ['template', 'render'],
-                'renderError'
-            ]
-        }],
+        'vue/order-in-components': [
+            'error',
+            {
+                order: [
+                    'el',
+                    'name',
+                    'parent',
+                    'functional',
+                    ['delimiters', 'comments'],
+                    ['components', 'directives', 'filters'],
+                    'extends',
+                    'mixins',
+                    'inheritAttrs',
+                    'model',
+                    ['props', 'propsData'],
+                    'data',
+                    'computed',
+                    'watch',
+                    // LIFECYCLE_HOOKS: ['beforeCreate', 'created', 'beforeMount', 'mounted', 'beforeUpdate', 'updated', 'activated', 'deactivated', 'beforeDestroy', 'destroyed']
+                    'LIFECYCLE_HOOKS',
+                    'methods',
+                    ['template', 'render'],
+                    'renderError'
+                ]
+            }
+        ],
 
         // https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/prop-name-casing.md
         // 组件 props 属性名驼峰命名
@@ -1347,14 +1366,15 @@ module.exports = {
         }
     ]
 }
-
 ```
+
 :::
 
-## 在`webpack`中配置`eslint-loader`
+## 3.在`webpack`中配置`eslint-loader`
+
 ::: tip 配置代码的位置
 只需要关注高亮部分即可。这是`eslint-loader`在`webpack`配置文件中的位置。
-然而`eslint-loader`的具体配置，你需要进入 <tgx-link :href="'https://gitee.com/tgx-1587900660'">npm包管理网站</tgx-link> 
+然而`eslint-loader`的具体配置，你需要进入 <tgx-link :href="'https://gitee.com/tgx-1587900660'">npm 包管理网站</tgx-link>
 搜索并打开`eslint-loader`插件说明，先找到使用指南`Usage`，然后复制过来自主定制即可
 :::
 
@@ -1385,23 +1405,24 @@ module.exports = {
 }
 ```
 
-## 旧代码处理步骤
+## 4.旧代码处理步骤
 
 ::: tip 建议用 VS Code 的 eslint 插件修复
 但一般情况下忽略了，就没人管了。
-所以我们应该 <tgx-link :href="'https://gitee.com/tgx-1587900660'">配置eslint插件</tgx-link> 
+所以我们应该 <tgx-link :href="'https://gitee.com/tgx-1587900660'">配置 eslint 插件</tgx-link>
 在每次保存代码时自动修复
 :::
 
-- `eslintignore`先忽略以前的代码
-> 与 node_modules 平级的目录下可创建一个`.eslintignore`文件，用来设置哪些`不想被 eslint 检测`的文件(或文件夹)。
+-   `eslintignore`先忽略以前的代码
+    > 与 node_modules 平级的目录下可创建一个`.eslintignore`文件，用来设置哪些`不想被 eslint 检测`的文件(或文件夹)。
 
 ```xml
 /dist/
 /node_modules/
 ```
 
-- 先使用命令工具循序渐进执行，再手动处理(公司项目都比较庞大，手动修复不太现实)
+-   先使用命令工具循序渐进执行，再手动处理(公司项目都比较庞大，手动修复不太现实)
+
 ```xml
 npx eslint ./src/xxx.vue --fix
 ```

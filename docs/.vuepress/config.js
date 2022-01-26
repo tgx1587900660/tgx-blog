@@ -42,7 +42,7 @@ module.exports = {
                     // 5. 如果 link 为 '/test/test-001.md', vuepress 会去 docs/test 文件夹中查找 test-001.md
                     // { text: 'test', link: '/test/test-001' },
                     // 我们将采取 方案4 来管理文章
-                    { text: 'vue2', link: '/frontend/vue2/eslint-upgrade' },
+                    { text: 'vue2', link: '/frontend/vue2/eslint-upgrade' }
                     // { text: 'vue3', link: '/frontend/vue3/' }
                 ]
             }
@@ -51,31 +51,39 @@ module.exports = {
         sidebar: [
             {
                 // 设置一级标题(子标题会从.md文档中自动提取)
-                title: 'eslint 升级指南',
+                title: 'Eslint 升级实践',
                 // 对应的文章路径(同 nav 里面的 link, 采取方案4)
-                path: '/frontend/vue2/eslint-upgrade', 
+                path: '/frontend/vue2/eslint-upgrade'
+            },
+            {
+                title: 'Git 命令收集',
+                path: '/frontend/vue2/git-command'
+            },
+            {
+                title: '第三篇文章',
+                path: '/frontend/vue2/three'
             }
         ],
         // 标题深度，2 表示提取 h2 和 h3 标题
-        // sidebarDepth: 2,
-    
+        sidebarDepth: 2,
+
         // 是否启用页面滚动效果
         smoothScroll: true,
-    
+
         // 最后更新时间
         // lastUpdated: 'Last Updated',
-    
+
         // 是否开启页面底部的 下一篇 链接
         nextLinks: false,
         // 是否开启页面底部的 上一篇 链接
         prevLinks: false,
-        
+
         // 仓库链接文字
         repoLabel: 'Gitee 仓库',
         // 仓库地址
-        repo: 'https://gitee.com/tgx-1587900660/tgx-blog',
+        repo: 'https://gitee.com/tgx-1587900660/tgx-blog'
     },
-    
+
     // markdown 内容的相关配置
     markdown: {
         // 给 .md 文件中每个代码块显示行号
