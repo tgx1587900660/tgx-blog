@@ -1,9 +1,7 @@
 // vuepress 的文档地址 https://vuepress.vuejs.org/zh/config/
-
-const path = require('path')
 module.exports = {
     // 部署站点的基准路径, 默认是 /
-    base: './',
+    base: '/tgx-blog/',
 
     // 左上角的标题
     title: 'telectron 的博客',
@@ -25,8 +23,8 @@ module.exports = {
         ]
     ],
 
-    // 指定 build 的输出目录, 默认打包到 .vuepress/dist 下
-    dest: './src',
+    // 指定 build 的输出目录, 默认打包到 docs/.vuepress/dist 下
+    dest: './dist',
 
     // vuepress 默认主题 的配置
     themeConfig: {
