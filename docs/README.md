@@ -4,7 +4,7 @@ heroImage: /img/logo.png
 heroText: 一个普通上班族的博客
 tagline: telectron 的博客
 actionText: 查看文章 →
-actionLink: /frontend/vue2/eslint-upgrade/
+actionLink: /frontend/vue2/bk-open-source
 features:
     - title: 简洁至上
       details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
