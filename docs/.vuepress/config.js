@@ -3,7 +3,7 @@
 const path = require('path')
 module.exports = {
     // 部署站点的基准路径, 默认是 /
-    base: '/',
+    base: './',
 
     // 左上角的标题
     title: 'telectron 的博客',
