@@ -1,4 +1,4 @@
-const baseConfig = require('./build.config.js')
+const baseConfig = require('./config.js')
 const { createApp } = require('vuepress')
 
 process.env.NODE_ENV = 'production'
