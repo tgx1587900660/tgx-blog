@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /img/logo.jpg
+heroImage: /img/logo.png
 heroText: 一个普通上班族的博客
 tagline: telectron 的博客
 actionText: 查看文章 →
