@@ -2,15 +2,15 @@
 home: true
 heroImage: /img/logo.png
 heroText: 一个普通上班族的博客
-tagline: telectron 的博客
-actionText: 查看文章 →
-actionLink: /frontend/vue2/bk-open-source
+tagline: 哦 咧 喏，bo ki (博客) 哒
+actionText: 开始阅读 →
+actionLink: /frontend/vue2/personal-blog
 features:
-    - title: 简洁至上
-      details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-    - title: Vue驱动
-      details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-    - title: 高性能
-      details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
-footer: MIT Licensed | Copyright © 2018-present Evan You
+    - title: 简洁
+      details: 多则杂，杂则乱，乱则无章。有用的文章，必定是解决某个具体问题的一段文字。
+    - title: 实践
+      details: 自己动手才能发现真正的实施问题，试图解决它，然后写一小段总结。
+    - title: 总结
+      details: 有必要收集一些自己解决过的问题，形成记忆图，以便日后快速查找，腾出更多打游戏的时间。
+footer: Copyright © 2022-present telectron
 ---

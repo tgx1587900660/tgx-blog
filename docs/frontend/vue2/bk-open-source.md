@@ -1,10 +1,12 @@
-## 蓝鲸开源项目集合
+# 资源整合
 
 ::: tip 开源项目合集
 平时工作中，经常观摩他们的源码，时不时抄两个函数过来涨涨技术 :smiley: ，
 这些项目的代码不但考虑周全，设计思路也很牛逼，非常值得学习，
 我负责的项目就是借鉴 <tgx-link href="https://github.com/Tencent/bk-cmdb">bk-cmdb</tgx-link> 而设计出来的
 :::
+
+## 蓝鲸开源项目集合
 
 -   蓝鲸配置平台：<tgx-link href="https://github.com/Tencent/bk-cmdb">https://github.com/Tencent/bk-cmdb</tgx-link>
 -   蓝鲸 PaaS 平台：<tgx-link href="https://github.com/Tencent/bk-PaaS">https://github.com/Tencent/bk-PaaS</tgx-link>

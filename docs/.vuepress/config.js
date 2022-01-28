@@ -1,4 +1,8 @@
 // vuepress 的文档地址 https://vuepress.vuejs.org/zh/config/
+const tools = require('./utils')
+
+const randomIcon = ['/tang.ico', '/gan.ico', '/xiao.ico']
+
 module.exports = {
     // 部署站点的基准路径, 默认是 /
     base: '/tgx-blog/',
@@ -7,7 +11,7 @@ module.exports = {
     title: 'telectron 的博客',
 
     // 网站的 SEO 描述
-    description: '唐干宵的前端博客',
+    description: '唐干宵的博客，一个普通上班族的博客，telectron 的博客，谭竿霄的博客',
 
     // 需要被注入到 <head> 标签的内容
     head: [
@@ -18,7 +22,8 @@ module.exports = {
             {
                 rel: 'shortcut icon',
                 // 路径指向 .vuepress/public
-                href: '/xiao.ico'
+                // href: '/xiao.ico'
+                href: tools.getRandomElement(randomIcon)
             }
         ]
     ],
@@ -58,17 +63,21 @@ module.exports = {
         sidebar: [
             {
                 // 设置一级标题(子标题会从.md文档中自动提取)
-                title: '资源整合',
+                title: '使用 vuepress 搭建个人博客',
                 // 对应的文章路径(同 nav 里面的 link, 采取方案4)
-                path: '/frontend/vue2/bk-open-source'
+                path: '/frontend/vue2/personal-blog'
             },
             {
-                title: '旧项目 Eslint 升级体验',
-                path: '/frontend/vue2/eslint-upgrade'
+                title: '资源整合',
+                path: '/frontend/vue2/bk-open-source'
             },
             {
                 title: 'Git 命令收集',
                 path: '/frontend/vue2/git-command'
+            },
+            {
+                title: '旧项目 Eslint 升级体验',
+                path: '/frontend/vue2/eslint-upgrade'
             }
         ],
         // 标题深度，2 表示提取 h2 和 h3 标题
@@ -78,7 +87,7 @@ module.exports = {
         smoothScroll: true,
 
         // 最后更新时间
-        lastUpdated: '本文最后更新时间',
+        lastUpdated: '最后更新时间',
 
         // 是否开启页面底部的 下一篇 链接
         nextLinks: true,
