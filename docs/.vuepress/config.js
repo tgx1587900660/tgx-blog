@@ -71,6 +71,7 @@ module.exports = {
         ],
         // 侧边栏菜单
         sidebar: {
+            // 文档路径标识 (表示以下文档都在 与 .vuepress 平级的 frontend/vue2 文件夹中)
             '/frontend/vue2': [
                 {
                     // 设置一级标题 (vuepress 会从 .md 文档中自动提取 二级标题)
