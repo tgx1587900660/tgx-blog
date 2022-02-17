@@ -77,17 +77,17 @@ cnpm install -D vuepress
 
 <!-- 推荐手动搭建项目结构，如果你照着官网来创建首页 README.md，有可能跑起来是乱码 -->
 <!-- 此时你应该保证项目大概长这样，请自建文件夹 -->
-vuepress-blog (项目根文件夹)
-├── docs (文档存放地)
-│ ├── .vuepress (配置目录)
-│ │ ├── components (自动注册的vue组件)
-│ │ ├── public (静态图片)
-│ │ └── config.js (vuepress配置)
+vuepress-blog           (项目根文件夹)
+├── docs                (文档存放地)
+│ ├── .vuepress         (配置目录)
+│ │ ├── components      (自动注册的vue组件)
+│ │ ├── public          (静态图片)
+│ │ └── config.js       (vuepress配置)
 │ │
-│ └── README.md (首页定制地)
+│ └── README.md         (首页定制地)
 |
-├── package.json (包相关)
-└── package-lock.json (包相关)
+├── package.json        (包相关)
+└── package-lock.json   (包相关)
 ```
 
 ### 5.终端跑起来，浏览器访问
@@ -106,12 +106,12 @@ npm run dev
 ::: tip 说明
 打开 vuepress 说明文档，打开
 <tgx-link href="https://vuepress.vuejs.org/zh/guide/basic-config.html">指南</tgx-link>
-查看详细文档。要定制 `.vuepress/config.js` 内容，
-具体查看 <tgx-link href="https://vuepress.vuejs.org/zh/config/">配置和默认主题</tgx-link>。在这里，我就不当复读机了，
-但请你一定要搞明白`config.js`里面的`图片路径`和`路由匹配机制`。
+查看详细文档。要想定制 `.vuepress/config.js` 内容，
+就要查看 <tgx-link href="https://vuepress.vuejs.org/zh/config/">配置和默认主题</tgx-link>。在这里，我就不当复读机了，
+但请你一定要搞明白`config.js`里面的`图片路径`和`文件路径匹配机制`。
 
-值得一提的是，当你修改 vuepress 默认配置文件后(如 `.vuepress/config.js`、`docs/README.md`)，
-需要重新`npm run dev`跑一下项目，才能生效。
+值得一提的是，当你修改`vuepress的默认配置文件`后(如 `.vuepress/config.js`、`docs/README.md`)，
+需要重新`npm run dev`启动一下项目，才能生效。因为我们的开发服务器是基于该文件运行的，如果不重启，他依旧使用着上一次的内容。
 :::
 
 ```xml
@@ -247,13 +247,13 @@ module.exports = {
     ```xml {1}
     <!-- 一定要确保你的 .vuepress/config.js 中的 base 为 '/tgx-blog/' -->
 
-    <!-- 地址长这样，tgx-blog 是云端项目名 (要跟 base 一样，但 base 首尾加了 / ) -->
+    <!-- 地址长这样，末尾 tgx-blog 是云端项目名 (要跟 base 一样，但 base 首尾加了 / ) -->
     https://gitee.com/tgx-1587900660/tgx-blog
     ```
 
 -   第二步：本地打包
 
-    -   我打包到了 与 docs 同级的目录下，也就是根目录 (方便部署)
+    -   我打包到了 与 docs 同级的目录下，也就是根目录 (方便部署，具体看配置文件config.js)
 
     ```xml
     npm run build
@@ -273,10 +273,10 @@ module.exports = {
 
 ### 2. 异常可能
 
--   部署后样式丢失了，点击链接 404 了
+-   错误一：部署后样式丢失了，点击链接 404 了
     -   检查你开启 Gitee pages 服务的时候 **部署目录** 是否填对了
     -   检测你的 `.vuepress.config` 里面的 `base` 是否设对了
--   `npm run dev` 正常，`npm run build` 报错
+-   错误二：`npm run dev` 正常，`npm run build` 报错
     ::: tip 报错说明
     我以前学习 node.js 时，跟着老师学习系统环境变量时，设置过一个 `NODE_ENV=development`
 
@@ -288,8 +288,8 @@ module.exports = {
     > 就可以修改 NODE_ENV 相关配置，修改后要重启下终端和项目
 
     -   方案一：删掉这个环境变量，vuepress 会自动设置 NODE_ENV 的值 **(我就是这样干的)**
-    -   方案二：每次 dev 和 build 时就切换 NODE_ENV 的值，设置死了总有一边报错
-    -   方案三：像 webpack 一样设置两种入口文件，手动设置 NODE_ENV 的值，这有学习成本
+    -   方案二：每次 dev 和 build 时就设置一下 NODE_ENV 的值，但设置死了总有一边会报错
+    -   方案三：像 webpack 一样设置两种入口文件，手动设置 NODE_ENV 的值，但这有学习成本
 
     ```xml
     <!-- 这是我的报错内容 -->

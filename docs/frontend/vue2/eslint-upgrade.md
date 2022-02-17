@@ -1373,12 +1373,14 @@ module.exports = {
 ## 3.在`webpack`中配置`eslint-loader`
 
 ::: tip 配置代码的位置
-只需要关注高亮部分即可。这是`eslint-loader`在`webpack`配置文件中的位置。
+这是 `eslint-loader` 在 `webpack配置文件` 中的位置。
 然而`eslint-loader`的具体配置，你需要进入 <tgx-link :href="'https://gitee.com/tgx-1587900660'">npm 包管理网站</tgx-link>
 搜索并打开`eslint-loader`插件说明，先找到使用指南`Usage`，然后复制过来自主定制即可
 :::
 
-```js {6-12}
+```js {8-14}
+// 只需要关注高亮部分即可
+
 module.exports = {
     entry: {...},
     output: {...},
@@ -1410,7 +1412,7 @@ module.exports = {
 ::: tip 建议用 VS Code 的 eslint 插件修复
 但一般情况下忽略了，就没人管了。
 所以我们应该 <tgx-link :href="'https://gitee.com/tgx-1587900660'">配置 eslint 插件</tgx-link>
-在每次保存代码时自动修复
+在每次保存代码时自动修复，从而一次性修复整个项目所有文件
 :::
 
 -   `eslintignore`先忽略以前的代码
@@ -1426,3 +1428,13 @@ module.exports = {
 ```xml
 npx eslint ./src/xxx.vue --fix
 ```
+
+-   如果你用的是vscode编辑器，那就可以用扩展 `eslint` 来处理
+    - 第一步：点击`扩展`搜索`eslint`并安装
+    - 第二步：进入编辑器的 `settings.json` 配置文件，添加以下代码即可
+    ```js
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true // eslint 自动修复
+    }
+    ``` 
+    > 此时，我们每次保存代码时，编辑器的 `eslint插件` 就会去项目中查询 `规则文件` 并应用，达到修复代码的目的

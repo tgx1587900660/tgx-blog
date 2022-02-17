@@ -1,12 +1,32 @@
 # 资源整合
+## 个人仓库项目
+::: tip 说明
+学习新技术时，反复写了多次的练习项目
+:::
+1. 电商后台管理：
+<tgx-link href="https://gitee.com/tgx-1587900660/vue_shop">
+https://gitee.com/tgx-1587900660/vue_shop
+</tgx-link>
+    - 技术栈：vue2 + axios + element UI
+
+2. 可视化面板：
+<tgx-link href="https://gitee.com/tgx-1587900660/tgx_vue_vision">
+https://gitee.com/tgx-1587900660/tgx_vue_vision
+</tgx-link>
+    - 技术栈：vue2 + echarts + node.js + koa + websocket
+
+3. 博客：
+<tgx-link href="https://gitee.com/tgx-1587900660/tgx_vue_vision">
+https://gitee.com/tgx-1587900660/tgx_vue_vision
+</tgx-link>
+    - 技术栈：vue2 + vuepress + markdown
+## 蓝鲸开源项目集合
 
 ::: tip 开源项目合集
-平时工作中，经常观摩他们的源码，时不时抄两个函数过来涨涨技术 :smiley: ，
-这些项目的代码不但考虑周全，设计思路也很牛逼，非常值得学习，
-我负责的项目就是借鉴 <tgx-link href="https://github.com/Tencent/bk-cmdb">bk-cmdb</tgx-link> 而设计出来的
+平时工作中，会借鉴他们的源码，学习编码思路。
+这些项目考虑周全，设计思路牛逼，非常值得学习，
+我负责的项目就借鉴了 <tgx-link href="https://github.com/Tencent/bk-cmdb">bk-cmdb</tgx-link> 的设计思路
 :::
-
-## 蓝鲸开源项目集合
 
 -   蓝鲸配置平台：<tgx-link href="https://github.com/Tencent/bk-cmdb">https://github.com/Tencent/bk-cmdb</tgx-link>
 -   蓝鲸 PaaS 平台：<tgx-link href="https://github.com/Tencent/bk-PaaS">https://github.com/Tencent/bk-PaaS</tgx-link>

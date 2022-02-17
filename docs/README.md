@@ -2,7 +2,7 @@
 home: true
 heroImage: /img/logo.png
 heroText: 一个普通上班族的博客
-tagline: 哦 咧 喏，bo ki (博客) 哒
+tagline: o lei no，bo ki (博客) da
 actionText: 开始阅读 →
 actionLink: /frontend/vue2/personal-blog
 features:
