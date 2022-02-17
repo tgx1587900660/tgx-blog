@@ -1,5 +1,5 @@
 # 资源整合
-## 个人仓库项目
+## 1. 个人仓库项目
 ::: tip 说明
 学习新技术时，反复写了多次的练习项目
 :::
@@ -20,7 +20,8 @@ https://gitee.com/tgx-1587900660/tgx_vue_vision
 https://gitee.com/tgx-1587900660/tgx_vue_vision
 </tgx-link>
     - 技术栈：vue2 + vuepress + markdown
-## 蓝鲸开源项目集合
+
+## 2. 蓝鲸开源项目集合
 
 ::: tip 开源项目合集
 平时工作中，会借鉴他们的源码，学习编码思路。

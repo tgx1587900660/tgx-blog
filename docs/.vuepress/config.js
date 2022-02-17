@@ -65,7 +65,8 @@ module.exports = {
                     // { text: 'test', link: '/test/test-001' },
                     // 为了可读性, 我们将采取 方案4 来管理文章链接
                     { text: 'vue2', link: '/frontend/vue2/personal-blog' },
-                    { text: 'git', link: '/frontend/git/git-command' }
+                    { text: 'git', link: '/frontend/git/git-command' },
+                    { text: 'tools', link: '/frontend/tools/webpack-study' },
                 ]
             }
         ],
@@ -92,6 +93,12 @@ module.exports = {
                 {
                     title: 'Git 命令收集',
                     path: '/frontend/git/git-command'
+                }
+            ],
+            '/frontend/tools': [
+                {
+                    title: 'Webpack 知识',
+                    path: '/frontend/tools/webpack-study'
                 }
             ]
         },
