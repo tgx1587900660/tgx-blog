@@ -85,8 +85,8 @@ module.exports = {
                     path: '/frontend/vue2/personal-blog'
                 },
                 {
-                    title: '旧项目 Eslint 升级体验',
-                    path: '/frontend/vue2/eslint-upgrade'
+                    title: 'vue 冷门知识复习',
+                    path: '/frontend/vue2/unlikely-knowledge'
                 }
             ],
             '/frontend/git': [
@@ -97,8 +97,12 @@ module.exports = {
             ],
             '/frontend/tools': [
                 {
-                    title: 'Webpack 知识',
+                    title: 'Webpack 知识复习',
                     path: '/frontend/tools/webpack-study'
+                },
+                {
+                    title: 'Eslint 升级体验',
+                    path: '/frontend/tools/eslint-upgrade'
                 }
             ]
         },
