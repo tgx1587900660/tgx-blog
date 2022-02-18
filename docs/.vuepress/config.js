@@ -91,6 +91,10 @@ module.exports = {
                 {
                     title: 'Vue 问答整理',
                     path: '/frontend/vue2/vue-questions-answers'
+                },
+                {
+                    title: 'Vue 组件封装原则',
+                    path: '/frontend/vue2/component-package-principle'
                 }
             ],
             '/frontend/git': [
