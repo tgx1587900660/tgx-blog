@@ -2,9 +2,9 @@
 home: true
 heroImage: /img/logo.png
 heroText: 一个普通上班族的博客
-tagline: o lei no，bo ki (博客) da
+tagline: ou lei no，bo ki (博客) da
 actionText: 开始阅读 →
-actionLink: /frontend/vue2/personal-blog
+actionLink: /frontend/vue2/source-integration
 features:
     - title: 简洁
       details: 多则杂，杂则乱，乱则无章。有用的文章，必须要解决某个具体问题。

@@ -1,25 +1,36 @@
 # 资源整合
-## 1. 个人仓库项目
-::: tip 说明
-学习新技术时，反复写了多次的练习项目
+## 1. 个人项目
+::: tip 公开项目
+都是我学习新技术时，反复写了多次的练习项目
 :::
 1. 电商后台管理：
-<tgx-link href="https://gitee.com/tgx-1587900660/vue_shop">
-https://gitee.com/tgx-1587900660/vue_shop
-</tgx-link>
     - 技术栈：vue2 + axios + element UI
+    - 仓库地址：
+    <tgx-link href="https://gitee.com/tgx-1587900660/vue_shop">
+        https://gitee.com/tgx-1587900660/vue_shop
+    </tgx-link>
 
 2. 可视化面板：
-<tgx-link href="https://gitee.com/tgx-1587900660/tgx_vue_vision">
-https://gitee.com/tgx-1587900660/tgx_vue_vision
-</tgx-link>
-    - 技术栈：vue2 + echarts + node.js + koa + websocket
+    - 技术栈：vue2 + echarts + node + koa + websocket
+    - 仓库地址：
+    <tgx-link href="https://gitee.com/tgx-1587900660/tgx_vue_vision"> 
+        https://gitee.com/tgx-1587900660/tgx_vue_vision 
+    </tgx-link>
+    - 总结文档：
+    <tgx-link href="https://gitee.com/tgx-1587900660/echart_usage"> 
+        https://gitee.com/tgx-1587900660/echart_usage
+    </tgx-link>
 
-3. 博客：
-<tgx-link href="https://gitee.com/tgx-1587900660/tgx_vue_vision">
-https://gitee.com/tgx-1587900660/tgx_vue_vision
-</tgx-link>
-    - 技术栈：vue2 + vuepress + markdown
+3. 博客（现在看到的页面）：
+    - 技术栈：vue2 + vuepress + markdown + node
+    - 仓库地址：
+    <tgx-link href="https://gitee.com/tgx-1587900660/tgx-blog">
+        https://gitee.com/tgx-1587900660/tgx-blog
+    </tgx-link>
+    - 在线地址：
+    <tgx-link href="https://tgx-1587900660.gitee.io/tgx-blog/">
+        https://tgx-1587900660.gitee.io/tgx-blog/
+    </tgx-link>
 
 ## 2. 蓝鲸开源项目集合
 

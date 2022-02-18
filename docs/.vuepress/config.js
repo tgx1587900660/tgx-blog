@@ -64,7 +64,7 @@ module.exports = {
                     // 5. 如果 link 为 '/test/test-001.md', vuepress 会去 docs/test 文件夹中查找 test-001.md
                     // { text: 'test', link: '/test/test-001' },
                     // 为了可读性, 我们将采取 方案4 来管理文章链接
-                    { text: 'vue2', link: '/frontend/vue2/personal-blog' },
+                    { text: 'vue2', link: '/frontend/vue2/source-integration' },
                     { text: 'git', link: '/frontend/git/git-command' },
                     { text: 'tools', link: '/frontend/tools/webpack-study' },
                 ]
@@ -76,13 +76,13 @@ module.exports = {
             '/frontend/vue2': [
                 {
                     // 设置一级标题 (vuepress 会从 .md 文档中自动提取 二级标题)
-                    title: '使用 vuepress 搭建个人博客',
+                    title: '资源整合',
                     // 对应的文章路径 (同 nav 里面的 link, 采取方案4)
-                    path: '/frontend/vue2/personal-blog'
+                    path: '/frontend/vue2/source-integration'
                 },
                 {
-                    title: '资源整合',
-                    path: '/frontend/vue2/source-integration'
+                    title: '使用 vuepress 搭建个人博客',
+                    path: '/frontend/vue2/personal-blog'
                 },
                 {
                     title: '旧项目 Eslint 升级体验',
