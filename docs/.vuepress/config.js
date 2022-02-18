@@ -85,8 +85,12 @@ module.exports = {
                     path: '/frontend/vue2/personal-blog'
                 },
                 {
-                    title: 'vue 冷门知识复习',
+                    title: 'Vue 冷门知识复习',
                     path: '/frontend/vue2/unlikely-knowledge'
+                },
+                {
+                    title: 'Vue 问答整理',
+                    path: '/frontend/vue2/vue-questions-answers'
                 }
             ],
             '/frontend/git': [
