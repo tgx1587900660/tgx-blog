@@ -13,4 +13,4 @@
 ```xml
 UI = render(data)
 ```
-这个 render() 是一个动作，他把数据(data)填充到了页面(UI)中，从而形成了我们看到的页面。而 Vue 就做了这么一件事情，学习 Vue 就是在学习 render 这个方法。
+这个 render() 是一个方法，他把数据(data)填充到了页面(UI)中，从而形成了我们看到的页面。开发 Vue 就是在开发一个 render() 方法， 而学习 Vue 就是在学习 render() 这个方法怎么使用。

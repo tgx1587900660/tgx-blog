@@ -22,8 +22,8 @@
 - @click.stop：阻止冒泡
 
 ## 4. 按键修饰符
-- @keyup.esc：按下 esc 时触发
-- @keyup.enter：按下 enter 时触发
+- @keyup.esc：弹起 esc 时触发
+- @keyup.enter：弹起 enter 时触发
 
 ## 5. 指令修饰符
 - v-model.number：把表单值转为数值类型

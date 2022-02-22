@@ -64,9 +64,10 @@ module.exports = {
                     // 5. 如果 link 为 '/test/test-001.md', vuepress 会去 docs/test 文件夹中查找 test-001.md
                     // { text: 'test', link: '/test/test-001' },
                     // 为了可读性, 我们将采取 方案4 来管理文章链接
-                    { text: 'vue2', link: '/frontend/vue2/source-integration' },
-                    { text: 'git', link: '/frontend/git/git-command' },
-                    { text: 'tools', link: '/frontend/tools/webpack-study' },
+                    { text: 'Vue2', link: '/frontend/vue2/source-integration' },
+                    { text: 'Git', link: '/frontend/git/git-command' },
+                    { text: 'JavaScript', link: '/frontend/javascript/data-processing-method' },
+                    { text: 'Tools', link: '/frontend/tools/webpack-study' },
                 ]
             }
         ],
@@ -101,6 +102,12 @@ module.exports = {
                 {
                     title: 'Git 命令收集',
                     path: '/frontend/git/git-command'
+                }
+            ],
+            '/frontend/javascript': [
+                {
+                    title: 'js 数据处理方法回顾',
+                    path: '/frontend/javascript/data-processing-method'
                 }
             ],
             '/frontend/tools': [
