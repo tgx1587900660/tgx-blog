@@ -10,6 +10,39 @@
     - 标识 key 值类型：为 String 或 Number
     - 循环对象（值名索）：
     v-for="(value, key, index) in obj" 中 value 是键值, key 是键名, index 是索引
+- v-slot：
+    - 具名插槽：v-slot:name1 简写成 #name1，只能用在 组件名或template 上
+    - 作用于插槽：编写基础组件时，可以在 slot 标签上绑定一些属性，父组件使用时就可以用 #name1="obj" 中的 obj 来接收这些属性。（相当于数据的子传父）
+- 自定义指令：
+    - 注册自定义指令及其内部的函数触发时机
+    ```js
+    // 全局定义自定义指令 t-copy
+    Vue.directive('t-copy', {
+        // 第一次绑定到 dom 元素时触发（el 是被绑定的 dom 元素，binding 是指令后面的内容）
+        bind(el, binding) {
+            console.log('触发了 v-t-copy 指令的 bing 函数')
+            el.style.color = binding.value
+        },
+        // 第一次绑定时不触发，dom 更新时触发
+        update(el, binding) {
+            console.log('触发了 v-t-copy 指令的 update 函数')
+            el.style.color = binding.value
+        }
+    })
+
+    ----------------------------------------------------------
+    // 如果 bind 和 update 逻辑完全一样，可以简写
+    Vue.directive('t-copy', () => {
+        el.style.color = binding.value
+    })
+
+    ----------------------------------------------------------
+
+    // 组件内使用自定义指令 t-copy
+    <template>
+        <p v-t-copy="bindingDate"></p>
+    </template>
+    ```
 
 ## 2. 事件绑定
 - $event：
