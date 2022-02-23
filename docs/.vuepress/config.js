@@ -122,6 +122,14 @@ module.exports = {
                 {
                     title: 'Eslint 升级体验',
                     path: '/frontend/tools/eslint-upgrade'
+                },
+                {
+                    title: 'Vant 主题定制',
+                    path: '/frontend/tools/vant-theme'
+                },
+                {
+                    title: '特殊需求及其解决方案',
+                    path: '/frontend/tools/special-needs'
                 }
             ]
         },
