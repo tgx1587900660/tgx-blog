@@ -96,6 +96,10 @@ module.exports = {
                 {
                     title: 'Vue 组件封装原则',
                     path: '/frontend/vue2/component-package-principle'
+                },
+                {
+                    title: 'Vue-Router 知识复习',
+                    path: '/frontend/vue2/vue-router'
                 }
             ],
             '/frontend/git': [
