@@ -124,6 +124,10 @@ module.exports = {
                 {
                     title: 'Async / Await 相关知识',
                     path: '/frontend/javascript/async-await'
+                },// ![这是图片](/tgx-blog/img/eventloop.png "Magic Gardens")
+                {
+                    title: 'EventLoop 事件循环',
+                    path: '/frontend/javascript/event-loop'
                 }
             ],
             '/frontend/tools': [
