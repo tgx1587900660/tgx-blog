@@ -116,6 +116,10 @@ module.exports = {
                 {
                     title: '前端模块化规范',
                     path: '/frontend/javascript/modularity-standard'
+                },
+                {
+                    title: 'Promise 相关知识',
+                    path: '/frontend/javascript/promise'
                 }
             ],
             '/frontend/tools': [
