@@ -120,6 +120,10 @@ module.exports = {
                 {
                     title: 'Promise 相关知识',
                     path: '/frontend/javascript/promise'
+                },
+                {
+                    title: 'Async / Await 相关知识',
+                    path: '/frontend/javascript/async-await'
                 }
             ],
             '/frontend/tools': [

@@ -9,8 +9,9 @@
 ## 2. Promise 的概念
 ::: tip 概念
 - Promise 是一个 **构造函数**
-    - 可创建实例对象： const p = new Promise()
+    - 可创建实例对象： const p = new Promise((resolve, reject) => { ... })
     - 实例对象 p ，代表一个异步操作
+    - resolve 和 reject 是接收回调函数的形参，resolve() 在成功时调用，reject() 在失败时调用
 :::
 - Promise.prototype 上提供了一些方法，供 **所有实例对象** 访问:
     - then()
@@ -29,7 +30,8 @@
 
 ::: details 点击查看 then() 方法调用案例
 ```js
-const p = new Promise()
+const p = new Promise(...) // 定义一个返回 Promise 实例对象的变量
+
 p.then(success1 => {}, error1 => {})
     .then(success2 => {}, error2 => {})
     .then(success3 => {}, error3 => {})
@@ -45,7 +47,8 @@ p.then(success1 => {}, error1 => {})
 
 ::: details 点击查看 catch() 方法调用案例
 ```js
-const p1 = new Promise()
+const p1 = new Promise(...) // 定义一个返回 Promise 实例对象的变量
+
 p1.then(success1 => {}, error1 => {})
   .then(success2 => {}, error2 => {})
   .then(success3 => {}, error3 => {})
@@ -53,7 +56,8 @@ p1.then(success1 => {}, error1 => {})
 
 -------------------------------------------------------------------------
 
-const p2 = new Promise()
+const p2 = new Promise(...) // 定义一个返回 Promise 实例对象的变量
+
 p2.catch(err => { console.log(err) }) // 捕获错误后，继续执行后面的 then()
   .then(success1 => {}, error1 => {})
   .then(success2 => {}, error2 => {})
@@ -70,9 +74,10 @@ Promise.all() 方法会发起并行的 Promise 异步操作，等所有的异步
 
 ::: details 点击查看 all() 方法调用案例
 ```js
-const p1 = new Promise()
-const p2 = new Promise()
-const p3 = new Promise()
+// 定义 3 个返回 Promise 实例对象的变量
+const p1 = new Promise(...)
+const p2 = new Promise(...)
+const p3 = new Promise(...)
 
 Promise.all([p1, p2, p3])
     .then([res1, res2, res3] => {
@@ -92,9 +97,10 @@ Promise.race() 方法会发起并行的 Promise 异步操作，只要任何一�
 
 ::: details 点击查看 race() 方法调用案例
 ```js
-const p1 = new Promise()
-const p2 = new Promise()
-const p3 = new Promise()
+// 定义 3 个返回 Promise 实例对象的变量
+const p1 = new Promise(...)
+const p2 = new Promise(...)
+const p3 = new Promise(...)
 
 Promise.race([p1, p2, p3])
     .then(res => {
@@ -111,9 +117,13 @@ Promise.race([p1, p2, p3])
 :::
 
 ```js
+// 在 .js 文件中
+
 import fs from 'fs'
 
 function getFile(filePath) {
+    // resolve, reject 是两个方法形参，
+    // 分别接收 then(成功方法, 失败方法) 里面的 成功方法, 失败方法
     return new Promise((resolve, reject) => {
         fs.readFile(filePath, 'utf8', (err) => {
             if (err) return reject(err)
