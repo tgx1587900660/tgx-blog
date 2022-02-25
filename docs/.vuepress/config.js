@@ -112,6 +112,10 @@ module.exports = {
                 {
                     title: 'js 数据处理方法回顾',
                     path: '/frontend/javascript/data-processing-method'
+                },
+                {
+                    title: '前端模块化规范',
+                    path: '/frontend/javascript/modularity-standard'
                 }
             ],
             '/frontend/tools': [
