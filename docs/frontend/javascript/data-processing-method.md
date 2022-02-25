@@ -180,5 +180,8 @@ arr.forEach(item => {
     sum += item * 10
 })
 console.log('result:', sum)
+
+// 打印结果：
+// result: 100
 ```
 :::
