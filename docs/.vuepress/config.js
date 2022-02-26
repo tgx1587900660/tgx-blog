@@ -65,6 +65,7 @@ module.exports = {
                     // { text: 'test', link: '/test/test-001' },
                     // 为了可读性, 我们将采取 方案4 来管理文章链接
                     { text: 'Vue2', link: '/frontend/vue2/source-integration' },
+                    { text: 'Vue3', link: '/frontend/vue3/vue3-change-details' },
                     { text: 'Git', link: '/frontend/git/git-command' },
                     { text: 'JavaScript', link: '/frontend/javascript/data-processing-method' },
                     { text: 'Tools', link: '/frontend/tools/webpack-study' },
@@ -102,6 +103,12 @@ module.exports = {
                     path: '/frontend/vue2/vue-router'
                 }
             ],
+            '/frontend/vue3': [
+                {
+                    title: 'Vue3 相对于 Vue2 的变化',
+                    path: '/frontend/vue3/vue3-change-details'
+                }
+            ],
             '/frontend/git': [
                 {
                     title: 'Git 命令收集',
@@ -132,8 +139,12 @@ module.exports = {
             ],
             '/frontend/tools': [
                 {
-                    title: 'Webpack 知识复习',
+                    title: 'Webpack 相关知识',
                     path: '/frontend/tools/webpack-study'
+                },
+                {
+                    title: 'Vite 相关知识',
+                    path: '/frontend/tools/vite-study'
                 },
                 {
                     title: 'Eslint 升级体验',
