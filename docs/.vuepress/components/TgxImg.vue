@@ -1,6 +1,6 @@
 <!-- 自定义的 a 链接组件 -->
 <template>
-    <img class="tgx-img" :title="title" :src="src" :alt="alt" :width="width" :height="height" />
+    <img class="tgx-img" :title="title" :src="'/tgx-blog' + src" :alt="alt" :width="width" :height="height" />
 </template>
 
 <script>
