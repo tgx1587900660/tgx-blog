@@ -105,8 +105,12 @@ module.exports = {
             ],
             '/frontend/vue3': [
                 {
-                    title: 'Vue3 相对于 Vue2 的变化',
+                    title: 'Vue3 相对于 Vue2 的某些变化',
                     path: '/frontend/vue3/vue3-change-details'
+                },
+                {
+                    title: 'Vue3 相关知识',
+                    path: '/frontend/vue3/vue3-study'
                 }
             ],
             '/frontend/git': [

@@ -1,4 +1,4 @@
-# Vue3 相对于 Vue2 的变化
+# Vue3 相对于 Vue2 的某些变化
 ## 1. 单文件组件变化
 - 不再限制 template 中只能有一个根节点标签
 ::: details 点击查看 区别 案例
@@ -68,5 +68,36 @@ app.$mount('#app')
     color: red;
 }
 </style>
+```
+:::
+
+## 5. 自定义事件 emits 节点
+::: tip 说明
+虽然不声明 emits 节点也能工作，但有了 emits 属性，子组件自定义事件就更加清晰了
+:::
+::: details 点击查看 变更 案例
+```js
+// Vue3
+export default {
+    name: 'App',
+    emits: ['num-change'], // 多了 emits 节点, 包含该组件所有自定义事件
+    methods: {
+        add() {
+            this.$emit('num-change')
+        }
+    }
+}
+
+------------------------------------------
+
+// Vue2
+export default {
+    name: 'App',
+    methods: {
+        add() {
+            this.$emit('num-change')
+        }
+    }
+}
 ```
 :::
