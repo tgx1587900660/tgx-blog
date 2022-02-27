@@ -1,0 +1,10 @@
+module.exports = [
+  {
+    title: 'Vue3 相对于 Vue2 的某些变化',
+    path: '/frontend/vue3/vue3-change-details'
+  },
+  {
+    title: 'Vue3 相关知识',
+    path: '/frontend/vue3/vue3-study'
+  }
+]

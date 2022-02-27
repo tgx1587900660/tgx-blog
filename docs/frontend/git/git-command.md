@@ -9,7 +9,7 @@
 
 > user.name 支持中文
 
--   全局设置
+- 全局设置
 
 ```xml
 <!-- 语法 -->
@@ -26,7 +26,7 @@ git config --global user.name telectron
 git config --global user.email shuaibi@qq.com
 ```
 
--   局部设置
+- 局部设置
 
 ```xml
 <!-- 语法 -->
@@ -175,7 +175,7 @@ git cherry-pick commitID
 git cherry-pick 921dc370
 ```
 
-## 高频不会忘的命令
+## 11. 高频不会忘的命令
 
 ```xml
 <!-- 新建一个 telectron_dev 分支 -->
