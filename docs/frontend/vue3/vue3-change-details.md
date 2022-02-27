@@ -3,7 +3,8 @@
 ## 1. 单文件组件变化
 
 - 不再限制 template 中只能有一个根节点标签
-  ::: details 点击查看 区别 案例
+
+::: details 点击查看 区别 案例
 
 ```html
 <!-- Vue3 -->
@@ -134,5 +135,46 @@ export default {
   - 挂载阶段：beforeMount, mounted （挂载到 dom 上）
   - 更新阶段：beforeUpdate, undated （data 数据更新）
   - **销毁阶段：beforeUnmount, Unmounted （实例被销毁）**
+
+:::
+
+## 7. 挂载 axios 等工具变化
+
+::: tip 说明
+
+- vue3 不再推荐把某些工具挂载在 原型对象 prototype 上
+- vue3 的实例 app 提供一个 config.globalProperties 代替原先的挂载方案
+
+:::
+
+::: details 点击查看 区别 案例
+
+```js{8,19}
+// vue3
+import { createApp } from 'vue'
+import axios from 'axios'
+import App from './App'
+
+const app = createApp(App)
+
+app.config.globalProperties.$http = axios
+
+app.mount('#app')
+
+-------------------------------------------
+
+// vue2
+import Vue from 'vue'
+import axios from 'axios'
+import App from './App'
+
+Vue.prototype.$http = axios
+
+const app = new Vue({
+  render: h => h(App)
+})
+
+app.$mount('#app')
+```
 
 :::
