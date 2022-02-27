@@ -1,7 +1,9 @@
 <!-- 自定义的 img 图片组件 -->
 <template>
-  <!-- 路径需要加上 项目基准地址 。否则：开发时可能是正常的，但打包后部署线上会出错 -->
-  <img class="tgx-img" :title="title" :src="'/tgx-blog' + src" :alt="alt" :width="width" :height="height" />
+  <div class="img-wrapper">
+    <!-- 路径需要加上 项目基准地址 。否则：开发时可能是正常的，但打包后部署线上会出错 -->
+    <img :title="title" :src="'/tgx-blog' + src" :alt="alt" :width="width" :height="height" />
+  </div>
 </template>
 
 <script>
@@ -40,7 +42,8 @@ export default {
 </script>
 
 <style scoped>
-.tgx-img {
+.img-wrapper {
+  text-align: center;
   border: 1px solid #cfd4db;
 }
 </style>
