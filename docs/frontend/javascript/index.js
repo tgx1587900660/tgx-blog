@@ -1,6 +1,6 @@
 module.exports = [
   {
-    title: 'js 数据处理方法回顾',
+    title: 'JavaScript 数据处理',
     path: '/frontend/javascript/data-processing-method'
   },
   {

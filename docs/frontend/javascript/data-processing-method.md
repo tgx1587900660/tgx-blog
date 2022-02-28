@@ -1,4 +1,4 @@
-# js 数据处理方法回顾
+# JavaScript 数据处理
 
 ## 1. 数组
 
@@ -215,10 +215,10 @@ console.log('result:', sum)
 
 :::
 
-## 工具方法
+## 工具函数封装
 
 ::: tip 说明
-封装了一些常用的工具方法。直接复制就可以使用
+封装了一些常用的工具方法，直接复制就可以使用。
 :::
 
 ### 1. 随机获取数组中的一个元素
@@ -228,16 +228,45 @@ console.log('result:', sum)
 ```js
 // 传入一个数组, 随机返回它的某一个元素
 getRandomElement(arr) {
-    const min = 0
-    const max = arr.length - 1
-    const random = Math.floor(Math.random() * (max - min + 1)) + min
-    return arr[random]
+  const min = 0
+  const max = arr.length - 1
+  const random = Math.floor(Math.random() * (max - min + 1)) + min
+  return arr[random]
 }
 
 ----------test----------
 
 getRandomElement([1, 2, 5, 6]) // 2
 getRandomElement([1, 2, 5, 6]) // 6
+```
+
+:::
+
+### 2. 给数组分区间
+
+::: details 点击查看代码
+
+```js
+// 传入一个 数组 和 区间大小, 返回 分好区间的 二维数组
+
+chunk(arr, size) {
+  let [start, end] = [0, 0]
+  const result = []
+  for (let i = 0; i < Math.ceil(arr.length / size); i++) {
+    start = i * size
+    end = start + size
+    result.push(arr.slice(start, end))
+  }
+  return result
+}
+
+----------test----------
+
+const arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+chunk(arr1, 3) // [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
+
+const arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+chunk(arr2, 5) // [[1, 2, 3, 4, 5], [6, 7, 8, 9]]
 ```
 
 :::
