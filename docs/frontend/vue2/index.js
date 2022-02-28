@@ -1,5 +1,9 @@
 module.exports = [
   {
+    title: '资源整合',
+    path: '/frontend/vue2/source-integration'
+  },
+  {
     title: '使用 vuepress 搭建个人博客',
     path: '/frontend/vue2/personal-blog'
   },
