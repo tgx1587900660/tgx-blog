@@ -188,3 +188,13 @@ app.$mount('#app')
 - vue3 的 **mounted** 钩子是在第一次绑定到 dom 上时触发，**updated** 钩子是 dom 更新时触发
 
 :::
+
+## 9. vue-router 路由版本变化
+
+::: tip 说明
+
+- 两个 vue-router 版本的语法有较大变化
+- vue2 只能用 vue-router3.x 版本
+- vue3 只能用 vue-router4.x 版本
+
+:::
