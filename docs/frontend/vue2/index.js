@@ -1,3 +1,5 @@
+// vue2 栏目侧边导航目录
+
 module.exports = [
   {
     title: '资源整合',

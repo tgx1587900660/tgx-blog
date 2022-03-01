@@ -1,3 +1,5 @@
+// javascript 栏目侧边导航目录
+
 module.exports = [
   {
     title: 'JavaScript 数据处理',
