@@ -12,8 +12,11 @@ const FrontendToolsSidebar = require('../frontend/tools/index.js')
 const FrontendBrowserSidebar = require('../frontend/browser/index.js')
 const FrontendInterviewSidebar = require('../frontend/interview/index.js')
 
+// 引入 backend 模块的侧边导航菜单
+const BackendNodeSidebar = require('../backend/node/index.js')
+
 // 引入 exception 模块的侧边导航菜单
-const ExceptionPowershell = require('../exception/powershell/index.js')
+const ExceptionPowershellSidebar = require('../exception/powershell/index.js')
 
 module.exports = {
   // 部署站点的基准路径, 默认是 /
@@ -76,8 +79,12 @@ module.exports = {
         ]
       },
       {
+        text: '后端学习',
+        items: [{ text: 'Node', link: BackendNodeSidebar[0].path }]
+      },
+      {
         text: '异常处理',
-        items: [{ text: 'Powershell', link: ExceptionPowershell[0].path }]
+        items: [{ text: 'Powershell', link: ExceptionPowershellSidebar[0].path }]
       }
     ],
     // 侧边栏菜单
@@ -97,7 +104,8 @@ module.exports = {
       '/frontend/tools': FrontendToolsSidebar,
       '/frontend/browser': FrontendBrowserSidebar,
       '/frontend/interview': FrontendInterviewSidebar,
-      '/exception/powershell': ExceptionPowershell
+      '/backend/node': BackendNodeSidebar,
+      '/exception/powershell': ExceptionPowershellSidebar
     },
     // 标题深度，2 表示提取 h2 和 h3 标题
     sidebarDepth: 2,
