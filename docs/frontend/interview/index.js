@@ -1,4 +1,4 @@
-// interview 栏目侧边导航目录
+// 面试题 栏目侧边导航目录
 
 module.exports = [
   {

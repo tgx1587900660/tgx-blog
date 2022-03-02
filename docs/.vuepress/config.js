@@ -9,6 +9,7 @@ const FrontendVue3Sidebar = require('../frontend/vue3/index.js')
 const FrontendGitSidebar = require('../frontend/git/index.js')
 const FrontendJavaScriptSidebar = require('../frontend/javascript/index.js')
 const FrontendToolsSidebar = require('../frontend/tools/index.js')
+const FrontendBrowserSidebar = require('../frontend/browser/index.js')
 const FrontendInterviewSidebar = require('../frontend/interview/index.js')
 
 // 引入 exception 模块的侧边导航菜单
@@ -70,6 +71,7 @@ module.exports = {
           { text: 'Git', link: FrontendGitSidebar[0].path },
           { text: 'JavaScript', link: FrontendJavaScriptSidebar[0].path },
           { text: 'Tools', link: FrontendToolsSidebar[0].path },
+          { text: '浏览器', link: FrontendBrowserSidebar[0].path },
           { text: '面试题', link: FrontendInterviewSidebar[0].path }
         ]
       },
@@ -93,6 +95,7 @@ module.exports = {
       '/frontend/git': FrontendGitSidebar,
       '/frontend/javascript': FrontendJavaScriptSidebar,
       '/frontend/tools': FrontendToolsSidebar,
+      '/frontend/browser': FrontendBrowserSidebar,
       '/frontend/interview': FrontendInterviewSidebar,
       '/exception/powershell': ExceptionPowershell
     },
