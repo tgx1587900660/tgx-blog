@@ -13,16 +13,20 @@
 
 ### 1. `then-fs` 有什么用？
 
+::: tip 具体作用
+
 - `then-fs` 是个服务端的三方依赖包，可以基于 Promise 的方式来读取系统文件。
 - `then-fs` 提供的 readFile() 方法，可以异步地读取文件的内容，它的返回值是 Promise 的实例对象。因此可以调用 .then() 方法为每个 Promise 异步操作指定成功和失败之后的回调函数
 
+:::
+
 ### 2. 使用方法
 
-- 安装
+- 第一步：安装
   ```xml
   npm i then-fs
   ```
-- 使用
+- 第二步：使用<tgx-link href="https://www.npmjs.com/package/then-fs">（点击查看具体使用文档）</tgx-link>
 
   ```js
   // 引入包
@@ -37,20 +41,51 @@
 
 ### 1. `mitt` 有什么用？
 
+::: tip 具体作用
+
 - 在 vue3 中：兄弟组件的数据共享需要用到 eventBus 方案
 - 使用 `mitt` 可以快速创建 一个 vue 实例 作为 bus
 
+:::
+
 ### 2. 使用方法
 
-- 安装
+- 第一步：安装
   ```xml
   npm i mitt@2.1.0 -S
   ```
-- 使用
+- 第二步：使用<tgx-link href="https://www.npmjs.com/package/mitt">（点击查看具体使用文档）</tgx-link>
 
   ```js
   // 引入包, 创建 bus 并导出, 各个组件就可以直接引入使用了
   import mitt from 'mitt'
   const bus = mitt()
   export default bus
+  ```
+
+## 3. `moment` 格式化时间
+
+### 1. `moment` 有什么用？
+
+::: tip 具体作用
+使用 `moment` 第三方包，可以快速把原始时间处理成指定的日期格式。
+
+:::
+
+### 2. 使用方法
+
+- 第一步：安装
+  ```xml
+  npm i moment -S
+  ```
+- 第二步：使用<tgx-link href="https://momentjs.com/docs/#/use-it/">（点击查看具体使用文档）</tgx-link>
+
+  ```js
+  import moment from 'moment'
+
+  // 得到当前时间
+  const nowDate = moment()
+
+  // 格式化时间
+  nowDate.format('YYYY-MM-DD HH:mm:ss') // 2020-03-02 18:05:52
   ```
