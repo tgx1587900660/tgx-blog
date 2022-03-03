@@ -89,3 +89,26 @@
   // 格式化时间
   nowDate.format('YYYY-MM-DD HH:mm:ss') // 2020-03-02 18:05:52
   ```
+
+## 4. `i5ting_toc` 转化 md 为 html
+
+### 1. `i5ting_toc` 有什么用？
+
+::: tip 具体作用
+使用 `i5ting_toc` 第三方包，可以快速把 .md 文件转化为 .html 格式的文档
+
+:::
+
+### 2. 使用方法
+
+- 第一步：全局安装
+  ```xml
+  npm install -g i5ting_toc
+  ```
+- 第二步：使用<tgx-link href="https://www.npmjs.com/package/i5ting_toc">（点击查看具体使用文档）</tgx-link>
+
+  ```js
+  // 把桌面的 01.md 转为 html 格式：
+  // 直接在桌面打开终端输入：
+  i5ting_toc -f 01.md -o    // -o 表示 转换后再浏览器打开
+  ```
