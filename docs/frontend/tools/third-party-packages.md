@@ -112,3 +112,29 @@
   // 直接在桌面打开终端输入：
   i5ting_toc -f 01.md -o    // -o 表示 转换后再浏览器打开
   ```
+
+## 5. `nodemon` 监听 node 服务文件
+
+### 1. `nodemon` 有什么用？
+
+::: tip 具体作用
+
+使用 `nodemon` 第三方包，可以实时监听我们代码的变动，而不用在每次更改代码后都重启服务才生效
+
+:::
+
+### 2. 使用方法
+
+- 第一步：全局安装
+  ```xml
+  npm install -g nodemon
+  ```
+- 第二步：使用
+
+  ```js
+  // 直接使用 nodemon 运行文件即可
+
+  // 假设现在要执行一个 demo.js 文件
+  node demo.js // 原始：使用 node 执行
+  nodemon demo.js // 现在：使用 nodemon 执行，demo.js 变动后无需重启，可以自动更新
+  ```
