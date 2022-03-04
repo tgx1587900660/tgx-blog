@@ -8,5 +8,9 @@ module.exports = [
   {
     title: '第三方包 相关知识',
     path: '/backend/node/package-knowledge'
+  },
+  {
+    title: '模块加载 相关知识',
+    path: '/backend/node/module-loading'
   }
 ]
