@@ -1,7 +1,7 @@
 // vuepress 的文档地址 https://vuepress.vuejs.org/zh/config/
 
 // 引入 工具函数
-const tools = require('./utils')
+const { getRandomElement, getCurrentTime } = require('./utils')
 
 // 引入 frontend 模块的侧边导航菜单
 const FrontendVue2Sidebar = require('../frontend/vue2/index.js')
@@ -38,7 +38,7 @@ module.exports = {
         rel: 'shortcut icon',
         // 路径指向 .vuepress/public
         // href: '/xiao.ico'
-        href: tools.getRandomElement(['/tang.ico', '/gan.ico', '/xiao.ico']) // 随机取一个 favicon
+        href: getRandomElement(['/tang.ico', '/gan.ico', '/xiao.ico']) // 随机取一个 favicon
       }
     ]
   ],
@@ -48,11 +48,23 @@ module.exports = {
 
   // 指定 build 的输出目录, 默认打包到 docs/.vuepress/dist 下
   dest: './dist', // 现在会打包到与 docs 平级的目录下
+
   // markdown 相关配置
   markdown: {
     // 给 .md 文件中每个代码块显示行号
     lineNumbers: true
   },
+
+  // 注册插件
+  plugins: [
+    // 返回顶部
+    '@vuepress/back-to-top',
+    // 最后更新时间
+    '@vuepress/last-updated',
+    {
+      transformer: (timestamp, lang) => getCurrentTime(timestamp)
+    }
+  ],
 
   // vuepress 默认主题 的配置
   themeConfig: {
@@ -110,6 +122,7 @@ module.exports = {
       '/backend/node': BackendNodeSidebar,
       '/exception/powershell': ExceptionPowershellSidebar
     },
+
     // 标题深度，2 表示提取 h2 和 h3 标题
     sidebarDepth: 2,
 
