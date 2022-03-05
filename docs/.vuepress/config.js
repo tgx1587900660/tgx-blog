@@ -43,6 +43,9 @@ module.exports = {
     ]
   ],
 
+  // 开发服务器地址, 默认是 0.0.0.0
+  host: 'localhost',
+
   // 指定 build 的输出目录, 默认打包到 docs/.vuepress/dist 下
   dest: './dist', // 现在会打包到与 docs 平级的目录下
   // markdown 相关配置
@@ -126,6 +129,9 @@ module.exports = {
     // 仓库链接文字
     repoLabel: 'Gitee 仓库',
     // 仓库地址
-    repo: 'https://gitee.com/tgx-1587900660/tgx-blog'
+    repo: 'https://gitee.com/tgx-1587900660/tgx-blog',
+
+    // 浏览器兼容性：舍弃 IE, 提升性能, 减小体积
+    evergreen: true
   }
 }
