@@ -60,10 +60,12 @@ module.exports = {
     // 返回顶部
     '@vuepress/back-to-top',
     // 最后更新时间
-    '@vuepress/last-updated',
-    {
-      transformer: (timestamp, lang = 'zh-CN') => getCurrentTime(timestamp)
-    }
+    [
+      '@vuepress/last-updated',
+      {
+        transformer: timestamp => getCurrentTime(timestamp)
+      }
+    ]
   ],
 
   // vuepress 默认主题 的配置
