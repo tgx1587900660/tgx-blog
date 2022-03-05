@@ -270,3 +270,40 @@ chunk(arr2, 5) // [[1, 2, 3, 4, 5], [6, 7, 8, 9]]
 ```
 
 :::
+
+
+### 3. 时间处理器
+::: details 点击查看代码
+
+```js
+// 时间处理器, 传入 '时间戳' 或 '原始时间格式', 返回该格式：2020-10-14 15:01:03
+function getCurrentTime(dateStr) {
+  const date = new Date(dateStr)
+
+  const y = date.getFullYear()
+  const m = padZero(date.getMonth() + 1)
+  const d = padZero(date.getDate())
+
+  const hh = padZero(date.getHours())
+  const mm = padZero(date.getMinutes())
+  const ss = padZero(date.getSeconds())
+  
+  // 补零函数
+  function padZero(date) {
+    return date > 9 ? date : '0' + date
+  } 
+
+  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+}
+
+----------test----------
+
+const timestamp = 1602648779952
+console.log(getCurrentTime(timestamp)) // 2020-10-14 12:12:59
+
+const dt = new Date()
+console.log(getCurrentTime(dt)) // 2020-10-14 12:14:59
+
+```
+
+:::

@@ -6,9 +6,10 @@ function getRandomElement(arr) {
   return arr[random]
 }
 
-// 2. 时间处理器, 传入时间戳, 返回 2020-01-01 08:01:03 格式
-function getCurrentTime(timestamp) {
-  const date = timestamp
+// 2. 时间处理器, 传入 '时间戳' 或 '原始时间格式', 返回该格式：2020-10-14 15:01:03
+function getCurrentTime(dateStr) {
+  const date = new Date(dateStr)
+
   const y = date.getFullYear()
   const m = padZero(date.getMonth() + 1)
   const d = padZero(date.getDate())
