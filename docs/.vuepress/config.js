@@ -62,7 +62,7 @@ module.exports = {
     // 最后更新时间
     '@vuepress/last-updated',
     {
-      transformer: (timestamp, lang) => getCurrentTime(timestamp)
+      transformer: (timestamp, lang = 'zh-CN') => getCurrentTime(timestamp)
     }
   ],
 
