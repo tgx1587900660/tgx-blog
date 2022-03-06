@@ -2,8 +2,8 @@
 home: true
 heroImage: /img/logo.png
 heroText: 一个普通上班族的网络日志
-tagline: 学习笔记
-actionText: 开始阅读 →
+tagline: 一些经验
+actionText: bo ki →
 actionLink: /frontend/vue2/source-integration
 features:
     - title: 前端
