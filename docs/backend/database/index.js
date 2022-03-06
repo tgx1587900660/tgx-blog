@@ -6,7 +6,11 @@ module.exports = [
     path: '/backend/database/database'
   },
   {
-    title: 'MySQL 数据库 相关',
+    title: 'MySQL 数据库 相关知识',
     path: '/backend/database/mysql'
+  },
+  {
+    title: 'SQL 语言 相关知识',
+    path: '/backend/database/sql'
   }
 ]
