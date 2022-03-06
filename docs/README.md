@@ -6,11 +6,11 @@ tagline: 学习笔记
 actionText: 开始阅读 →
 actionLink: /frontend/vue2/source-integration
 features:
-    - title: 不念过去
-      details: 提取知识关键字，每隔7天就复习一次~
-    - title: 不畏将来
-      details: 学新东西，真的不简单~
-    - title: 总结
-      details: 任何事情都应该用一个数学公式来解决~
+    - title: 前端
+      details: 所见即所得，就是前端的意义
+    - title: 后端
+      details: Node.js 只是一个开端
+    - title: 日常
+      details: 总感觉任何事情都可以用公式来解决
 footer: Copyright © 2022-01-20 author： telectron
 ---

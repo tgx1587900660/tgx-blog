@@ -5,7 +5,7 @@
 每次新开一个项目就忘记设置邮箱的`Git指令`，所以在这里收集了一些 Git 指令
 :::
 
-## 1.设置用户名和邮箱
+## 1. 设置用户名和邮箱
 
 > user.name 支持中文
 
@@ -43,7 +43,7 @@ git config user.name telectron
 git config user.email shuaibi@qq.com
 ```
 
-## 2.查看当前项目的配置
+## 2. 查看当前项目的配置
 
 > 一般不会用到
 
@@ -51,7 +51,7 @@ git config user.email shuaibi@qq.com
 git config --list
 ```
 
-## 3.恢复到某次 commit 提交的版本
+## 3. 恢复到某次 commit 提交的版本
 
 > 用得较少，很少有人经常搞坏项目
 
@@ -70,7 +70,7 @@ git reset --hard commitID
 git reset --hard 44tte48c59eb8093686ceb517a37ea065a38a676
 ```
 
-## 4.删除分支
+## 4. 删除分支
 
 > D 表示强制删除, 有时候会用到，比如两个人写了重复代码，另一个人的代码废弃了，得删掉
 
@@ -86,7 +86,7 @@ git branch -d telectron_dev
 git branch -D telectron_dev (强制删除)
 ```
 
-## 5.加入、取出缓存区
+## 5. 加入、取出缓存区
 
 ::: tip 使用场景
 
@@ -108,7 +108,7 @@ git stash
 git stash pop
 ```
 
-## 6.拉取代码
+## 6. 拉取代码
 
 > 初入公司或在 github/gitee 第一次获取项目代码时使用
 
@@ -122,7 +122,7 @@ git clone 远程地址
 git clone https://gitee.com/tgx-1587900660/tgx_vue_vision
 ```
 
-## 7.给远程地址起别名
+## 7. 给远程地址起别名
 
 > 方便提交代码时，少敲点字符
 
@@ -136,13 +136,13 @@ git remote add origin 远程地址
 git remote add origin https://gitee.com/tgx-1587900660/tgx_vue_vision
 ```
 
-## 8.查看所有分支名称(包括远程分支)
+## 8. 查看所有分支名称(包括远程分支)
 
 ```xml
 git branch -a
 ```
 
-## 9.同步远程分支内容
+## 9. 同步远程分支内容
 
 ::: tip 场景
 有时候分支是在线上，点点点创建的，这时我们可以用这个命令在本地获取最新分支，
@@ -153,7 +153,7 @@ git branch -a
 git fetch
 ```
 
-## 10.只提取某一次 commit 内容
+## 10. 只提取某一次 commit 内容
 
 ::: tip 场景
 多人协作时用的比较频繁
