@@ -11,6 +11,7 @@ const FrontendInterviewSidebar = require('../../frontend/interview/index.js')
 
 // 引入 backend 模块的侧边导航菜单
 const BackendNodeSidebar = require('../../backend/node/index.js')
+const BackendDataBaseSidebar = require('../../backend/database/index.js')
 
 // 引入 exception 模块的侧边导航菜单
 const ExceptionPowershellSidebar = require('../../exception/powershell/index.js')
@@ -42,7 +43,10 @@ module.exports = [
   },
   {
     text: '后端学习',
-    items: [{ text: 'Node', link: BackendNodeSidebar[0].path }]
+    items: [
+      { text: 'Node', link: BackendNodeSidebar[0].path },
+      { text: '数据库', link: BackendDataBaseSidebar[0].path }
+    ]
   },
   {
     text: '异常处理',
