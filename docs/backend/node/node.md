@@ -10,7 +10,7 @@
 
 - 浏览器：是 js 的 **前端运行环境**
 - Node：是 js 的 **后端运行环境**
-- <tgx-link href="/frontend/browser/browser">点击查看浏览器运行环境</tgx-link>
+- <tgx-link href="/frontend/browser/browser">这篇文章</tgx-link> 有 浏览器运行环境 相关知识
 
 :::
 
@@ -212,5 +212,5 @@ server.listen(80, () => {
 ## 6. querystring 字符串处理模块
 ::: tip 说明
 querystring 模块是 Node.js 官方提供的、用来处理字符串格式数据的模块。
-<tgx-link href="/tgx-blog/backend/node/express">这篇文章</tgx-link> 的【第三方 中间件】中用到了 querystring 模块
+<tgx-link href="/backend/node/express">这篇文章</tgx-link> 的【第三方 中间件】中用到了 querystring 模块
 :::
