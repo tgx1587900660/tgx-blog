@@ -1,7 +1,9 @@
 # 浏览器 相关知识
 
-::: tip 说明
-本栏目收集了一些 浏览器 的相关知识
+::: tip 栏目说明
+
+本栏目收录了一些 浏览器 的相关知识
+
 :::
 
 ## 1. 浏览器为什么能运行 JavaScript ?
@@ -28,6 +30,7 @@
 因为浏览器内置了一些操作 DOM、 BOM 和 Ajax 的 api 接口，所以我们就可以基于这些 api 编写一些 **操作 DOM、BOM、Ajax 的 js 代码**。浏览器拿到这些代码后，就交给 js 解析引擎处理，从而实现 js 代码操作 DOM，BOM 和 Ajax 的功能。
 
 :::
+
 <tgx-img src="/browser/browser/browser-dom-bom.png" 
     alt="JS 为什么能操作 DOM 和 BOM示意图" 
     title="JS 为什么能操作 DOM 和 BOM示意图"

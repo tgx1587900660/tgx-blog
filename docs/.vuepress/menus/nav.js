@@ -38,14 +38,14 @@ module.exports = [
       { text: 'Git', link: FrontendGitSidebar[0].path },
       { text: 'JavaScript', link: FrontendJavaScriptSidebar[0].path },
       { text: 'Tools', link: FrontendToolsSidebar[0].path },
-      { text: '浏览器', link: FrontendBrowserSidebar[0].path },
+      { text: '通用知识', link: FrontendBrowserSidebar[0].path },
       { text: '面试题', link: FrontendInterviewSidebar[0].path }
     ]
   },
   {
     text: '后端学习',
     items: [
-      { text: 'Node', link: BackendNodeSidebar[0].path },
+      { text: 'Node.js', link: BackendNodeSidebar[0].path },
       { text: 'DataBase', link: BackendDataBaseSidebar[0].path },
       { text: 'Tools', link: BackendToolsSidebar[0].path }
     ]

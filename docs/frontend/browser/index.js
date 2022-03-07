@@ -4,5 +4,9 @@ module.exports = [
   {
     title: '浏览器 相关知识',
     path: '/frontend/browser/browser'
+  },
+  {
+    title: 'Web 开发模式选型',
+    path: '/frontend/browser/dev-web'
   }
 ]
