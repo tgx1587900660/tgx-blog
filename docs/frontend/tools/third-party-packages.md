@@ -138,3 +138,191 @@
   node demo.js // 原始：使用 node 执行
   nodemon demo.js // 现在：使用 nodemon 执行，demo.js 变动后无需重启，可以自动更新
   ```
+
+## 6. `mysql` 操作数据库
+
+### 1. `mysql` 有什么用？
+
+::: tip 具体作用
+
+- 默认情况下，项目 与 数据库 是 **不存在联系的**
+- `mysql`这个第三方包，提供了在 Node.js 项目中 **连接和操作** MySQL 数据库的能力。
+- 有关数据库的知识 <tgx-link href="/backend/database/database">请点击这里</tgx-link>
+
+:::
+
+### 2. 使用方法
+
+- 第一步：项目中安装
+  ```xml
+  npm install mysql
+  ```
+- 第二步：项目中使用
+  ::: details 点击查看 如何连接 mysql 数据库
+
+  ```js
+  // 1. 导入 mysql 模块
+  const mysql = require('mysql')
+
+  // 2. 建立与 MySQL 数据库 的连接
+  const db = mysql.createPool({
+    host: '127.0.0.1', // 数据库 ip 地址
+    user: 'root', // 登录数据库的用户名
+    password: 'admin123', // 登录数据库的密码
+    database: 'my_db_01' // 指定要操作的 数据库名称
+  })
+
+  // 3. 检测 mysql 模块是否正常工作
+  // 其中：'select 1' 这个SQL语句在这里没什么实质性作用，仅仅用于检测
+  db.query('select 1', (err, results) => {
+    // err 是错误对象
+    if (err) return console.log(err.message)
+    // results 是查询结果 // [ RowDataPacket { '1': 1 } ]
+    console.log(results)
+  })
+  ```
+
+  :::
+
+  ::: details 点击查看 如何查询数据
+
+  ```js{10-16}
+  const mysql = require('mysql')
+
+  const db = mysql.createPool({
+    host: '127.0.0.1',
+    user: 'root',
+    password: 'admin123',
+    database: 'my_db_01'
+  })
+
+  // 1. 查询 users 表中所有数据
+  const sqlStr = 'select * from users'
+  db.query(sqlStr, (err, results) => {
+    if (err) return console.log(err.message)
+    // 用 select 查询到的 results 是个数组, 里面是一个又一个对象
+    console.log(results)
+  })
+  ```
+
+  :::
+
+  ::: details 点击查看 如何插入数据
+
+  ```js{10-23,26-36}
+  const mysql = require('mysql')
+
+  const db = mysql.createPool({
+    host: '127.0.0.1',
+    user: 'root',
+    password: 'admin123',
+    database: 'my_db_01'
+  })
+
+  // 1. 向 users 中插入一条数据, username为Spider-Man, password为pcc321
+  // sql 语句中可以用 ? 来进行占位, 执行时 用数组对应替换即可
+  const sqlStr = 'insert into users (username, password) values (?, ?)'
+  const user = { username: 'Spider-Man', password: 'pcc321' }
+
+  // 用 insert into 查询到的 results 是个对象
+  db.query(sqlStr, [user.username, user.password], (err, results) => {
+    if (err) return console.log(err.message)
+    // 可以通过 affectedRows影响的行数 可以知道是否插入成功
+    if (results.affectedRows === 1) {
+      console.log(results)
+      console.log('插入数据成功')
+    }
+  })
+
+
+  // 2. 快捷方式：向 users 中插入一条数据
+  // 要求：数据对象的 每个属性和数据表的字段一一对应，执行时，直接用对象替换
+  const sqlStr = 'insert into users set ?'
+  const user = { username: 'Spider-Man2', password: 'pcc000' }
+
+  db.query(sqlStr, user, (err, results) => {
+    if (err) return console.log(err.message)
+    if (results.affectedRows === 1) {
+      console.log('插入数据成功')
+    }
+  })
+  ```
+
+  :::
+
+  ::: details 点击查看 如何更新数据
+
+  ```js{10-19,22-31}
+  const mysql = require('mysql')
+
+  const db = mysql.createPool({
+    host: '127.0.0.1',
+    user: 'root',
+    password: 'admin123',
+    database: 'my_db_01'
+  })
+
+  // 1. 更新 users 中的一条数据（思想与插入数据类似）
+  const sqlStr = 'update users set username=?, password=? where id=?'
+  const user = { id: 6, username: 'aaa', password: '000' }
+
+  db.query(sqlStr, [user.username, user.password, user.id], (err, res) => {
+    if (err) return console.log(err.message)
+    if (res.affectedRows === 1) {
+      console.log('更新数据成功')
+    }
+  })
+
+
+  // 2. 便捷方式：更新 users 中的一条数据（思想与插入数据类似）
+  const sqlStr = 'update users set ? where id=?'
+  const user = { id: 6, username: 'aaa2', password: '0002' }
+
+  db.query(sqlStr, [user, user.id], (err, res) => {
+    if (err) return console.log(err.message)
+    if (res.affectedRows === 1) {
+      console.log('更新数据成功')
+    }
+  })
+  ```
+
+  :::
+
+  > 标记删除思想：真正执行 delete 语句过于危险，无法恢复数据。因此我们可以在设计表时定义一个 status 状态字段，
+  > 用来标记某条数据是否为 '已删除状态'，实际操作时，我们使用的是 update 语句来修改这条数据的 '删除状态' ，从而实现删除效果。
+
+  ::: details 点击查看 如何删除数据
+
+  ```js{10-18,21-29}
+  const mysql = require('mysql')
+
+  const db = mysql.createPool({
+    host: '127.0.0.1',
+    user: 'root',
+    password: 'admin123',
+    database: 'my_db_01'
+  })
+
+  // 1. 删除 users 中的一条数据（不推荐）
+  const sqlStr = 'delete from users where id=?'
+  // 这个 id 值可以直接写 5 也可以写成 [5] (取决于操作的数据 是单个还是多个)
+  db.query(sqlStr, 5, (err, results) => {
+    if (err) return console.log(err.message)
+    if (results.affectedRows === 1) {
+      console.log('删除数据成功')
+    }
+  })
+
+
+  // 2. 标记删除：删除 users 中的一条数据（推荐）
+  // 这里设计的 status 用来标记用户是否启用 0 为正常 1为禁用
+  const sqlStr = 'update users set status=? where id=?'
+  db.query(sqlStr, [1, 6], (err, results) => {
+    if (err) return console.log(err.message)
+    if (results.affectedRows === 1) {
+      console.log('标记删除成功')
+    }
+  })
+  ```
+
+  :::
