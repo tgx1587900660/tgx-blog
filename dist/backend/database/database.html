@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>数据库 相关知识 | telectron 的网络日志</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="shortcut icon" href="/tgx-blog/xiao.ico">
+    <meta name="description" content="唐干宵的网络日志|博客，一个普通上班族的网络日志|博客，telectron 的网络日志|博客，谭竿霄的网络日志|博客">
+    
+    <link rel="preload" href="/tgx-blog/assets/css/0.styles.d22bdb4d.css" as="style"><link rel="preload" href="/tgx-blog/assets/js/app.aa9b1eb8.js" as="script"><link rel="preload" href="/tgx-blog/assets/js/2.f27d966e.js" as="script"><link rel="preload" href="/tgx-blog/assets/js/12.6ee44bac.js" as="script"><link rel="prefetch" href="/tgx-blog/assets/js/10.1853b5de.js"><link rel="prefetch" href="/tgx-blog/assets/js/11.80471333.js"><link rel="prefetch" href="/tgx-blog/assets/js/13.55f9bf56.js"><link rel="prefetch" href="/tgx-blog/assets/js/14.35f8188b.js"><link rel="prefetch" href="/tgx-blog/assets/js/15.ab730dd7.js"><link rel="prefetch" href="/tgx-blog/assets/js/16.3e0048b9.js"><link rel="prefetch" href="/tgx-blog/assets/js/17.0f825fa1.js"><link rel="prefetch" href="/tgx-blog/assets/js/18.d82862d0.js"><link rel="prefetch" href="/tgx-blog/assets/js/19.c9341044.js"><link rel="prefetch" href="/tgx-blog/assets/js/20.d406fafa.js"><link rel="prefetch" href="/tgx-blog/assets/js/21.222b4f6a.js"><link rel="prefetch" href="/tgx-blog/assets/js/22.fbabbc33.js"><link rel="prefetch" href="/tgx-blog/assets/js/23.d8e237e7.js"><link rel="prefetch" href="/tgx-blog/assets/js/24.90ed8050.js"><link rel="prefetch" href="/tgx-blog/assets/js/25.f21c87d5.js"><link rel="prefetch" href="/tgx-blog/assets/js/26.98561214.js"><link rel="prefetch" href="/tgx-blog/assets/js/27.ec84f398.js"><link rel="prefetch" href="/tgx-blog/assets/js/28.f56319a8.js"><link rel="prefetch" href="/tgx-blog/assets/js/29.4f601536.js"><link rel="prefetch" href="/tgx-blog/assets/js/3.2a05aa23.js"><link rel="prefetch" href="/tgx-blog/assets/js/30.78e352c9.js"><link rel="prefetch" href="/tgx-blog/assets/js/31.9e6a760f.js"><link rel="prefetch" href="/tgx-blog/assets/js/32.19fef5a3.js"><link rel="prefetch" href="/tgx-blog/assets/js/33.2a4174ad.js"><link rel="prefetch" href="/tgx-blog/assets/js/34.3842c6b2.js"><link rel="prefetch" href="/tgx-blog/assets/js/35.0f9f2fe1.js"><link rel="prefetch" href="/tgx-blog/assets/js/36.4af61ca3.js"><link rel="prefetch" href="/tgx-blog/assets/js/37.948b95d2.js"><link rel="prefetch" href="/tgx-blog/assets/js/38.02ff3da5.js"><link rel="prefetch" href="/tgx-blog/assets/js/39.6219aa83.js"><link rel="prefetch" href="/tgx-blog/assets/js/4.2a84383b.js"><link rel="prefetch" href="/tgx-blog/assets/js/40.28281f92.js"><link rel="prefetch" href="/tgx-blog/assets/js/41.7f8ee169.js"><link rel="prefetch" href="/tgx-blog/assets/js/42.54d19593.js"><link rel="prefetch" href="/tgx-blog/assets/js/43.db0409ec.js"><link rel="prefetch" href="/tgx-blog/assets/js/5.2c2a22bf.js"><link rel="prefetch" href="/tgx-blog/assets/js/6.8a5543e5.js"><link rel="prefetch" href="/tgx-blog/assets/js/7.a7ae1732.js"><link rel="prefetch" href="/tgx-blog/assets/js/8.e6bf8faa.js"><link rel="prefetch" href="/tgx-blog/assets/js/9.5f480ae4.js">
+    <link rel="stylesheet" href="/tgx-blog/assets/css/0.styles.d22bdb4d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/tgx-blog/" class="home-link router-link-active"><img src="/tgx-blog/img/logo.png" alt="telectron 的网络日志" class="logo"> <span class="site-name can-hide">telectron 的网络日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端学习" class="dropdown-title"><span class="title">前端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端学习" class="mobile-dropdown-title"><span class="title">前端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/vue2/source-integration.html" class="nav-link">
+  Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/vue3/vue3-change-details.html" class="nav-link">
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/git/git-command.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/javascript/data-processing-method.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/tools/webpack-study.html" class="nav-link">
+  Tools
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/browser/browser.html" class="nav-link">
+  浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/interview/interview.html" class="nav-link">
+  面试题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端学习" class="dropdown-title"><span class="title">后端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端学习" class="mobile-dropdown-title"><span class="title">后端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tgx-blog/backend/node/node.html" class="nav-link">
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/backend/database/database.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  数据库
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="异常处理" class="dropdown-title"><span class="title">异常处理</span> <span class="arrow down"></span></button> <button type="button" aria-label="异常处理" class="mobile-dropdown-title"><span class="title">异常处理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tgx-blog/exception/powershell/security-error.html" class="nav-link">
+  Powershell
+</a></li></ul></div></div> <a href="https://gitee.com/tgx-1587900660/tgx-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Gitee 仓库
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端学习" class="dropdown-title"><span class="title">前端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端学习" class="mobile-dropdown-title"><span class="title">前端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/vue2/source-integration.html" class="nav-link">
+  Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/vue3/vue3-change-details.html" class="nav-link">
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/git/git-command.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/javascript/data-processing-method.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/tools/webpack-study.html" class="nav-link">
+  Tools
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/browser/browser.html" class="nav-link">
+  浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/interview/interview.html" class="nav-link">
+  面试题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端学习" class="dropdown-title"><span class="title">后端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端学习" class="mobile-dropdown-title"><span class="title">后端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tgx-blog/backend/node/node.html" class="nav-link">
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/backend/database/database.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  数据库
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="异常处理" class="dropdown-title"><span class="title">异常处理</span> <span class="arrow down"></span></button> <button type="button" aria-label="异常处理" class="mobile-dropdown-title"><span class="title">异常处理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tgx-blog/exception/powershell/security-error.html" class="nav-link">
+  Powershell
+</a></li></ul></div></div> <a href="https://gitee.com/tgx-1587900660/tgx-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Gitee 仓库
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/tgx-blog/backend/database/database.html" aria-current="page" class="active sidebar-link">数据库 相关知识</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tgx-blog/backend/database/database.html#_1-什么是数据库" class="sidebar-link">1. 什么是数据库？</a></li><li class="sidebar-sub-header"><a href="/tgx-blog/backend/database/database.html#_2-常见数据库及其分类" class="sidebar-link">2. 常见数据库及其分类</a></li></ul></li><li><a href="/tgx-blog/backend/database/mysql.html" class="sidebar-link">MySQL 数据库 相关知识</a></li><li><a href="/tgx-blog/backend/database/sql.html" class="sidebar-link">SQL 语言 相关知识</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="数据库-相关知识"><a href="#数据库-相关知识" class="header-anchor">#</a> 数据库 相关知识</h1> <div class="custom-block tip"><p class="custom-block-title">栏目说明</p> <p>本栏目收集了一些 数据库 的相关知识</p></div> <h2 id="_1-什么是数据库"><a href="#_1-什么是数据库" class="header-anchor">#</a> 1. 什么是数据库？</h2> <div class="custom-block tip"><p class="custom-block-title">概念</p> <p>数据库（database）是用来 <strong>组织、存储和管理数据</strong> 的仓库。</p></div> <h2 id="_2-常见数据库及其分类"><a href="#_2-常见数据库及其分类" class="header-anchor">#</a> 2. 常见数据库及其分类</h2> <div class="custom-block tip"><p class="custom-block-title">数据库分类</p> <ul><li><p><strong>关系型数据库</strong>：又叫 SQL 数据库。属于 <strong>传统型数据库</strong> ，有 MySQL、Oracle、SQL Server...</p></li> <li><p><strong>非关系型数据库</strong>：又叫 NoSQL 数据库。属于 <strong>新型数据库</strong> ，有 Mongodb...</p></li></ul></div> <p>最常见的数据库，有：</p> <ul><li>MySQL 数据库（目前使用最广泛、流行度最高的开源免费数据库；Community + Enterprise）</li> <li>Oracle 数据库（收费）</li> <li>SQL Server 数据库（收费）</li> <li>Mongodb 数据库（Community + Enterprise）</li></ul> <p>其中，MySQL、Oracle、SQL Server，这三者设计理念相同，用法比较类似。</p> <p>而 Mongodb 属于新型数据库，它在一定程度上弥补了传统型数据库的缺陷</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022-03-06 19:29:23</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/tgx-blog/backend/database/mysql.html">
+        MySQL 数据库 相关知识
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/tgx-blog/assets/js/app.aa9b1eb8.js" defer></script><script src="/tgx-blog/assets/js/2.f27d966e.js" defer></script><script src="/tgx-blog/assets/js/12.6ee44bac.js" defer></script>
+  </body>
+</html>
