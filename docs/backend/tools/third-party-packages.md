@@ -269,3 +269,82 @@ db.query(sqlStr, [1, 6], (err, results) => {
 ```
 
 :::
+
+## 4. `express-session` 身份认证
+
+### 1. `express-session` 有什么用？
+
+::: tip 具体作用
+
+- `express-session` 可以便捷地在客户端进行 session 身份认证。
+
+:::
+
+### 2. 使用方法
+
+- 第一步: 安装
+
+```xml
+npm i express-session
+```
+
+- 第二步: 使用
+
+::: details 点击查看 如何在 express 项目中 保存、获取、删除 session 信息
+
+```js{4-13,24-27,34-38,43,49-50}
+const express = require('express')
+const app = express()
+
+// 1. 导入
+const session = require('express-session')
+// 2. 注册 express-session 中间件
+app.use(
+  session({
+    secret: 'tgx', // 任意写，用来加密的
+    resave: false, // 固定写法
+    saveUninitialized: true // 固定写法
+  })
+)
+
+// 其他代码...
+
+// 登录的 API 接口
+app.post('/api/login', (req, res) => {
+  // 判断用户提交的登录信息是否正确
+  if (req.body.username !== 'admin' || req.body.password !== '000000') {
+    return res.send({ status: 1, msg: '登录失败' })
+  }
+
+  // 3. 将登录成功后的用户信息，保存到 Session 中
+  // 只有成功注册 express-session 中间件后 req 才有 session 这个属性
+  req.session.user = req.body // 将用户信息存入 Session 中
+  req.session.islogin = true // 设置用户登录状态存入 Session 中
+
+  res.send({ status: 0, msg: '登录成功' })
+})
+
+// 获取用户姓名的接口
+app.get('/api/username', (req, res) => {
+  // 4. 从 Session 中获取用户的名称，响应给客户端
+  // 判断是否登录了
+  if (!req.session.islogin) {
+    return res.send({ status: 1, message: 'fail' })
+  }
+
+  res.send({
+    status: 0,
+    message: 'success',
+    username: req.session.user.username
+  })
+})
+
+// 退出登录的接口
+app.post('/api/logout', (req, res) => {
+  // 5. 清空 Session 信息
+  req.session.destroy() // destroy() 方法只会清除当前用户的信息
+  res.send({ status: 0, message: 'success' })
+})
+```
+
+:::
