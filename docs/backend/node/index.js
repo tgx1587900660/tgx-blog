@@ -10,7 +10,7 @@ module.exports = [
     path: '/backend/node/package-knowledge'
   },
   {
-    title: '模块加载 相关知识',
+    title: 'Node.js 模块加载机制',
     path: '/backend/node/module-loading'
   },
   {

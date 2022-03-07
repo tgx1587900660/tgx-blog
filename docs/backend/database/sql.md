@@ -32,7 +32,7 @@ SQL（Structured Query Language）即 **结构化查询语言**，专门用来 *
 
 ## 3. SQL 语法规则
 
-::: tip 说明
+::: tip 重要
 
 SQL 中的 **关键字** 对大小写不敏感
 
