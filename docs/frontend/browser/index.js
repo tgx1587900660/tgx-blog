@@ -8,5 +8,9 @@ module.exports = [
   {
     title: 'Web 开发模式选型',
     path: '/frontend/browser/dev-web'
+  },
+  {
+    title: '网站的 身份认证',
+    path: '/frontend/browser/authentication'
   }
 ]
