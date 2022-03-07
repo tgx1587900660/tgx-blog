@@ -17,6 +17,6 @@ vue: 无法加载文件 ...... 因为在此系统上禁止运行脚本。有关�
 :::
 
 - 解决方案：
-  - 管理员身份运行 Powershell
-  - 执行 set-ExecutionPolicy RemoteSigned 命令
-  - 会提示 **执行策略更改** ，输入字符 Y ，回车即可
+  - 1. 管理员身份运行 Powershell
+  - 2. 执行 set-ExecutionPolicy RemoteSigned 命令
+  - 3. 会提示 **执行策略更改** ，输入字符 Y ，回车即可
