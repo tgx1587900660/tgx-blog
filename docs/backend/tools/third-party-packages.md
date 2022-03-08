@@ -408,3 +408,133 @@ app.post('/api/logout', (req, res) => {
 ```
 
 :::
+
+## 5. `jsonwebtoken` 和 `express-jwt` 认证
+
+::: tip 说明
+
+`jsonwebtoken` 和 `express-jwt` 都是 node.js 服务端 的三方依赖包。
+
+:::
+
+### 1. 这 2 个包有什么用？
+
+::: tip 具体作用
+
+- `jsonwebtoken` 用于生成 JWT 字符串
+- `express-jwt` 用于将 JWT 字符串解析还原成 JSON 对象
+
+:::
+
+### 2. 使用方法
+
+- 第一步: 安装 2 个包
+
+```xml
+npm i jsonwebtoken express-jwt
+```
+
+- 第二步: 使用
+
+::: details 点击查看 2 个包的具体使用步骤
+
+```js{1-8,13,24,27,51,64,74,85}
+// 使用这两个包，分 7 步：
+// 1. 导入两个包
+// 2. 定义 secret 密钥
+// 3. 等待用户第一次登录成功，返回对应内容 （客户端请求登录接口）
+// 4. 用 jsonwebtoken 包 加密用户信息成 token 字符串，返回给客户端保存
+// 5. 注册 express-jwt解密 中间件
+// 6. 等待用户请求权限接口，返回对应内容 （客户端请求需要权限的接口）
+// 7. 使用错误处理中间件，捕获 解析 JWT 失败产生的错误（防止程序崩溃）
+
+const express = require('express')
+const app = express()
+
+// 1. 导入两个包
+const jwt = require('jsonwebtoken') // 用于加密的包
+const expressJTW = require('express-jwt') // 用于解析的包
+
+// 允许跨域资源共享
+const cors = require('cors')
+app.use(cors())
+// 解析 post 表单数据的中间件
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// 2. 定义 secret 密钥，token 进行解密、加密时都要用到 (随便起，越复杂越好)
+const secretKey = 'tgx-XXX -_-'
+
+// 5. 注册将 JWT 字符串解析还原成 JSON 对象的中间件
+// expressJTW({secret: secretKey}) 用来解析 token 字符串
+// unless({ path: [/^\/api\//] }) 用来指定 哪些接口不需要访问权限
+app.use(
+  expressJTW({
+    secret: secretKey,
+    algorithms: ['HS256']
+  }).unless({
+    path: [/^\/api\//]
+  })
+)
+
+// 登录接口
+app.post('/api/login', function (req, res) {
+  const userinfo = req.body
+  // 登录失败
+  if (userinfo.username !== 'admin' || userinfo.password !== '000000') {
+    return res.send({
+      status: 400,
+      message: '登录失败！'
+    })
+  }
+
+  // 登录成功
+  // 3. 登录成功后，把用户信息加密成 JWT 字符串。并通过 token 属性发送给客户端
+  // jwt.sign() 方法接收 3 个参数
+  // 参数1: 用户的信息对象（一定不要放密码）
+  // 参数2: 加密的秘钥
+  // 参数3: 配置对象, 可配置 token 有效期
+  const tokenStr = jwt.sign(
+    {
+      username: userinfo.username
+    },
+    secretKey,
+    { expiresIn: '30s' }
+  )
+
+  // 4. 把加密的 用户信息 token 字符串，返回给客户端保存
+  res.send({
+    status: 200,
+    message: '登录成功！',
+    token: tokenStr // 要发送给客户端保存的 token 字符串
+  })
+})
+
+// 这是一个有权限的 API 接口
+app.get('/admin/getinfo', function (req, res) {
+  // 6. 使用 req.user 获取用户信息，并使用 data 属性将用户信息发送给客户端
+  // req 中的 user 属性是在注册了 express-jwt 中间件后被自动挂载的
+  console.log(req.user) // {username:'admin', iat:1646731406, exp:1646731436}
+
+  res.send({
+    status: 200,
+    message: '获取用户信息成功！',
+    data: req.user // 要发送给客户端的用户信息
+  })
+})
+
+// 7. 使用全局错误处理中间件，捕获解析 JWT 失败后产生的错误
+app.use((err, req, res, next) => {
+  if (err.name === 'UnauthorizedError') {
+    // token 解析失败导致 (防止程序崩溃)
+    return res.send({ status: 401, message: '无效的 token' })
+  }
+  return res.send({ status: 500, message: '未知错误' })
+})
+
+app.listen(8888, function () {
+  console.log('Express server running at http://127.0.0.1:8888')
+})
+```
+
+:::
