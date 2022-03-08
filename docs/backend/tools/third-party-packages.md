@@ -15,8 +15,8 @@
 
 ::: tip 具体作用
 
-- `then-fs` 是个服务端的三方依赖包，可以基于 Promise 的方式来读取系统文件。
-- `then-fs` 提供的 readFile() 方法，可以异步地读取文件的内容，它的返回值是 Promise 的实例对象。因此可以调用 .then() 方法为每个 Promise 异步操作指定成功和失败之后的回调函数
+- `then-fs` 是一个 node.js 服务端 的三方依赖包。
+- `then-fs` 可以基于 Promise 的方式来读取系统文件。提供的 readFile() 方法，可以异步地读取文件的内容，它的返回值是 Promise 的实例对象。因此可以调用 .then() 方法为每个 Promise 异步操作指定成功和失败之后的回调函数
 
 :::
 
@@ -32,11 +32,16 @@ npm i then-fs
 
 ::: details 点击查看使用案例
 
-```js
-// 引入包
+```js{1-3}
+// 使用这个包，分 2 步：
+// 1. 导入包得到一个对象
+// 2. 调用该对象的 readFile 方法即可
+
+
+// 1. 引入包
 import thenFs from 'then-fs'
 
-// 调用 readFile() 方法读取文件
+// 2. 调用 readFile() 方法读取文件
 // 该方法返回一个 Promise 实例对象，因此可以访问 then() 方法
 thenFs.readFile('./file.txt', 'utf8').then(success => { .. }, error => { .. })
 ```
@@ -53,7 +58,8 @@ thenFs.readFile('./file.txt', 'utf8').then(success => { .. }, error => { .. })
 
 ::: tip 具体作用
 
-使用 `nodemon` 第三方包，可以实时监听我们代码的变动，并自动执行文件。
+- `nodemon` 是一个 node.js 服务端 的三方依赖包。
+- `nodemon` 可以实时监听我们代码的变动，并自动执行文件。
 
 :::
 
@@ -69,10 +75,12 @@ npm install -g nodemon
 
 ::: details 点击查看使用案例
 
-```js
-// 直接使用 nodemon 运行文件即可
+```js{1-2}
+// 使用这个包，分 1 步：
+// 1. 直接使用 nodemon 命令运行文件即可
 
-// 假设现在要执行一个 demo.js 文件
+
+// 1. 假设现在要执行一个 demo.js 文件
 node demo.js // 原始：使用 node 执行
 nodemon demo.js // 现在：使用 nodemon 执行，demo.js 变动后无需重启，可以自动更新
 ```
@@ -85,9 +93,9 @@ nodemon demo.js // 现在：使用 nodemon 执行，demo.js 变动后无需重�
 
 ::: tip 具体作用
 
-- 默认情况下，项目 与 数据库 是 **不存在联系的**
-- `mysql`这个第三方包，提供了在 Node.js 项目中 **连接和操作** MySQL 数据库的能力。
-- 有关数据库的知识 <tgx-link href="/backend/database/database">请点击这里</tgx-link>
+- `mysql` 是一个 node.js 服务端 的三方依赖包。
+- 默认情况下，**项目** 与 **数据库** 是 **不存在联系的**。`mysql` 提供了在 Node.js 项目中 **连接和操作** MySQL 数据库的能力。
+- 有关数据库的知识请查看 <tgx-link href="/backend/database/database">这篇文章</tgx-link>
 
 :::
 
@@ -101,9 +109,16 @@ npm install mysql
 
 - 第二步：项目中使用
 
-::: details 点击查看 如何连接 mysql 数据库
+::: details 点击查看 如何连接并测试 mysql 数据库
 
-```js{1,4,12}
+```js{1-5,8,11,19,28}
+// 使用这个包，分 4 步：
+// 1. 导入包，得到一个 对象
+// 2. 调用 该对象的 createPool 方法创建一个 连接对象 (创建时需要传入一个配置对象)
+// 3. 测试 连接对象 是否正常工作
+// 4. 使用 连接对象 操作 数据库
+
+
 // 1. 导入 mysql 模块
 const mysql = require('mysql')
 
@@ -123,13 +138,20 @@ db.query('select 1', (err, results) => {
   // results 是查询结果 // [ RowDataPacket { '1': 1 } ]
   console.log(results)
 })
+
+// 4. 在项目中使用...
 ```
 
 :::
 
 ::: details 点击查看 如何查询数据
 
-```js{10-16}
+```js{1-3,15-23}
+// 查询数据，分 2 步：
+// 1. 编写 SQL 语句
+// 2. 调用 连接对象的 qurey 方法执行
+
+
 const mysql = require('mysql')
 
 const db = mysql.createPool({
@@ -139,8 +161,10 @@ const db = mysql.createPool({
   database: 'my_db_01'
 })
 
-// 1. 查询 users 表中所有数据
+// 案例: 查询 users 表中所有数据
+// 1. 编写 SQL 语句
 const sqlStr = 'select * from users'
+// 2. 调用 连接对象的 qurey 方法查询
 db.query(sqlStr, (err, results) => {
   if (err) return console.log(err.message)
   // 用 select 查询到的 results 是个数组, 里面是一个又一个对象
@@ -152,9 +176,14 @@ db.query(sqlStr, (err, results) => {
 
 ::: details 点击查看 如何插入数据
 
-```js{10-23,26-36}
-const mysql = require('mysql')
+```js{1-4,15-30,33-45}
+// 插入数据，分 3 步：
+// 1. 定义一个要插入的对象
+// 2. 编写 SQL 语句
+// 3. 调用 连接对象的 qurey 方法执行
 
+
+const mysql = require('mysql')
 const db = mysql.createPool({
   host: '127.0.0.1',
   user: 'root',
@@ -162,11 +191,13 @@ const db = mysql.createPool({
   database: 'my_db_01'
 })
 
-// 1. 向 users 中插入一条数据, username为Spider-Man, password为pcc321
+// 案例一: 向 users 中插入一条数据, username为Spider-Man, password为pcc321
 // sql 语句中可以用 ? 来进行占位, 执行时 用数组对应替换即可
-const sqlStr = 'insert into users (username, password) values (?, ?)'
+// 1. 定义一个要插入的对象
 const user = { username: 'Spider-Man', password: 'pcc321' }
-
+// 2. 编写 SQL 语句
+const sqlStr = 'insert into users (username, password) values (?, ?)'
+// 3. 调用 连接对象的 qurey 方法执行
 // 用 insert into 查询到的 results 是个对象
 db.query(sqlStr, [user.username, user.password], (err, results) => {
   if (err) return console.log(err.message)
@@ -178,11 +209,13 @@ db.query(sqlStr, [user.username, user.password], (err, results) => {
 })
 
 
-// 2. 快捷方式：向 users 中插入一条数据
+// 案例二: 使用快捷方式 向 users 中插入一条数据
 // 要求：数据对象的 每个属性和数据表的字段一一对应，执行时，直接用对象替换
-const sqlStr = 'insert into users set ?'
+// 1. 定义一个要插入的对象
 const user = { username: 'Spider-Man2', password: 'pcc000' }
-
+// 2. 编写 SQL 语句
+const sqlStr = 'insert into users set ?'
+// 3. 调用 连接对象的 qurey 方法执行
 db.query(sqlStr, user, (err, results) => {
   if (err) return console.log(err.message)
   if (results.affectedRows === 1) {
@@ -195,9 +228,14 @@ db.query(sqlStr, user, (err, results) => {
 
 ::: details 点击查看 如何更新数据
 
-```js{10-19,22-31}
-const mysql = require('mysql')
+```js{1-4,16-27,30-41}
+// 插入数据，分 3 步：
+// 1. 定义一个要插入的对象
+// 2. 编写 SQL 语句
+// 3. 调用 连接对象的 qurey 方法执行
 
+
+const mysql = require('mysql')
 const db = mysql.createPool({
   host: '127.0.0.1',
   user: 'root',
@@ -205,10 +243,13 @@ const db = mysql.createPool({
   database: 'my_db_01'
 })
 
-// 1. 更新 users 中的一条数据（思想与插入数据类似）
-const sqlStr = 'update users set username=?, password=? where id=?'
-const user = { id: 6, username: 'aaa', password: '000' }
 
+// 案例一: 更新 users 中的一条数据（思想与插入数据类似）
+// 1. 定义一个要插入的对象
+const user = { id: 6, username: 'aaa', password: '000' }
+// 2. 编写 SQL 语句
+const sqlStr = 'update users set username=?, password=? where id=?'
+// 3. 调用 连接对象的 qurey 方法执行
 db.query(sqlStr, [user.username, user.password, user.id], (err, res) => {
   if (err) return console.log(err.message)
   if (res.affectedRows === 1) {
@@ -217,10 +258,12 @@ db.query(sqlStr, [user.username, user.password, user.id], (err, res) => {
 })
 
 
-// 2. 便捷方式：更新 users 中的一条数据（思想与插入数据类似）
-const sqlStr = 'update users set ? where id=?'
+// 案例二: 使用便捷方式 更新 users 中的一条数据（思想与插入数据类似）
+// 1. 定义一个要插入的对象
 const user = { id: 6, username: 'aaa2', password: '0002' }
-
+// 2. 编写 SQL 语句
+const sqlStr = 'update users set ? where id=?'
+// 3. 调用 连接对象的 qurey 方法执行
 db.query(sqlStr, [user, user.id], (err, res) => {
   if (err) return console.log(err.message)
   if (res.affectedRows === 1) {
@@ -236,9 +279,13 @@ db.query(sqlStr, [user, user.id], (err, res) => {
 
 ::: details 点击查看 如何删除数据
 
-```js{10-18,21-29}
-const mysql = require('mysql')
+```js{1-3,15-25,28-38}
+// 插入数据，分 2 步：
+// 1. 编写 SQL 语句
+// 2. 调用 连接对象的 qurey 方法执行
 
+
+const mysql = require('mysql')
 const db = mysql.createPool({
   host: '127.0.0.1',
   user: 'root',
@@ -246,8 +293,11 @@ const db = mysql.createPool({
   database: 'my_db_01'
 })
 
-// 1. 删除 users 中的一条数据（不推荐）
+
+// 案例一: 删除 users 中的一条数据（不推荐）
+// 1. 编写 SQL 语句
 const sqlStr = 'delete from users where id=?'
+// 2. 调用 连接对象的 qurey 方法执行
 // 这个 id 值可以直接写 5 也可以写成 [5] (取决于操作的数据 是单个还是多个)
 db.query(sqlStr, 5, (err, results) => {
   if (err) return console.log(err.message)
@@ -257,9 +307,11 @@ db.query(sqlStr, 5, (err, results) => {
 })
 
 
-// 2. 标记删除：删除 users 中的一条数据（推荐）
+// 案例二: 使用标记删除思想 删除 users 中的一条数据（推荐）
+// 1. 编写 SQL 语句
 // 这里设计的 status 用来标记用户是否启用 0 为正常 1为禁用
 const sqlStr = 'update users set status=? where id=?'
+// 2. 调用 连接对象的 qurey 方法执行
 db.query(sqlStr, [1, 6], (err, results) => {
   if (err) return console.log(err.message)
   if (results.affectedRows === 1) {
@@ -276,6 +328,7 @@ db.query(sqlStr, [1, 6], (err, results) => {
 
 ::: tip 具体作用
 
+- `express-session` 是一个 node.js 服务端 的三方依赖包。
 - `express-session` 可以便捷地在客户端进行 session 身份认证。
 
 :::
@@ -292,7 +345,14 @@ npm i express-session
 
 ::: details 点击查看 如何在 express 项目中 保存、获取、删除 session 信息
 
-```js{4-13,24-27,34-38,43,49-50}
+```js{1-5,11,13,31,41,56}
+// 完整使用这个包，分 5 步：
+// 1. 导入包, 得到一个方法
+// 2. 调用这个方法,传入一个配置对象, 同时注册为中间件
+// 3. 注册后, req 上会自动挂载一个 session 属性 (用于存储用户信息, 供后续使用)
+// 4. session 属性上有一个 destroy() 用于销毁当前用户信息
+
+
 const express = require('express')
 const app = express()
 
@@ -316,7 +376,7 @@ app.post('/api/login', (req, res) => {
     return res.send({ status: 1, msg: '登录失败' })
   }
 
-  // 3. 将登录成功后的用户信息，保存到 Session 中
+  // 3.1 将登录成功后的用户信息，保存到 Session 中
   // 只有成功注册 express-session 中间件后 req 才有 session 这个属性
   req.session.user = req.body // 将用户信息存入 Session 中
   req.session.islogin = true // 设置用户登录状态存入 Session 中
@@ -326,7 +386,7 @@ app.post('/api/login', (req, res) => {
 
 // 获取用户姓名的接口
 app.get('/api/username', (req, res) => {
-  // 4. 从 Session 中获取用户的名称，响应给客户端
+  // 3.2 从 Session 中获取用户的名称，响应给客户端
   // 判断是否登录了
   if (!req.session.islogin) {
     return res.send({ status: 1, message: 'fail' })
@@ -341,7 +401,7 @@ app.get('/api/username', (req, res) => {
 
 // 退出登录的接口
 app.post('/api/logout', (req, res) => {
-  // 5. 清空 Session 信息
+  // 4. 清空当前用户 Session 信息
   req.session.destroy() // destroy() 方法只会清除当前用户的信息
   res.send({ status: 0, message: 'success' })
 })
