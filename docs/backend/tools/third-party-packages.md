@@ -577,3 +577,44 @@ app.use(cors())
 ```
 
 :::
+
+## 7. `bcryptjs` 密码加密
+
+### 1. `bcryptjs` 有什么用？
+
+::: tip 具体作用
+
+- `bcryptjs` 是一个 node.js 服务端 的三方依赖包。
+- `bcryptjs` 可以对明文密码进行加密
+  - 加密后的密码，无法被逆向破解
+  - 多个用户使用同一个密码，被加密后，得到的结果不同
+
+:::
+
+### 2. 使用方法
+
+- 第一步: 安装
+
+```xml
+npm i bcryptjs@2.4.3
+```
+
+- 第二步: 使用
+
+::: details 点击查看 bcryptjs 具体用法
+
+```js{1-3,8-11}
+// 使用 bcryptjs 分 2 步：
+// 1. 导入包
+// 2. 调用包的 hashSync(密码, 数字) 方法加密
+
+const express = require('express')
+const app = express()
+
+// 1. 导入包
+const bcryptjs = require('bcryptjs')
+// 2. 进行加密并覆盖(其中 10 是随机盐长度，越大表示密码越复杂，时间也越久)
+userinfo.password = bcryptjs.hashSync(userinfo.password, 10)
+```
+
+:::
