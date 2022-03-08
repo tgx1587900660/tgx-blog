@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>组件封装原则 | telectron 的网络日志</title>
     <meta name="generator" content="VuePress 1.9.7">
-    <link rel="shortcut icon" href="/tgx-blog/xiao.ico">
+    <link rel="shortcut icon" href="/tgx-blog/tang.ico">
     <meta name="description" content="唐干宵的网络日志|博客，一个普通上班族的网络日志|博客，telectron 的网络日志|博客，谭竿霄的网络日志|博客">
     
-    <link rel="preload" href="/tgx-blog/assets/css/0.styles.d22bdb4d.css" as="style"><link rel="preload" href="/tgx-blog/assets/js/app.aa9b1eb8.js" as="script"><link rel="preload" href="/tgx-blog/assets/js/2.f27d966e.js" as="script"><link rel="preload" href="/tgx-blog/assets/js/34.3842c6b2.js" as="script"><link rel="prefetch" href="/tgx-blog/assets/js/10.1853b5de.js"><link rel="prefetch" href="/tgx-blog/assets/js/11.80471333.js"><link rel="prefetch" href="/tgx-blog/assets/js/12.6ee44bac.js"><link rel="prefetch" href="/tgx-blog/assets/js/13.55f9bf56.js"><link rel="prefetch" href="/tgx-blog/assets/js/14.35f8188b.js"><link rel="prefetch" href="/tgx-blog/assets/js/15.ab730dd7.js"><link rel="prefetch" href="/tgx-blog/assets/js/16.3e0048b9.js"><link rel="prefetch" href="/tgx-blog/assets/js/17.0f825fa1.js"><link rel="prefetch" href="/tgx-blog/assets/js/18.d82862d0.js"><link rel="prefetch" href="/tgx-blog/assets/js/19.c9341044.js"><link rel="prefetch" href="/tgx-blog/assets/js/20.d406fafa.js"><link rel="prefetch" href="/tgx-blog/assets/js/21.222b4f6a.js"><link rel="prefetch" href="/tgx-blog/assets/js/22.fbabbc33.js"><link rel="prefetch" href="/tgx-blog/assets/js/23.d8e237e7.js"><link rel="prefetch" href="/tgx-blog/assets/js/24.90ed8050.js"><link rel="prefetch" href="/tgx-blog/assets/js/25.f21c87d5.js"><link rel="prefetch" href="/tgx-blog/assets/js/26.98561214.js"><link rel="prefetch" href="/tgx-blog/assets/js/27.ec84f398.js"><link rel="prefetch" href="/tgx-blog/assets/js/28.f56319a8.js"><link rel="prefetch" href="/tgx-blog/assets/js/29.4f601536.js"><link rel="prefetch" href="/tgx-blog/assets/js/3.2a05aa23.js"><link rel="prefetch" href="/tgx-blog/assets/js/30.78e352c9.js"><link rel="prefetch" href="/tgx-blog/assets/js/31.9e6a760f.js"><link rel="prefetch" href="/tgx-blog/assets/js/32.19fef5a3.js"><link rel="prefetch" href="/tgx-blog/assets/js/33.2a4174ad.js"><link rel="prefetch" href="/tgx-blog/assets/js/35.0f9f2fe1.js"><link rel="prefetch" href="/tgx-blog/assets/js/36.4af61ca3.js"><link rel="prefetch" href="/tgx-blog/assets/js/37.948b95d2.js"><link rel="prefetch" href="/tgx-blog/assets/js/38.02ff3da5.js"><link rel="prefetch" href="/tgx-blog/assets/js/39.6219aa83.js"><link rel="prefetch" href="/tgx-blog/assets/js/4.2a84383b.js"><link rel="prefetch" href="/tgx-blog/assets/js/40.28281f92.js"><link rel="prefetch" href="/tgx-blog/assets/js/41.7f8ee169.js"><link rel="prefetch" href="/tgx-blog/assets/js/42.54d19593.js"><link rel="prefetch" href="/tgx-blog/assets/js/43.db0409ec.js"><link rel="prefetch" href="/tgx-blog/assets/js/5.2c2a22bf.js"><link rel="prefetch" href="/tgx-blog/assets/js/6.8a5543e5.js"><link rel="prefetch" href="/tgx-blog/assets/js/7.a7ae1732.js"><link rel="prefetch" href="/tgx-blog/assets/js/8.e6bf8faa.js"><link rel="prefetch" href="/tgx-blog/assets/js/9.5f480ae4.js">
+    <link rel="preload" href="/tgx-blog/assets/css/0.styles.d22bdb4d.css" as="style"><link rel="preload" href="/tgx-blog/assets/js/app.d64e1074.js" as="script"><link rel="preload" href="/tgx-blog/assets/js/2.f27d966e.js" as="script"><link rel="preload" href="/tgx-blog/assets/js/37.c22208f9.js" as="script"><link rel="prefetch" href="/tgx-blog/assets/js/10.1853b5de.js"><link rel="prefetch" href="/tgx-blog/assets/js/11.80471333.js"><link rel="prefetch" href="/tgx-blog/assets/js/12.540c86f5.js"><link rel="prefetch" href="/tgx-blog/assets/js/13.97de0be3.js"><link rel="prefetch" href="/tgx-blog/assets/js/14.135585ac.js"><link rel="prefetch" href="/tgx-blog/assets/js/15.b59925a1.js"><link rel="prefetch" href="/tgx-blog/assets/js/16.3e0048b9.js"><link rel="prefetch" href="/tgx-blog/assets/js/17.894112a7.js"><link rel="prefetch" href="/tgx-blog/assets/js/18.d82862d0.js"><link rel="prefetch" href="/tgx-blog/assets/js/19.640ca3e2.js"><link rel="prefetch" href="/tgx-blog/assets/js/20.d0292728.js"><link rel="prefetch" href="/tgx-blog/assets/js/21.4c9ca646.js"><link rel="prefetch" href="/tgx-blog/assets/js/22.eadc2f17.js"><link rel="prefetch" href="/tgx-blog/assets/js/23.d1d93683.js"><link rel="prefetch" href="/tgx-blog/assets/js/24.2ec409bc.js"><link rel="prefetch" href="/tgx-blog/assets/js/25.213d20a5.js"><link rel="prefetch" href="/tgx-blog/assets/js/26.d58af079.js"><link rel="prefetch" href="/tgx-blog/assets/js/27.7f371680.js"><link rel="prefetch" href="/tgx-blog/assets/js/28.47c43726.js"><link rel="prefetch" href="/tgx-blog/assets/js/29.ff4df8e8.js"><link rel="prefetch" href="/tgx-blog/assets/js/3.2a05aa23.js"><link rel="prefetch" href="/tgx-blog/assets/js/30.06d38db5.js"><link rel="prefetch" href="/tgx-blog/assets/js/31.98ed51f5.js"><link rel="prefetch" href="/tgx-blog/assets/js/32.df664d36.js"><link rel="prefetch" href="/tgx-blog/assets/js/33.f823a694.js"><link rel="prefetch" href="/tgx-blog/assets/js/34.466e8dff.js"><link rel="prefetch" href="/tgx-blog/assets/js/35.139aa42f.js"><link rel="prefetch" href="/tgx-blog/assets/js/36.33194f58.js"><link rel="prefetch" href="/tgx-blog/assets/js/38.79fbcef9.js"><link rel="prefetch" href="/tgx-blog/assets/js/39.ef3744cd.js"><link rel="prefetch" href="/tgx-blog/assets/js/4.0c533e1a.js"><link rel="prefetch" href="/tgx-blog/assets/js/40.8ef90d03.js"><link rel="prefetch" href="/tgx-blog/assets/js/41.28b22f7e.js"><link rel="prefetch" href="/tgx-blog/assets/js/42.d9ce413e.js"><link rel="prefetch" href="/tgx-blog/assets/js/43.ca401d44.js"><link rel="prefetch" href="/tgx-blog/assets/js/44.7b6dfe6d.js"><link rel="prefetch" href="/tgx-blog/assets/js/45.b5b01034.js"><link rel="prefetch" href="/tgx-blog/assets/js/46.5f42c46f.js"><link rel="prefetch" href="/tgx-blog/assets/js/5.2c2a22bf.js"><link rel="prefetch" href="/tgx-blog/assets/js/6.8a5543e5.js"><link rel="prefetch" href="/tgx-blog/assets/js/7.3aa16f7d.js"><link rel="prefetch" href="/tgx-blog/assets/js/8.3ea8db55.js"><link rel="prefetch" href="/tgx-blog/assets/js/9.5f480ae4.js">
     <link rel="stylesheet" href="/tgx-blog/assets/css/0.styles.d22bdb4d.css">
   </head>
   <body>
@@ -23,13 +23,15 @@
 </a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/tools/webpack-study.html" class="nav-link">
   Tools
 </a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/browser/browser.html" class="nav-link">
-  浏览器
+  通用知识
 </a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/interview/interview.html" class="nav-link">
   面试题
 </a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端学习" class="dropdown-title"><span class="title">后端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端学习" class="mobile-dropdown-title"><span class="title">后端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tgx-blog/backend/node/node.html" class="nav-link">
-  Node
+  Node.js
 </a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/backend/database/database.html" class="nav-link">
-  数据库
+  DataBase
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/backend/tools/third-party-packages.html" class="nav-link">
+  Tools
 </a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="异常处理" class="dropdown-title"><span class="title">异常处理</span> <span class="arrow down"></span></button> <button type="button" aria-label="异常处理" class="mobile-dropdown-title"><span class="title">异常处理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tgx-blog/exception/powershell/security-error.html" class="nav-link">
   Powershell
 </a></li></ul></div></div> <a href="https://gitee.com/tgx-1587900660/tgx-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
@@ -45,13 +47,15 @@
 </a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/tools/webpack-study.html" class="nav-link">
   Tools
 </a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/browser/browser.html" class="nav-link">
-  浏览器
+  通用知识
 </a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/interview/interview.html" class="nav-link">
   面试题
 </a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端学习" class="dropdown-title"><span class="title">后端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端学习" class="mobile-dropdown-title"><span class="title">后端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tgx-blog/backend/node/node.html" class="nav-link">
-  Node
+  Node.js
 </a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/backend/database/database.html" class="nav-link">
-  数据库
+  DataBase
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/backend/tools/third-party-packages.html" class="nav-link">
+  Tools
 </a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="异常处理" class="dropdown-title"><span class="title">异常处理</span> <span class="arrow down"></span></button> <button type="button" aria-label="异常处理" class="mobile-dropdown-title"><span class="title">异常处理</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tgx-blog/exception/powershell/security-error.html" class="nav-link">
   Powershell
 </a></li></ul></div></div> <a href="https://gitee.com/tgx-1587900660/tgx-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
@@ -105,6 +109,6 @@
       </a>
       →
     </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/tgx-blog/assets/js/app.aa9b1eb8.js" defer></script><script src="/tgx-blog/assets/js/2.f27d966e.js" defer></script><script src="/tgx-blog/assets/js/34.3842c6b2.js" defer></script>
+    <script src="/tgx-blog/assets/js/app.d64e1074.js" defer></script><script src="/tgx-blog/assets/js/2.f27d966e.js" defer></script><script src="/tgx-blog/assets/js/37.c22208f9.js" defer></script>
   </body>
 </html>
