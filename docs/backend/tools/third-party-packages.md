@@ -538,3 +538,42 @@ app.listen(8888, function () {
 ```
 
 :::
+
+## 6. `cors` 允许跨域
+
+### 1. `cors` 有什么用？
+
+::: tip 具体作用
+
+- `cors` 是一个 node.js 服务端 的三方依赖包。
+- `cors` 可以便捷地在客户端 设置跨域资源访问
+
+:::
+
+### 2. 使用方法
+
+- 第一步: 安装
+
+```xml
+npm i cors@2.8.5
+```
+
+- 第二步: 使用
+
+::: details 点击查看 cors 具体用法
+
+```js{1-3,8-11}
+// 使用 cors， 分 2 步：
+// 1. 导入包
+// 2. 注册为中间件
+
+const express = require('express')
+const app = express()
+
+// 1. 导入包
+const cors = require('cors')
+// 2. 注册为中间件
+app.use(cors())
+```
+
+:::

@@ -290,10 +290,13 @@ app.listen(80, () => {
 - **第三方** 中间件
 
 :::
-#### 3.1 应用级别 的中间件 
+
+#### 3.1 应用级别 的中间件
+
 > 指的是上文的写法，绑在 app.use() 上
 
 #### 3.2 路由级别 的中间件
+
 > 指的是上文的写法，绑在 router.use() 上
 
 #### 3.3 错误级别 的中间件
@@ -328,8 +331,9 @@ app.listen(80)
 
 - 自 Express 4.16.0 版本开始，Express 内置了 3 个常用的中间件，极大的提高了 Express 项目的开发效率和体验
   - express.static 快速托管静态资源的内置中间件，例如： HTML 文件、图片、CSS 样式等（无兼容性）
-  - express.json 解析 JSON 格式的请求体数据（有兼容性，仅在 4.16.0+ 版本中可用）
-  - express.urlencoded 解析 URL-encoded 格式的请求体数据（有兼容性，仅在 4.16.0+ 版本中可用）
+  - express.json 解析 JSON 格式的请求体数据（仅在 4.16.0+ 版本中可用）
+  - express.urlencoded 解析 固定表单格式的请求体数据（仅在 4.16.0+ 版本中可用）
+    - express.urlencoded 只能解析 application/x-www-form-urlencoded 格式的表单数据
 
 :::
 
@@ -388,9 +392,11 @@ app.listen(80)
 #### 3.5 第三方 中间件
 
 ::: tip 说明
+
 - **第三方 中间件** 是指从 npm 仓库下载的中间件，也可以是自己写的 自定义 中间件。
 
 - 这里用到了一个 querystring 模块，用来处理字符串，是 node.js 内置模块，与 fs, path 一样
+
 :::
 
 ::: details 点击查看 自定的中间件 模块
