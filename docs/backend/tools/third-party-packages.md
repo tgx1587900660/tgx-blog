@@ -453,7 +453,7 @@ const app = express()
 
 // 1. 导入两个包
 const jwt = require('jsonwebtoken') // 用于加密的包
-const expressJTW = require('express-jwt') // 用于解析的包
+const expressJWT = require('express-jwt') // 用于解析的包
 
 // 允许跨域资源共享
 const cors = require('cors')
@@ -466,10 +466,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 const secretKey = 'tgx-XXX -_-'
 
 // 5. 注册将 JWT 字符串解析还原成 JSON 对象的中间件
-// expressJTW({secret: secretKey}) 用来解析 token 字符串
+// expressJWT({secret: secretKey}) 用来解析 token 字符串
 // unless({ path: [/^\/api\//] }) 用来指定 哪些接口不需要访问权限
 app.use(
-  expressJTW({
+  expressJWT({
     secret: secretKey,
     algorithms: ['HS256']
   }).unless({
@@ -603,18 +603,26 @@ npm i bcryptjs@2.4.3
 
 ::: details 点击查看 bcryptjs 具体用法
 
-```js{1-3,8-11}
-// 使用 bcryptjs 分 2 步：
+```js{1-4,11,13,15}
+// 使用 bcryptjs 分 3 步：
 // 1. 导入包
 // 2. 调用包的 hashSync(密码, 数字) 方法加密
+// 3. 调用包的 compareSync(密码, 数据库的加密密码) 方法解密
+
 
 const express = require('express')
 const app = express()
 
+
 // 1. 导入包
-const bcryptjs = require('bcryptjs')
+const bcrypt = require('bcryptjs')
 // 2. 进行加密并覆盖(其中 10 是随机盐长度，越大表示密码越复杂，时间也越久)
-userinfo.password = bcryptjs.hashSync(userinfo.password, 10)
+userinfo.password = bcrypt.hashSync(userinfo.password, 10)
+// 3. 登录时解密 bcrypt.compareSync(明文密码, 加密密码) 返回布尔值
+// results 是查询用户的结果
+const compareRes = bcrypt.compareSync(userinfo.password, results[0].password)
+if (!compareRes) return res.send('密码错误')
+res.send('登录成功')
 ```
 
 :::

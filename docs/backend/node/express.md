@@ -307,7 +307,7 @@ app.listen(80, () => {
 
 ::: details 点击查看 错误级别 中间件
 
-```js{6-10}
+```js{7-11}
 const express = require('express')
 const app = express()
 
