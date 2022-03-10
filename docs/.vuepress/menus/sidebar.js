@@ -3,7 +3,7 @@
 // 引入 frontend 模块的侧边导航菜单
 const FrontendVue2Sidebar = require('../../frontend/vue2/index.js')
 const FrontendVue3Sidebar = require('../../frontend/vue3/index.js')
-const FrontendGitSidebar = require('../../frontend/git/index.js')
+const FrontendTypeScriptSidebar = require('../../frontend/typescript/index.js')
 const FrontendJavaScriptSidebar = require('../../frontend/javascript/index.js')
 const FrontendToolsSidebar = require('../../frontend/tools/index.js')
 const FrontendBrowserSidebar = require('../../frontend/browser/index.js')
@@ -31,7 +31,7 @@ module.exports = {
 
   '/frontend/vue2': FrontendVue2Sidebar,
   '/frontend/vue3': FrontendVue3Sidebar,
-  '/frontend/git': FrontendGitSidebar,
+  '/frontend/typescript': FrontendTypeScriptSidebar,
   '/frontend/javascript': FrontendJavaScriptSidebar,
   '/frontend/tools': FrontendToolsSidebar,
   '/frontend/browser': FrontendBrowserSidebar,

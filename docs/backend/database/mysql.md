@@ -36,5 +36,6 @@
 
 - sql 是一门编程语言，专门用来操作数据库
 - sql 语法相关 <tgx-link href="/backend/database/sql">点击这里</tgx-link>
+- 要在 node 项目中使用 sql 语句操作 MySQL 数据库，查看 <tgx-link href="/backend/tools/third-party-packages">这篇文章</tgx-link> 的【mysql 中间件】章节
 
 :::

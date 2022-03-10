@@ -2,6 +2,10 @@
 
 module.exports = [
   {
+    title: 'Git 命令收集',
+    path: '/frontend/tools/git-command'
+  },
+  {
     title: 'Webpack 相关知识',
     path: '/frontend/tools/webpack-study'
   },
