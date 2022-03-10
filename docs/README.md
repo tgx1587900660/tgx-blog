@@ -2,15 +2,15 @@
 home: true
 heroImage: /img/logo.png
 heroText: 一个普通上班族的网络日志
-tagline: 一些经验
+tagline: 经验 +1
 actionText: bo ki →
 actionLink: /frontend/vue2/source-integration
 features:
-    - title: 前端
-      details: 所见即所得，就是前端的意义
-    - title: 后端
-      details: Node.js 只是一个开端
-    - title: 日常
-      details: 总感觉任何事情都可以用公式来解决
-footer: Copyright © 2022-01-20 author： telectron
+  - title: 学不可以已
+    details: 青，取之于蓝，而青于蓝；冰，水为之，而寒于水。
+  - title: 善假与物也
+    details: 吾尝终日而思矣，不如须臾之所学也！吾尝跂而望矣，不如登高之博见也！
+  - title: 勿以己而悲
+    details: 蚓无爪牙之利，筋骨之强，上食埃土，下饮黄泉，用心一也！
+footer: Copyright © 2022-01-20 作者： telectron
 ---
