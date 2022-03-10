@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Node.js 概念及其内置 API | telectron 的网络日志</title>
     <meta name="generator" content="VuePress 1.9.7">
-    <link rel="shortcut icon" href="/tgx-blog/xiao.ico">
+    <link rel="shortcut icon" href="/tgx-blog/gan.ico">
     <meta name="description" content="唐干宵的网络日志|博客，一个普通上班族的网络日志|博客，telectron 的网络日志|博客，谭竿霄的网络日志|博客">
     
-    <link rel="preload" href="/tgx-blog/assets/css/0.styles.059ad6a2.css" as="style"><link rel="preload" href="/tgx-blog/assets/js/app.9f7533e8.js" as="script"><link rel="preload" href="/tgx-blog/assets/js/2.f27d966e.js" as="script"><link rel="preload" href="/tgx-blog/assets/js/17.dacc49dd.js" as="script"><link rel="preload" href="/tgx-blog/assets/js/9.5f480ae4.js" as="script"><link rel="preload" href="/tgx-blog/assets/js/3.2a05aa23.js" as="script"><link rel="prefetch" href="/tgx-blog/assets/js/10.1853b5de.js"><link rel="prefetch" href="/tgx-blog/assets/js/11.68275d5e.js"><link rel="prefetch" href="/tgx-blog/assets/js/12.25aff631.js"><link rel="prefetch" href="/tgx-blog/assets/js/13.84fd080a.js"><link rel="prefetch" href="/tgx-blog/assets/js/14.a58c66e4.js"><link rel="prefetch" href="/tgx-blog/assets/js/15.576747a9.js"><link rel="prefetch" href="/tgx-blog/assets/js/16.3e0048b9.js"><link rel="prefetch" href="/tgx-blog/assets/js/18.d82862d0.js"><link rel="prefetch" href="/tgx-blog/assets/js/19.1757c56a.js"><link rel="prefetch" href="/tgx-blog/assets/js/20.3c6bd5c3.js"><link rel="prefetch" href="/tgx-blog/assets/js/21.3a636a71.js"><link rel="prefetch" href="/tgx-blog/assets/js/22.777dcdaf.js"><link rel="prefetch" href="/tgx-blog/assets/js/23.f0838ca4.js"><link rel="prefetch" href="/tgx-blog/assets/js/24.f8a829bb.js"><link rel="prefetch" href="/tgx-blog/assets/js/25.2f4b367f.js"><link rel="prefetch" href="/tgx-blog/assets/js/26.cbed9f76.js"><link rel="prefetch" href="/tgx-blog/assets/js/27.867f19bc.js"><link rel="prefetch" href="/tgx-blog/assets/js/28.e5abfd25.js"><link rel="prefetch" href="/tgx-blog/assets/js/29.ff4df8e8.js"><link rel="prefetch" href="/tgx-blog/assets/js/30.0dc47895.js"><link rel="prefetch" href="/tgx-blog/assets/js/31.e55d7fbe.js"><link rel="prefetch" href="/tgx-blog/assets/js/32.f7e6897d.js"><link rel="prefetch" href="/tgx-blog/assets/js/33.d28f2c4f.js"><link rel="prefetch" href="/tgx-blog/assets/js/34.0d3530b6.js"><link rel="prefetch" href="/tgx-blog/assets/js/35.4d9b5087.js"><link rel="prefetch" href="/tgx-blog/assets/js/36.13088113.js"><link rel="prefetch" href="/tgx-blog/assets/js/37.736db414.js"><link rel="prefetch" href="/tgx-blog/assets/js/38.cd22aadd.js"><link rel="prefetch" href="/tgx-blog/assets/js/39.0ceb798f.js"><link rel="prefetch" href="/tgx-blog/assets/js/4.0c533e1a.js"><link rel="prefetch" href="/tgx-blog/assets/js/40.907a89d5.js"><link rel="prefetch" href="/tgx-blog/assets/js/41.be251e09.js"><link rel="prefetch" href="/tgx-blog/assets/js/42.d9ce413e.js"><link rel="prefetch" href="/tgx-blog/assets/js/43.7a47706d.js"><link rel="prefetch" href="/tgx-blog/assets/js/44.7b6dfe6d.js"><link rel="prefetch" href="/tgx-blog/assets/js/45.9b56fa35.js"><link rel="prefetch" href="/tgx-blog/assets/js/46.6a67759c.js"><link rel="prefetch" href="/tgx-blog/assets/js/5.5409a136.js"><link rel="prefetch" href="/tgx-blog/assets/js/6.736696b6.js"><link rel="prefetch" href="/tgx-blog/assets/js/7.3aa16f7d.js"><link rel="prefetch" href="/tgx-blog/assets/js/8.3ea8db55.js">
+    <link rel="preload" href="/tgx-blog/assets/css/0.styles.059ad6a2.css" as="style"><link rel="preload" href="/tgx-blog/assets/js/app.ba359154.js" as="script"><link rel="preload" href="/tgx-blog/assets/js/2.f27d966e.js" as="script"><link rel="preload" href="/tgx-blog/assets/js/17.894112a7.js" as="script"><link rel="preload" href="/tgx-blog/assets/js/9.5f480ae4.js" as="script"><link rel="preload" href="/tgx-blog/assets/js/3.2a05aa23.js" as="script"><link rel="prefetch" href="/tgx-blog/assets/js/10.1853b5de.js"><link rel="prefetch" href="/tgx-blog/assets/js/11.80471333.js"><link rel="prefetch" href="/tgx-blog/assets/js/12.540c86f5.js"><link rel="prefetch" href="/tgx-blog/assets/js/13.84d222ae.js"><link rel="prefetch" href="/tgx-blog/assets/js/14.73e71f78.js"><link rel="prefetch" href="/tgx-blog/assets/js/15.576747a9.js"><link rel="prefetch" href="/tgx-blog/assets/js/16.3e0048b9.js"><link rel="prefetch" href="/tgx-blog/assets/js/18.d82862d0.js"><link rel="prefetch" href="/tgx-blog/assets/js/19.d83c0a0a.js"><link rel="prefetch" href="/tgx-blog/assets/js/20.d0292728.js"><link rel="prefetch" href="/tgx-blog/assets/js/21.4c9ca646.js"><link rel="prefetch" href="/tgx-blog/assets/js/22.eadc2f17.js"><link rel="prefetch" href="/tgx-blog/assets/js/23.35e7a697.js"><link rel="prefetch" href="/tgx-blog/assets/js/24.62c21bf5.js"><link rel="prefetch" href="/tgx-blog/assets/js/25.acba3a8d.js"><link rel="prefetch" href="/tgx-blog/assets/js/26.6972ee5f.js"><link rel="prefetch" href="/tgx-blog/assets/js/27.b4511dd5.js"><link rel="prefetch" href="/tgx-blog/assets/js/28.02bba07a.js"><link rel="prefetch" href="/tgx-blog/assets/js/29.49ff0b7b.js"><link rel="prefetch" href="/tgx-blog/assets/js/30.b549e10f.js"><link rel="prefetch" href="/tgx-blog/assets/js/31.31f436cc.js"><link rel="prefetch" href="/tgx-blog/assets/js/32.f7e6897d.js"><link rel="prefetch" href="/tgx-blog/assets/js/33.d28f2c4f.js"><link rel="prefetch" href="/tgx-blog/assets/js/34.bbd17bd1.js"><link rel="prefetch" href="/tgx-blog/assets/js/35.139aa42f.js"><link rel="prefetch" href="/tgx-blog/assets/js/36.33194f58.js"><link rel="prefetch" href="/tgx-blog/assets/js/37.b3e9af97.js"><link rel="prefetch" href="/tgx-blog/assets/js/38.cfb54113.js"><link rel="prefetch" href="/tgx-blog/assets/js/39.743ea96a.js"><link rel="prefetch" href="/tgx-blog/assets/js/4.ca01859a.js"><link rel="prefetch" href="/tgx-blog/assets/js/40.cc6f90d1.js"><link rel="prefetch" href="/tgx-blog/assets/js/41.6d9c55d8.js"><link rel="prefetch" href="/tgx-blog/assets/js/42.b3ec8f6d.js"><link rel="prefetch" href="/tgx-blog/assets/js/43.366e069b.js"><link rel="prefetch" href="/tgx-blog/assets/js/44.9ed88daf.js"><link rel="prefetch" href="/tgx-blog/assets/js/45.29d6a7c0.js"><link rel="prefetch" href="/tgx-blog/assets/js/46.4fd67a89.js"><link rel="prefetch" href="/tgx-blog/assets/js/47.cfee7590.js"><link rel="prefetch" href="/tgx-blog/assets/js/5.5409a136.js"><link rel="prefetch" href="/tgx-blog/assets/js/6.736696b6.js"><link rel="prefetch" href="/tgx-blog/assets/js/7.9dc050da.js"><link rel="prefetch" href="/tgx-blog/assets/js/8.4fd836ae.js">
     <link rel="stylesheet" href="/tgx-blog/assets/css/0.styles.059ad6a2.css">
   </head>
   <body>
@@ -16,11 +16,11 @@
   Vue2
 </a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/vue3/vue3-change-details.html" class="nav-link">
   Vue3
-</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/git/git-command.html" class="nav-link">
-  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/typescript/typescript.html" class="nav-link">
+  TypeScript
 </a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/javascript/data-processing-method.html" class="nav-link">
   JavaScript
-</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/tools/webpack-study.html" class="nav-link">
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/tools/git-command.html" class="nav-link">
   Tools
 </a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/browser/browser.html" class="nav-link">
   通用知识
@@ -40,11 +40,11 @@
   Vue2
 </a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/vue3/vue3-change-details.html" class="nav-link">
   Vue3
-</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/git/git-command.html" class="nav-link">
-  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/typescript/typescript.html" class="nav-link">
+  TypeScript
 </a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/javascript/data-processing-method.html" class="nav-link">
   JavaScript
-</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/tools/webpack-study.html" class="nav-link">
+</a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/tools/git-command.html" class="nav-link">
   Tools
 </a></li><li class="dropdown-item"><!----> <a href="/tgx-blog/frontend/browser/browser.html" class="nav-link">
   通用知识
@@ -131,6 +131,6 @@ server<span class="token punctuation">.</span><span class="token function">liste
       </a>
       →
     </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/tgx-blog/assets/js/app.9f7533e8.js" defer></script><script src="/tgx-blog/assets/js/2.f27d966e.js" defer></script><script src="/tgx-blog/assets/js/17.dacc49dd.js" defer></script><script src="/tgx-blog/assets/js/9.5f480ae4.js" defer></script><script src="/tgx-blog/assets/js/3.2a05aa23.js" defer></script>
+    <script src="/tgx-blog/assets/js/app.ba359154.js" defer></script><script src="/tgx-blog/assets/js/2.f27d966e.js" defer></script><script src="/tgx-blog/assets/js/17.894112a7.js" defer></script><script src="/tgx-blog/assets/js/9.5f480ae4.js" defer></script><script src="/tgx-blog/assets/js/3.2a05aa23.js" defer></script>
   </body>
 </html>
