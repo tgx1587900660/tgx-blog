@@ -187,6 +187,20 @@ const position: [number, string] = [1, '2']
 
 :::
 
+::: details 点击查看 字面量 类型定义
+
+```ts
+// 字面量类型：用来限定某个变量的具体范围，搭配联合类型使用
+const fn = (direction: 'left' | 'right') => {}
+
+// 使用：只能填入 left right 这两个值
+fn('left')
+fn('right')
+fn('others') // 报错
+```
+
+:::
+
 ## 3. 类型断言
 
 ::: tip 说明
