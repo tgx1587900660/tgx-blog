@@ -201,6 +201,29 @@ fn('others') // 报错
 
 :::
 
+::: details 点击查看 枚举 类型定义
+
+```ts
+// 枚举类型：用来限定某个变量的具体范围（默认从0开始，如果被赋值，则递增）
+enum Color {
+  Red, // 0
+  Green, // 1
+  Blue // 2
+}
+console.log(Color.Red) // 0
+
+// 也可以手动初始化
+enum Direction {
+  left = 'left',
+  right = 'right',
+  up = 'up',
+  down = 'down'
+}
+console.log(Direction.down) // down
+```
+
+:::
+
 ## 3. 类型断言
 
 ::: tip 说明
@@ -226,6 +249,45 @@ foo.bus = 'bus'
 // 2. <类型> 值
 let foo: any
 let bar = <string>foo // 现在 bar 的类型是 'string'
+```
+
+:::
+
+## 4. class 类
+
+::: tip 说明
+
+类的继承 2 种方案
+
+- extends（继承父类）
+- implements（实现接口）
+
+:::
+
+::: details 点击查看 继承案例
+
+```ts{1,12}
+// 1. extends 的继承方法和 js 一样
+class Father {
+  com() {
+    console.log('公司')
+  }
+}
+class Son extends Father {
+  son = 'son'
+}
+const s = new Son() // 实例s 有 son 属性和 com 方法
+
+// 2. implements 接口继承要求这个 子类必须有 interface 中的属性
+interface Singable {
+  sing(): viod
+}
+class Person implements Singable {
+  // 必须有该方法（因为该方法在 接口Singable 中被定义过）
+  sing() {
+    console.log('sing')
+  }
+}
 ```
 
 :::
