@@ -280,7 +280,7 @@ const s = new Son() // 实例s 有 son 属性和 com 方法
 
 // 2. implements 接口继承要求这个 子类必须有 interface 中的属性
 interface Singable {
-  sing(): viod
+  sing(): void
 }
 class Person implements Singable {
   // 必须有该方法（因为该方法在 接口Singable 中被定义过）

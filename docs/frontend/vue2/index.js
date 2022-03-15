@@ -24,5 +24,9 @@ module.exports = [
   {
     title: 'Vue-Router 知识复习',
     path: '/frontend/vue2/vue-router'
+  },
+  {
+    title: 'Vue 源码学习',
+    path: '/frontend/vue2/vue-source'
   }
 ]
