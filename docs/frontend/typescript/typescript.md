@@ -255,6 +255,8 @@ let bar = <string>foo // 现在 bar 的类型是 'string'
 
 ## 4. class 类
 
+### 1. 类的继承
+
 ::: tip 说明
 
 类的继承 2 种方案
@@ -288,6 +290,190 @@ class Person implements Singable {
     console.log('sing')
   }
 }
+```
+
+:::
+
+### 2. 类成员的保护
+
+| 关键字   | public             | protected    | private |
+| -------- | ------------------ | ------------ | ------- |
+| 可访问处 | 类本身、子类、实例 | 类本身、子类 | 类本身  |
+
+::: details 点击查看 类成员的 3 种保护 案例
+
+```ts{2,9,16}
+class Father {
+  // 1. public 写了相当于没写（类及其子类的内部可以使用，实例也可以访问）
+  public a = 'a'
+  public say(): void {
+    console.log('say')
+    console.log(this.a)
+  }
+
+  // 2. protected 保护成员（类及其子类的内部可以使用，但实例不可访问）
+  protected money = 'my money'
+  protected getMyMoney() {
+    console.log('getMyMoney')
+    console.log(this.money)
+  }
+
+  // 3. private 保护成员（类内部可以使用，子类和实例都不可访问）
+  private mySelf = 'mySelf'
+  private beatMySelf() {
+    console.log(this.mySelf)
+  }
+}
+class Son extends Father {
+  study = 'study'
+  run() {
+    this.getMyMoney()
+    console.log(this.money)
+  }
+}
+
+const fat = new Father()
+const son = new Son()
+console.log(fat.a) // 'a'
+fat.say() // 'say', 'a'
+console.log(son.a) // 'a'
+son.say() // 'say', 'a'
+
+console.log(fat.money) // 报错
+fat.getMyMoney() // 报错
+```
+
+:::
+
+## 5. readonly
+
+::: tip 使用
+
+- 可以初始化，可以在类的 constructor 中改变
+  - 能在 interface 中使用，修饰属性
+  - 能在 type 中使用，修饰属性
+  - 能在 class 类中使用，修饰属性
+
+:::
+
+::: details 点击查看 readonly 案例
+
+```ts
+// 1. 在 interface 中使用
+interface Foo {
+  readonly [x: number]: number
+}
+// 使用
+const foo: Foo = { 0: 123, 2: 345 }
+console.log(foo[0]) // 123 （读取成功）
+foo[0] = 456 // 报错 （属性只读）
+
+// 2. 在 type 中使用
+type Foo2 = {
+  readonly bar: number
+  readonly bas: number
+}
+// 初始化
+const foo: Foo2 = { bar: 123, bas: 456 }
+// 不能被改变
+foo.bar = 456 // 报错 （属性只读）
+
+// 3. 在 类 中使用
+class Father {
+  readonly aaa: number = 18
+  constructor(age?: number) {
+    if (!age) {
+      console.log(this.aaa)
+      return
+    }
+    this.aaa = age
+    console.log(this.aaa)
+  }
+}
+
+new Father() // 18
+new Father(999) // 999
+```
+
+:::
+
+## 6. 类型兼容性
+
+TS 采用 **结构化类型系统**，常见的注意点有 3 种
+
+### 1. 类 与 接口 兼容 多赋少
+
+- 定义 `类`和`接口`时，属性多的可以赋值给属性少的
+
+::: details 点击查看案例
+
+```ts{1,16}
+// 1. 类 兼容
+class Father {
+  name: string
+  age: number
+}
+class Son {
+  name: string
+  age: number
+  job: string
+}
+let father = new Father()
+let son = new Son()
+father = son // 可行 （Son只需要具备Father的name,age属性即可兼容）
+// son = father // 报错
+
+// 2. 接口 兼容
+interface Father {
+  name: string
+  age: number
+}
+interface Son {
+  name: string
+  age: number
+  job: string
+}
+let father: Father
+let son: Son
+father = son // 可行 （Son只需要具备Father的name,age属性即可兼容）
+// son = father // 报错
+```
+
+:::
+
+### 2. 函数的形参 兼容 少赋多
+
+- 定义 `函数`时， **形参** 少的可以赋值给 **形参** 多的函数
+- 定义 `函数`时， **返回值** 多的可以赋值给 **返回值** 少的函数
+
+::: details 点击查看案例
+
+```ts{1,10}
+// 1. 一般情况
+type Father = (name: string, age: number) => void
+type Son = (name: string, age: number, job: string) => void
+let father: Father
+let son: Son
+
+son = father // 可行 （Father 只需要具备 Son 的 name,age 属性即可兼容）
+// father = son // 报错
+
+// 2. 混入接口的情况（依旧以函数形参为准）
+interface Father {
+  name: string
+  age: number
+}
+interface Son {
+  name: string
+  age: number
+  job: string
+}
+type fn = (p: Father) => void
+type sn = (p: Son) => void
+let father: fn
+let son: sn
+son = father // 可行 （认为 函数 fn 的参数比 函数 sn 的参数少）
+father = son // 报错
 ```
 
 :::
