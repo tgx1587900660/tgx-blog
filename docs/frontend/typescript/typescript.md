@@ -477,3 +477,67 @@ father = son // 报错
 ```
 
 :::
+
+## 7. 交叉类型
+
+- 可以实现 成员的继承
+
+::: details 点击查看案例
+
+```ts{1,16}
+// 1. 使用 extends继承 实现
+interface Father {
+  name: string
+}
+interface Son extends Father {
+  age: number
+}
+// 必须有 Father 和 Son 所有属性
+const obj: Son = {
+  age: 18,
+  name: 'zs'
+}
+
+// ---------------------------------------------------
+
+// 2. 使用 交叉类型(&) 实现
+interface Father {
+  name: string
+}
+interface Son extends Father {
+  age: number
+}
+type newInterFace = Father & Son
+
+// 必须有 Father 和 Son 所有属性
+const newObj: newInterFace = {
+  age: 18,
+  name: 'zs'
+}
+```
+
+:::
+
+## 8. 泛型
+
+- 可以 在保证类型安全的同时 配合多种类型使用
+
+::: details 点击查看案例
+
+```ts
+// 1. 在函数中使用泛型 （T相当于一个形参，可以在调用函数时传入一个类型）
+function fn<T>(params: T): T {
+  return params
+}
+
+const res = fn<number>(50)
+console.log(res) // 50
+
+const res2 = fn<string>('str')
+console.log(res2) // 'str'
+
+const res3 = fn<null>(null)
+console.log(res3) // null
+```
+
+:::
