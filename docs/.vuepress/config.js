@@ -17,7 +17,7 @@ module.exports = defineConfig(ctx => ({
   // 左上角的标题
   title: 'telectron 的网络日志',
 
-  // 网站的 SEO 描述
+  // 网站的 SEO 描述 (首页的二级标题)
   description: '唐干宵的网络日志|博客，一个普通上班族的网络日志|博客，telectron 的网络日志|博客，谭竿霄的网络日志|博客',
 
   // 需要被注入到 <head> 标签的内容
@@ -81,16 +81,12 @@ module.exports = defineConfig(ctx => ({
 
   // 注册插件
   plugins: [
-    // 返回顶部
+    // 1. 返回顶部 插件
     '@vuepress/back-to-top',
-    // 最后更新时间
-    [
-      '@vuepress/last-updated',
-      {
-        // 自定义显示的时间格式 (前面的文本需要在 默认主题的 lastUpdated 配置)
-        transformer: timestamp => getCurrentTime(timestamp)
-      }
-    ]
+    // 2. 最后更新时间 插件
+    ['@vuepress/last-updated', { transformer: timestamp => getCurrentTime(timestamp) }],
+    // 3. 放大页面中的图片 插件
+    '@vuepress/medium-zoom'
   ],
 
   // 额外监听的文件（无效，导航菜单变更，必须手动重启，原因未知）

@@ -35,7 +35,14 @@ export default {
     },
     height: {
       type: [Number, String],
-      default: value => (typeof value === 'number' ? value : parseInt(value))
+      default: value => {
+        // 如果没传，就不设置该属性
+        if (!value) {
+          return undefined
+        } else {
+          return typeof value === 'number' ? value : parseInt(value)
+        }
+      }
     }
   }
 }
