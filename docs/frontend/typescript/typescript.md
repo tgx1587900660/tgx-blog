@@ -715,3 +715,114 @@ let father: Father = {
 ```
 
 :::
+
+## 10. 索引签名类型
+
+- 数组是特殊的对象
+- 索引签名类型 可以定义 **对象** 和 **数组** 类型的接口
+
+::: details 点击查看 案例
+
+```ts
+// 1. 对象定义：要求该对象的键名 必须为字符串类型，键值为 数字或字符串
+interface Father {
+  [key: string]: number | string
+}
+// 使用
+let father: Father = {
+  name: 'zs',
+  age: 18
+}
+
+// 2. 数组定义：要求键名是数字，键值为数字
+interface Son {
+  [key: number]: number
+}
+// 使用 (数组是特殊的对象)
+let son: Son = [1, 2, 3]
+```
+
+:::
+
+## 11. 映射类型
+
+- 映射类型只能在 **类型别名 type** 中使用
+
+::: details 点击查看 映射联合类型 案例
+
+```ts
+// 1. Father 和 Son2 组合写法 等同于 Son
+type Father = 'x' | 'y' | 'z'
+type Son = { x: number; y: number; z: number }
+type Son2 = { [x in Father]: number } // 相当于遍历了 联合类型 Father (便于扩展)
+
+let son: Son = {
+  x: 0,
+  y: 1,
+  z: 2
+}
+
+let son2: Son2 = {
+  x: 0,
+  y: 1,
+  z: 2
+}
+```
+
+:::
+
+::: details 点击查看 映射对象类型 案例
+
+```ts
+// 1. Father 和 Son2 组合写法 等同于 Son
+type Father = { x: string; y: number; z: boolean }
+type Son = { x: number; y: number; z: number }
+// 相当于获取并遍历了 对象类型 Father 的键名
+type Son2 = { [x in keyof Father]: number }
+
+let son: Son = {
+  x: 0,
+  y: 1,
+  z: 2
+}
+
+let son2: Son2 = {
+  x: 0,
+  y: 1,
+  z: 2
+}
+```
+
+:::
+
+::: details 点击查看 Partial 怎么实现 案例
+
+```ts{4-6}
+// 1. 利用映射类型实现 Partial 工具类型
+type Props = { x: string; y: number; z: boolean }
+
+type MyPartial<T> = {
+  [key in keyof T]?: T[key]
+}
+
+type MyProps = MyPartial<Props>
+
+let p: MyProps = {
+  x: 'x',
+  y: 111
+  // z: false // 都是可选的值
+}
+```
+
+:::
+
+## 12. 索引查询类型
+
+```ts
+// 1. 索引查询类型
+type Props = { x: string; y: number; z: boolean }
+
+type Type1 = Props['x'] // string 类型
+type Type2 = Props['x' | 'y'] // string | number 类型
+type Type3 = Props[keyof Props] // string | number | boolean 类型
+```
