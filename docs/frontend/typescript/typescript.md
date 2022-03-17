@@ -482,7 +482,7 @@ father = son // 报错
 
 - 可以实现 成员的继承
 
-::: details 点击查看案例
+::: details 点击查看 接口中使用交叉类型 案例
 
 ```ts{1,16}
 // 1. 使用 extends继承 实现
@@ -520,24 +520,198 @@ const newObj: newInterFace = {
 
 ## 8. 泛型
 
-- 可以 在保证类型安全的同时 配合多种类型使用
+- 可以 **在保证类型安全的同时，支持多种类型**
 
-::: details 点击查看案例
+::: details 点击查看 函数中使用泛型 案例
 
-```ts
+```ts{1,11,13}
 // 1. 在函数中使用泛型 （T相当于一个形参，可以在调用函数时传入一个类型）
 function fn<T>(params: T): T {
   return params
 }
-
 const res = fn<number>(50)
 console.log(res) // 50
-
 const res2 = fn<string>('str')
 console.log(res2) // 'str'
 
-const res3 = fn<null>(null)
-console.log(res3) // null
+// 2. 也可以省略类型（ts内部会推断）
+const res4 = fn(100) // 100  此时不再是 number 类型，而是 字面量100 类型
+
+// 3. 泛型可以用 extends 进行约束
+interface MyLength {
+  length: number
+}
+function getValue<Type extends MyLength>(value: Type): Type {
+  console.log(value.length)
+  // console.log(value.name) // 报错 （因为MyLength中没有name属性）
+  return value
+}
+getValue({ length: 50, name: 12 }) // 传入的参数必须有 length 属性
+```
+
+:::
+
+::: details 点击查看 接口中使用泛型 案例
+
+```ts
+// 1. 接口中使用 泛型 (使用时不能省略，无推断)
+interface Father<Type> {
+  name: Type
+  com: () => Type[]
+}
+
+let father: Father<string> = {
+  name: 'zs',
+  com() {
+    return ['1', '2']
+  }
+}
+```
+
+:::
+
+::: details 点击查看 类中使用泛型 案例
+
+```ts
+// 1. 类中使用 泛型
+class Father<Type> {
+  age: Type
+  constructor(age: Type) {
+    this.age = age
+  }
+  add(x: Type, y: Type): void {
+    console.log(11)
+    console.log(this.age)
+  }
+}
+
+let father = new Father<number>(100)
+father.add(0, 0) // 11  100
+```
+
+:::
+
+## 9. 泛型工具类型
+
+::: tip 说明
+
+TS 内置了一些工具类型，用于提升开发效率
+
+:::
+
+### 1. Partial 可选
+
+::: details 点击查看 Partial 用法
+
+```ts
+// Partial 可以把接口成员 一次性全部改为 可选成员
+// 1. 定义一个接口
+// 2. 使用该接口
+// 3. 怎么把该接口快速改造成 所有成员可选？
+
+// 1. 定义
+interface Father {
+  name: string
+  age: number
+  hasSon: boolean
+}
+
+// 2. 使用时 必须传入三个属性
+let father: Father = {
+  name: 'zs',
+  age: 100,
+  hasSon: true
+}
+
+// 3. Partial 改造后，新类型 NewFather 三个属性都变为可选属性（同时不破坏Father）
+type NewFather = Partial<Father>
+let father2: NewFather = {
+  name: 'ls'
+}
+```
+
+:::
+
+### 2. Readonly 只读
+
+::: details 点击查看 Readonly 用法
+
+```ts
+// Readonly 可以把接口成员 全部改为只读
+// 1. 定义一个接口
+// 2. 使用该接口
+// 3. 怎么把该接口快速改造成 所有成员只读？
+
+// 1. 定义
+interface Father {
+  name: string
+  age: number
+  hasSon: boolean
+}
+
+// 2. 创建变量后，成员还可以修改
+let father: Father = {
+  name: 'zs',
+  age: 100,
+  hasSon: true
+}
+father.age = 120
+
+// 3. Readonly 改造后，三个属性都变为可选属性
+type NewFather = Readonly<Father>
+let father2: NewFather = {
+  name: 'ls',
+  age: 100,
+  hasSon: false
+}
+father2.age = 120 // 报错， 三个属性都变成 只读的了
+```
+
+:::
+
+### 3. Pick 挑选某些成员
+
+::: details 点击查看 Pick 用法
+
+```ts
+// Pick 可以把选取某一些接口成员
+// 1. 定义一个接口
+// 2. 挑选接口中某一些成员
+// 3. 使用新类型
+
+// 1. 定义
+interface Father {
+  name: string
+  age: number
+  hasSon: boolean
+}
+
+// 2. 挑选接口中某一些成员 语法： Pick<Type, keys>
+type PickFather = Pick<Father, 'name' | 'age'>
+
+// 3. 使用新类型
+let pick: PickFather = {
+  name: 'zs',
+  age: 18
+}
+```
+
+:::
+
+### 4. Record 构造一个键值一样的对象
+
+::: details 点击查看 Record 用法
+
+```ts
+// Record 可以快速构造一个键值格式一样的对象
+
+type Father = Record<'a' | 'b' | 'c', string[]>
+
+let father: Father = {
+  a: ['aa'],
+  b: ['bb'],
+  c: ['cc']
+}
 ```
 
 :::
