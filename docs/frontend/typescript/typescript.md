@@ -826,3 +826,20 @@ type Type1 = Props['x'] // string 类型
 type Type2 = Props['x' | 'y'] // string | number 类型
 type Type3 = Props[keyof Props] // string | number | boolean 类型
 ```
+
+## 13. TypeScript 类型声明文件
+
+- 当使用第三方库时，我们需要引用它的声明文件，才能获得对应的代码补全、接口提示等功能。
+- ts 中有两种文件类型
+
+  - ① .ts 文件
+
+    - 可以定义类型，也可以编写逻辑代码
+    - 可以被编译成 js 文件再执行逻辑代码
+    - 作用：编写功能代码
+
+  - ② .d.ts 文件
+
+    - 只能定义类型，不能编写逻辑代码
+    - 不会被编译成 js 文件，只提供类型定义
+    - 作用：为 js 提供类型信息

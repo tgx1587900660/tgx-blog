@@ -59,3 +59,16 @@
   - 3. 若都找不到，就会报错：Error: Cannot find module 'xxx'
 
 :::
+
+## 6. package.json 属性节点说明
+
+- type: 用来指定该项目的模块化规范。module 表示使用 ES6 模块化规范，commonjs 表示使用 commonjs 模块化规范
+- name: 表示该项目的名称。如果该项目被发布到 npm ，则该属性作为 包的名字
+- version: 表示该项目的版本号。会同步到 npm
+- description: 表示该项目的表述。会同步到 npm
+- main: 为该项目提供的入口文件。外界进行导入时，要导入的那个 js 文件路径
+- types/typings: 这两个节点效果一样。用来指定声明文件的入口，例如设置为 `./index.d.ts` 则引入这个包就会具有 ts 的类型检测和代码提示功能(需要在 index.d.ts 中定义)
+- scripts: 收集脚本。可以用 npm run ... 来执行
+- keywords: 表示包关键字。会同步到 npm
+- auther: 指定包的作者。
+- license: 指定包的代码协议
