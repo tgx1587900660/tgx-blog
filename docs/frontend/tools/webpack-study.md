@@ -9,7 +9,8 @@
 - 如果文件是 .js 文件，且不包含高级语法，就直接处理
 - 如果文件是 .js 文件，且包含高级语法，就要找 babel-loader 处理
 - 如果 babel-loader 没有配置，就报错，配置了，就在处理成 .js 后再交给 webpack
-  :::
+
+:::
 
 <tgx-img src="/tools/webpack-study/loader-study.png" title="loader 调用过程示意图" alt="loader 调用过程示意图"></tgx-img>
 
@@ -97,3 +98,7 @@ webpack 只能识别 .js 文件，因此需要 `加载器(loader)` 来处理其�
 webpack 只能处理一部分 js 文件，对于高级语法，需要借助 babel-loader 来处理。
 
 比如：要处理装饰器语法，就需要安装 babel-loader、@babel/core、@babel/plugin-proposal-decorators 这 3 个依赖包，同时创建 babel.config.js 配置文件，去 babel 官网找对应的配置复制即可
+
+### 5. 处理 .ts 文件
+
+如果项目中用到了 typescript ，需要借助 ts-loader 加载器来把 .ts 文件处理成 js 文件。

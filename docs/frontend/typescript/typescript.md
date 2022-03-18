@@ -8,8 +8,8 @@
 
 ::: tip 栏目说明
 
-- 可以全局安装 typescript 这个包，然后终端用 `tsc test.ts` 命令来将 test.ts 这个文件 转化为 test.js 文件
-- 可以全局安装 ts-node 这个包，然后终端用 `ts-node test.ts` 命令来直接运行 test.ts 文件（内部做了转化）
+- 可以全局安装 `typescript` 这个包，然后终端用 `tsc test.ts` 命令来将 test.ts 这个文件 转化为 test.js 文件
+- 可以全局安装 `ts-node` 这个包，然后终端用 `ts-node test.ts` 命令来直接运行 test.ts 文件（内部做了转化）
 
 :::
 
@@ -843,3 +843,27 @@ type Type3 = Props[keyof Props] // string | number | boolean 类型
     - 只能定义类型，不能编写逻辑代码
     - 不会被编译成 js 文件，只提供类型定义
     - 作用：为 js 提供类型信息
+
+### 1. 如果导入某个包后，没有代码提示？
+
+1. 访问 <tgx-link href="https://www.typescriptlang.org/dt/search?search=">类型声明地址</tgx-link> 搜索对应的包名
+2. 复制下载命令，并在项目中下载 这个包 对应的声明文件
+   - 例如：lodash 安装后，就会有代码提示了
+     - npm i @types/lodash --save-dev
+
+### 2. 怎么编写自己的 声明文件？
+
+- 在导入 .js 文件时，TS 会自动加载与 .js 同名的 .d.ts 文件，以提供类型声明
+- declare 关键字：用于类型声明, 而不是创建一个新的变量
+  - 1. 在 utils.js 文件已存在的变量声明(let const)
+  - 2. 创建一个 utils.d.ts 来修饰 utils.js 在所有的 let const 和 function 前加上 `declare` 即可
+
+## 14. tsconfig.json 文件
+
+- 生成 `tsconfig.json` 文件，先要安装 `typescript` 这个全局包
+- tsconfig.json 文件用来指定： **项目文件和项目编译所需的配置项**。
+
+```xml
+<!-- 终端输入以下命令，即可在项目中生成 tsconfig.json 文件 -->
+tsc --init
+```
