@@ -18,7 +18,8 @@ const BackendDataBaseSidebar = require('../../backend/database/index.js')
 const ExceptionPowershellSidebar = require('../../exception/powershell/index.js')
 
 // 引入 about-me 模块的侧边栏导航菜单
-const AboutMeSidebar = require('../../about-me/me/index.js')
+const AboutMeInfoSidebar = require('../../about-me/info/index.js')
+const AboutMeDonationSidebar = require('../../about-me/donation/index.js')
 
 module.exports = [
   {
@@ -59,6 +60,9 @@ module.exports = [
   },
   {
     text: '联系我',
-    items: [{ text: '联系我', link: AboutMeSidebar[0].path }]
+    items: [
+      { text: '联系我', link: AboutMeInfoSidebar[0].path },
+      { text: 'd 我', link: AboutMeDonationSidebar[0].path }
+    ]
   }
 ]

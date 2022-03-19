@@ -14,13 +14,3 @@
 ### 2. 加 QQ
 
 <tgx-img src="/img/my_qq.png" width="300" title="加我QQ" alt="QQ二维码"></tgx-img>
-
-## 2. 捐赠
-
-::: tip
-
-若 某些文章 能完美解决 你遇到的问题，那就 ~
-
-:::
-
-<tgx-img src="/img/my_appreciation.png" width="300" title="赞赏我" alt="logo"></tgx-img>
