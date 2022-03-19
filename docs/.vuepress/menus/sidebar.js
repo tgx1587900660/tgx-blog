@@ -17,6 +17,9 @@ const BackendDataBaseSidebar = require('../../backend/database/index.js')
 // 引入 exception 模块的侧边导航菜单
 const ExceptionPowershellSidebar = require('../../exception/powershell/index.js')
 
+// 引入 about-me 模块的侧边栏导航菜单
+const AboutMeSidebar = require('../../about-me/me/index.js')
+
 module.exports = {
   // 键名：是文档路径标识 (表示在 与 .vuepress 平级的 frontend/vue2 文件夹中查找对应的 .md 文档)
   // 键值：是一个数组，里面的每一个对象表示一篇 .md 文档
@@ -39,5 +42,6 @@ module.exports = {
   '/backend/node': BackendNodeSidebar,
   '/backend/tools': BackendToolsSidebar,
   '/backend/database': BackendDataBaseSidebar,
-  '/exception/powershell': ExceptionPowershellSidebar
+  '/exception/powershell': ExceptionPowershellSidebar,
+  '/about-me/me': AboutMeSidebar
 }

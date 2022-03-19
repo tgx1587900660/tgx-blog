@@ -17,6 +17,9 @@ const BackendDataBaseSidebar = require('../../backend/database/index.js')
 // 引入 exception 模块的侧边导航菜单
 const ExceptionPowershellSidebar = require('../../exception/powershell/index.js')
 
+// 引入 about-me 模块的侧边栏导航菜单
+const AboutMeSidebar = require('../../about-me/me/index.js')
+
 module.exports = [
   {
     text: '前端学习',
@@ -53,5 +56,9 @@ module.exports = [
   {
     text: '异常处理',
     items: [{ text: 'Powershell', link: ExceptionPowershellSidebar[0].path }]
+  },
+  {
+    text: '联系我',
+    items: [{ text: '联系我', link: AboutMeSidebar[0].path }]
   }
 ]

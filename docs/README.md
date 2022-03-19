@@ -12,5 +12,5 @@ features:
     details: 吾尝终日而思矣，不如须臾之所学也！吾尝跂而望矣，不如登高之博见也！
   - title: 勿以己而悲
     details: 蚓无爪牙之利，筋骨之强，上食埃土，下饮黄泉，用心一也！
-footer: Copyright © 2022-01-20 作者： telectron
+footer: Copyright © 2020-08-25 作者： telectron
 ---
