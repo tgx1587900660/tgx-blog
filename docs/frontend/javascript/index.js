@@ -6,6 +6,10 @@ module.exports = [
     path: '/frontend/javascript/data-processing-method'
   },
   {
+    title: 'JavaScript 重构小技巧',
+    path: '/frontend/javascript/restructure'
+  },
+  {
     title: '前端模块化规范',
     path: '/frontend/javascript/modularity-standard'
   },
