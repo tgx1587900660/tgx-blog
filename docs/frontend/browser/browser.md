@@ -19,8 +19,7 @@
 
 <tgx-img src="/browser/browser/browser-principle.png" 
     alt="浏览器为什么能运行 JavaScript示意图" 
-    title="浏览器为什么能运行 JavaScript示意图"
-    width="740">
+    title="浏览器为什么能运行 JavaScript示意图">
 </tgx-img>
 
 ## 2. JS 为什么能操作 DOM 和 BOM ?
@@ -33,8 +32,7 @@
 
 <tgx-img src="/browser/browser/browser-dom-bom.png" 
     alt="JS 为什么能操作 DOM 和 BOM示意图" 
-    title="JS 为什么能操作 DOM 和 BOM示意图"
-    width="740">
+    title="JS 为什么能操作 DOM 和 BOM示意图">
 </tgx-img>
 
 ## 3. 浏览器中的 JS 运行环境
@@ -52,6 +50,19 @@
 
 <tgx-img src="/browser/browser/environment.png" 
     alt="JS 运行环境示意图" 
-    title="JS 运行环境示意图"
-    width="740">
+    title="JS 运行环境示意图">
 </tgx-img>
+
+## 4. 浏览器的调试工具
+
+::: tip 目录
+
+1. 端点调试
+
+:::
+
+### 1. 端点调试
+
+- 单步跳过 F10：会让代码从上往下，逐行执行，**遇到函数调用，也直接跳到下一个语句**
+- 单步调试 F11：会让代码从上往下，逐行执行，**遇到函数调用，会进入函数体内部**
+- 单步跳出 shift + F11：会跳出当前函数（函数执行完成），接着执行函数调用以后的代码
