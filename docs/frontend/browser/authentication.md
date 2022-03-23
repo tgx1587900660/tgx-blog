@@ -44,7 +44,7 @@
 </tgx-img>
 
 要在 express 项目中使用 Session 认证机制，请查看
-<tgx-link href="/backend/tools/third-party-packages">这篇文章</tgx-link>
+<tgx-link href="/backend/packages/third-party-packages">这篇文章</tgx-link>
 的 【express-session 中间件】 用法
 
 ## 3. JWT 认证机制

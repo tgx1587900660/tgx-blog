@@ -27,7 +27,7 @@ SQL（Structured Query Language）即 **结构化查询语言**，专门用来 *
 - 创建 数据库
 - 创建 数据库的表
 - 可在数据库中创建存储过程、视图 等等
-- 要在 node 项目中使用 sql 语句操作 MySQL 数据库，查看 <tgx-link href="/backend/tools/third-party-packages">这篇文章</tgx-link> 的【mysql 中间件】章节
+- 要在 node 项目中使用 sql 语句操作 MySQL 数据库，查看 <tgx-link href="/backend/packages/third-party-packages">这篇文章</tgx-link> 的【mysql 中间件】章节
 
 :::
 
