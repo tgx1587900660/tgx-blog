@@ -6,10 +6,6 @@ module.exports = [
     path: '/backend/node/node'
   },
   {
-    title: '第三方包 相关知识',
-    path: '/backend/node/package-knowledge'
-  },
-  {
     title: 'Node.js 模块加载机制',
     path: '/backend/node/module-loading'
   },

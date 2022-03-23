@@ -22,10 +22,6 @@ module.exports = [
     path: '/frontend/tools/vant-theme'
   },
   {
-    title: '第三方插件 用法集合',
-    path: '/frontend/tools/third-party-packages'
-  },
-  {
     title: '特殊需求及其解决方案',
     path: '/frontend/tools/special-needs'
   }

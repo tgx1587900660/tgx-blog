@@ -6,13 +6,14 @@ const FrontendVue3Sidebar = require('../../frontend/vue3/index.js')
 const FrontendTypeScriptSidebar = require('../../frontend/typescript/index.js')
 const FrontendJavaScriptSidebar = require('../../frontend/javascript/index.js')
 const FrontendToolsSidebar = require('../../frontend/tools/index.js')
+const FrontendPackagesSidebar = require('../../frontend/packages/index.js')
 const FrontendBrowserSidebar = require('../../frontend/browser/index.js')
 const FrontendInterviewSidebar = require('../../frontend/interview/index.js')
 
 // 引入 backend 模块的侧边导航菜单
 const BackendNodeSidebar = require('../../backend/node/index.js')
-const BackendToolsSidebar = require('../../backend/tools/index.js')
 const BackendDataBaseSidebar = require('../../backend/database/index.js')
+const BackendPackagesSidebar = require('../../backend/packages/index.js')
 
 // 引入 exception 模块的侧边导航菜单
 const ExceptionPowershellSidebar = require('../../exception/powershell/index.js')
@@ -42,6 +43,7 @@ module.exports = [
       { text: 'TypeScript', link: FrontendTypeScriptSidebar[0].path },
       { text: 'JavaScript', link: FrontendJavaScriptSidebar[0].path },
       { text: 'Tools', link: FrontendToolsSidebar[0].path },
+      { text: 'Packages', link: FrontendPackagesSidebar[0].path },
       { text: '通用知识', link: FrontendBrowserSidebar[0].path },
       { text: '面试题', link: FrontendInterviewSidebar[0].path }
     ]
@@ -51,7 +53,7 @@ module.exports = [
     items: [
       { text: 'Node.js', link: BackendNodeSidebar[0].path },
       { text: 'DataBase', link: BackendDataBaseSidebar[0].path },
-      { text: 'Tools', link: BackendToolsSidebar[0].path }
+      { text: 'Packages', link: BackendPackagesSidebar[0].path }
     ]
   },
   {
