@@ -99,3 +99,33 @@ npm install -g i5ting_toc
 ```
 
 :::
+
+## 4. `live-server` 开发服务器
+
+### 1. `live-server` 有什么用？
+
+::: tip 具体作用
+
+- 使用 `live-server` 第三方包，可以在本地快速开启一个服务器。
+  - 1. 可以利用 ajax/fetch 来模拟请求本地数据
+  - 2. 可以实时监听代码改动，同步到浏览器页面
+
+:::
+
+### 2. 使用方法
+
+- 第一步：全局安装
+
+```xml
+npm install -g live-server
+```
+
+- 第二步：使用<tgx-link href="https://www.npmjs.com/package/live-server">（点击查看具体使用文档）</tgx-link>
+
+::: details 点击查看 使用案例
+
+```js
+// 直接在要打开的 .html 文件的目录下 打开终端并运行命令： live-server
+```
+
+:::
