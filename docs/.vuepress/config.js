@@ -76,7 +76,7 @@ module.exports = defineConfig(ctx => ({
     // 仓库链接文字
     repoLabel: 'Gitee 仓库',
     // 仓库地址
-    repo: 'https://gitee.com/tgx-1587900660/tgx-blog'
+    repo: 'https://gitee.com/tgx-1587900660'
   },
 
   // 注册插件
