@@ -1,6 +1,6 @@
 # vue 问答整理
 
-## 1. 说下你对 MVVM 的理解
+## 1. 说下你对 MVVM 的理解 ?
 
 - M 指 model 是页面所依赖的数据源
 - V 指 view 是页面的 dom 结构
@@ -75,3 +75,58 @@ HTML 的内容，从而实现页面与用户的交互。
 - 监听器：会监听 **一个值**，并执行一些逻辑，**无需返回值**
 
 :::
+
+## 5. 写一下 DOM-Diff 的 patch 函数 ？
+
+- DOM-Diff 分为 2 条主线，大致写一下它的内部逻辑：
+  - 1. 初次渲染
+  - 2. 更新渲染
+
+```js
+// 1. 初始化（准备一个 节点，目的是创建该节点）
+function creatElement(vNode) {
+  // 创建元素三要素：标签名、标签的属性、子节点
+  const tag = vNode.tag // 拿到标签名
+  const attrs = vNode.attrs || {} // 拿到所有属性
+  const children = vNode.children || [] // 拿到子节点
+
+  if (!tag) {
+    return null
+  }
+
+  // 有标签，则创建元素、添加属性、添加子节点
+  const ele = document.creatElement(tag)
+
+  for (let attName in attrs) {
+    if (attrs.hasOwnProperty(attName)) {
+      ele.setAttribute(arrName, attrs[arrName])
+    }
+  }
+
+  children.forEach(function (childVnode) {
+    ele.appendChild(creatElement(childVnode))
+  })
+
+  return ele
+}
+
+// 2. 更新函数（准备 一个旧节点 和 一个新节点，目的是把旧节点局部更新为新节点）
+function updateChildren(vNode, newVnode) {
+  let children = vNode.children || [] // 旧 DOM 的子节点
+  let newChildren = newVnode.children || [] // 新 DOM 的子节点
+
+  // 循环对比
+  children.forEach(function(childVnode, index) {
+    // 先假设无变化，则可以通过 旧节点索引 来获取 新节点
+    let newChildrenVnode = newChildren[index]
+
+    // 对比标签
+    if(newChildrenVnode.tag === childVnode.tag) {
+      // 第一层没变化, 递归更新子节点
+      updateChildren(childVnode, newChildrenVnode)
+    } else {
+      // 标签变了，就需要把旧节点换成新的
+      replaceNode(childVnode, newChildrenVnode)
+    }
+  })
+```
