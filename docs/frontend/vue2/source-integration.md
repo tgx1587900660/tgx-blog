@@ -18,7 +18,7 @@
      </tgx-link>
    - 项目描述：这是腾讯团队推出的一个组件库，组件丰富，仍然活跃迭代中，而我们的项目暂时采用这套 UI 规范。
      因此，我们也需要参与该项目的维护工作，以满足产品需求。
-   - **个人职责：部分组件 bug 修复**
+   - **个人职责：参与组件库维护。部分组件优化**
 
 2. market 前端样例库（内部）
 
@@ -26,7 +26,7 @@
      - 为 SaaS 开发赋能，快速完成图表相关功能开发。
      - 便于管理 yapi 接口，集成所有接口到个人帐号以便管理。
    - 技术栈：前端 vue + MagicBox + 后端 node.js + mysql + typeORM
-   - **个人职责：开发人员之一，承担一部分数据库表的设计、接口编写、前端页面开发工作。**
+   - **个人职责：产品设计者，部分数据库表的设计、接口编写、前端页面开发、分配 issues。**
 
 3. 业务流程管理（内部）
 
@@ -38,7 +38,7 @@
 
    - 项目定义：方便学生访问各大校园资讯网站，在宿舍进行校园网络连接认证。
    - 技术栈： jQuery + html + javascript + css
-   - **个人职责：协同其他同学维护前端页面、更新网站**
+   - **个人职责：网络信息部开发者之一，维护部分站点**
 
 ## 2. 个人项目
 
@@ -60,7 +60,19 @@
      https://tgx-1587900660.gitee.io/tgx-blog/
      </tgx-link>
 
-2. 电商后台管理：
+2. Tic Tac Toe（一个小游戏）：
+
+   - 技术栈：TypeScript + HTML
+   - 仓库地址：
+     <tgx-link href="https://gitee.com/tgx-1587900660/tic-tac-toe">
+     https://gitee.com/tgx-1587900660/tic-tac-toe
+     </tgx-link>
+   - 在线地址：
+     <tgx-link href="http://tgx-1587900660.gitee.io/tic-tac-toe/">
+     http://tgx-1587900660.gitee.io/tic-tac-toe/
+     </tgx-link>
+
+3. 电商后台管理：
 
    - 技术栈：vue2 + axios + element UI
    - 仓库地址：
@@ -68,7 +80,7 @@
      https://gitee.com/tgx-1587900660/vue_shop
      </tgx-link>
 
-3. 可视化面板：
+4. 可视化面板：
 
    - 技术栈：vue2 + echarts + node + koa + websocket
    - 仓库地址：
