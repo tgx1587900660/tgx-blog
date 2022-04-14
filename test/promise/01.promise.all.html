@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 面试题: 简单手写实现一个 promise.all
+    /**
+     * 1. 创建并返回一个 Promise 实例
+     * 2. 能力检测：判断传入的参数 promises 是否为 数组
+     * 3. 准备一个 结果数组 results， 它将来会被 resolve(results) 出去，作为 myPromiseAll.then 方法的参数
+     * 4. 遍历传入的 promises 数组，依次执行它里面的 Promise 实例 item
+     * 5. 调用 Promise 实例 item.then 方法，得到它们的结果，存入 results 数组
+     * 6. 当 结果数组results 和 传入数组promises 长度相等时，说明所有请求已完成，此时 resolve(results)
+     */
+    function myPromiseAll(promises) {
+      return new Promise((resolve, reject) => {            // 1
+        if (!Array.isArray(promises)) {                    // 2
+          return console.error('res is not an array')
+        }
+
+        let results = []                                   // 3
+
+        promises.forEach(item => {                         // 4
+          item.then(res => {                               // 5
+            results[results.length] = res
+            if (results.length === promises.length) {      // 6
+              resolve(results)
+            }
+          }).catch(err => {
+            console.log(err)
+          })
+        })
+      })
+    }
+
+    // test---- 目前只处理了简单形式，如果 new Promise 内部放了定时器，顺序还是会有问题
+    let p1 = Promise.resolve(1)
+    let p2 = new Promise((resolve, reject) => {
+      // window.setTimeout(() => {
+      //   resolve('p2')
+      // })
+      resolve('p2')
+    })
+    let p3 = Promise.resolve(3)
+
+    myPromiseAll([p1, p2, p3]).then(res => {
+      console.log(res)
+    })
+  </script>
+</body>
+
+</html>
