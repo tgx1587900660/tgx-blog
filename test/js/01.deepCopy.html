@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function deepClone(source) {
+      if (typeof source !== 'object' || source === null) return source
+      const res = Array.isArray(source) ? [] : {}
+      for (const key in source) {
+        if (source.hasOwnProperty(key)) {
+          res[key] = deepClone(source[key])
+        }
+      }
+      return res
+    }
+
+    // test ------- 简单实现，只考虑数组和对象
+    const arr = [1, { a: 'a' }, [2]]
+    const newArr = deepClone(arr)
+    console.log('arr', arr) // [1,{"a":"a"},[2]]
+    newArr[1].b = 'b'
+    newArr[2].push(6456)
+    console.log('arr', arr) // [1,{"a":"a"},[2]]
+    console.log('newArr', newArr) // [1,{"a":"a","b":"b"},[2,6456]]
+
+
+    const arr2 = { a: 'a', b: { b2: 'b2' } }
+    const newArr2 = deepClone(arr2)
+    console.log('arr2', arr2) // {"a":"a","b":{"b2":"b2"}}
+    newArr2.d = 'dd'
+    newArr2.b.b3 = 'b3'
+    console.log('arr2', arr2) // {"a":"a","b":{"b2":"b2"}}
+    console.log('newArr2', newArr2) // {"a":"a","b":{"b2":"b2","b3":"b3"},"d":"dd"}
+  </script>
+</body>
+
+</html>
