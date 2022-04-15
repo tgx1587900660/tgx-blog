@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <p>测试父子组件生命周期顺序</p>
+      <Child></Child>
+    </div>
+    <script>
+      const Child = {
+        template: `
+        <div>child</div>
+        `,
+        beforeCreate() {
+          console.log('child-beforeCreate')
+        },
+        created() {
+          console.log('child-created')
+        },
+        beforeMounte() {
+          console.log('child-beforeMounte')
+        },
+        mounted() {
+          console.log('child-mounted')
+        }
+      }
+
+      const vm = new Vue({
+        el: '#app',
+        components: { Child },
+        beforeCreate() {
+          console.log('beforeCreate')
+        },
+        created() {
+          console.log('created')
+        },
+        beforeMounte() {
+          console.log('beforeMounte')
+        },
+        mounted() {
+          console.log('mounted')
+        },
+        data: {
+          msg: []
+        }
+      })
+    </script>
+  </body>
+</html>
