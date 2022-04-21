@@ -267,6 +267,9 @@ module.exports = {
   这个 dist 文件就是你将来要部署到线上的所有页面 -->
   ```
 
+  - 以下是打包后的目录结构
+    <tgx-img src="/vue2/personal-blog/vuepress_catalogue.png" alt="目录结构" title="目录结构" width="300"></tgx-img>
+
 - 第三步：开启 Gitee pages 服务
 
   - 进入你线上码云项目仓库
@@ -289,8 +292,7 @@ module.exports = {
   然而 vuepress 在你执行`npm run dev`和`npm run build`命令时，就会去查找你的系统环境变量，假如你曾经手动设置了`NODE_ENV=development`那不管你执行哪条命令，他都会以`development`模式运行打包，所以`dev`不报错`build`就报错了
   :::
 
-  > 电脑桌面 点击此电脑-右键点属性-点左边高级系统设置-点右下角环境变量-点系统环境变量
-  >
+  > 从哪里找到？--- 在电脑桌面 点击此电脑-右键点属性-点左边高级系统设置-点右下角环境变量-点系统环境变量
   > 就可以修改 NODE_ENV 相关配置，修改后要重启下终端和项目
 
   - 方案一：删掉这个环境变量，vuepress 会自动设置 NODE_ENV 的值 **(我就是这样干的)**
