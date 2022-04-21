@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var uname = 'global uname'
+      var obj = {
+        uname: 'obj uname',
+        getUname: function () {
+          return this.uname
+        },
+        innerObj: {
+          uname: 'innerObj uname',
+          getUname: function () {
+            return this.uname
+          },
+          getOwnUname: function () {
+            return function () {
+              return this.uname
+            }
+          }
+        }
+      }
+
+      const res1 = obj.getUname()
+      console.log(res1) // obj uname
+
+      const res2 = obj.innerObj.getUname()
+      console.log(res2) // innerObj uname
+
+      const res3 = obj.innerObj.getOwnUname()()
+      console.log(res3) // global uname (因为这里返回的就是一个函数, 相当于在全局定义的一个函数)
+    </script>
+  </body>
+</html>
