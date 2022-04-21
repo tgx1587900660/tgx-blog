@@ -99,5 +99,5 @@ JWT（即 JSON Web Token）是目前最流行的 **跨域认证解决方案**。
 - Header 和 Signature 是安全性相关的部分，只是为了保证 Token 的安全性。
 
 要在 express 项目中使用 JWT 认证机制，请查看
-<tgx-link href="/backend/tools/third-party-packages">这篇文章</tgx-link>
+<tgx-link href="/backend/packages/third-party-packages">这篇文章</tgx-link>
 的 【jsonwebtoken 和 express-jwt】 用法
