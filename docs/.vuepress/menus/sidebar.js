@@ -7,6 +7,7 @@ const FrontendTypeScriptSidebar = require('../../frontend/typescript/index.js')
 const FrontendJavaScriptSidebar = require('../../frontend/javascript/index.js')
 const FrontendToolsSidebar = require('../../frontend/tools/index.js')
 const FrontendPackagesSidebar = require('../../frontend/packages/index.js')
+const FrontendAppletSidebar = require('../../frontend/applet/index.js')
 const FrontendBrowserSidebar = require('../../frontend/browser/index.js')
 const FrontendInterviewSidebar = require('../../frontend/interview/index.js')
 
@@ -23,7 +24,7 @@ const AboutMeInfoSidebar = require('../../about-me/info/index.js')
 const AboutMeDonationSidebar = require('../../about-me/donation/index.js')
 
 module.exports = {
-  // 键名：是文档路径标识 (表示在 与 .vuepress 平级的 frontend/vue2 文件夹中查找对应的 .md 文档)
+  // 键名：是文档路径标识 ('/frontend/vue2'表示在 与 .vuepress 平级的 frontend/vue2 文件夹中查找对应的 .md 文档)
   // 键值：是一个数组，里面的每一个对象表示一篇 .md 文档
 
   //（这里提供一个示例写法）
@@ -34,18 +35,23 @@ module.exports = {
   //   }
   // ],
 
+  // 前端学习区域
   '/frontend/vue2': FrontendVue2Sidebar,
   '/frontend/vue3': FrontendVue3Sidebar,
   '/frontend/typescript': FrontendTypeScriptSidebar,
   '/frontend/javascript': FrontendJavaScriptSidebar,
   '/frontend/tools': FrontendToolsSidebar,
   '/frontend/packages': FrontendPackagesSidebar,
+  '/frontend/applet': FrontendAppletSidebar,
   '/frontend/browser': FrontendBrowserSidebar,
   '/frontend/interview': FrontendInterviewSidebar,
+  // 后端学习区域
   '/backend/node': BackendNodeSidebar,
   '/backend/packages': BackendPackagesSidebar,
   '/backend/database': BackendDataBaseSidebar,
+  // 异常处理区域
   '/exception/powershell': ExceptionPowershellSidebar,
+  // 联系我区域
   '/about-me/info': AboutMeInfoSidebar,
   '/about-me/donation': AboutMeDonationSidebar
 }

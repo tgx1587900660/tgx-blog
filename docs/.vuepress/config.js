@@ -89,7 +89,7 @@ module.exports = defineConfig(ctx => ({
     '@vuepress/medium-zoom'
   ],
 
-  // 额外监听的文件（无效，导航菜单变更，必须手动重启，原因未知）
+  // 额外监听的文件（无效，导航菜单变更，这里还是得手动重启，原因未知）
   extraWatchFiles: ['.vuepress/menus/**'],
 
   // 浏览器兼容性设置：开发模式时 舍弃 IE, 提升性能, 减小体积

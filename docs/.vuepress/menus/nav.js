@@ -7,6 +7,7 @@ const FrontendTypeScriptSidebar = require('../../frontend/typescript/index.js')
 const FrontendJavaScriptSidebar = require('../../frontend/javascript/index.js')
 const FrontendToolsSidebar = require('../../frontend/tools/index.js')
 const FrontendPackagesSidebar = require('../../frontend/packages/index.js')
+const FrontendAppletSidebar = require('../../frontend/applet/index.js')
 const FrontendBrowserSidebar = require('../../frontend/browser/index.js')
 const FrontendInterviewSidebar = require('../../frontend/interview/index.js')
 
@@ -44,6 +45,7 @@ module.exports = [
       { text: 'JavaScript', link: FrontendJavaScriptSidebar[0].path },
       { text: 'Tools', link: FrontendToolsSidebar[0].path },
       { text: 'Packages', link: FrontendPackagesSidebar[0].path },
+      { text: '小程序', link: FrontendAppletSidebar[0].path },
       { text: '通用知识', link: FrontendBrowserSidebar[0].path },
       { text: '面试题', link: FrontendInterviewSidebar[0].path }
     ]
