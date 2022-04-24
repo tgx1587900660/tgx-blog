@@ -20,3 +20,26 @@
 - 以下展示了小程序的基本功能，常用的内容是：组件 和 接口
   <tgx-img src="/frontend/applet/about-applet/applet-use2.png" width="300" title="小程序基本功能示意图" alt="小程序基本功能示意图">
   </tgx-img>
+
+## 3. 申请小程序开发账号
+
+打开连接 <tgx-link href="https://mp.weixin.qq.com/">https://mp.weixin.qq.com/</tgx-link> 申请一个小程序个人开发账号，并登录，可看到如下页面：
+
+<tgx-img src="/frontend/applet//about-applet/applet-manage.png" title="小程序后台管理示意图" alt="小程序后台管理示意图"></tgx-img>
+
+## 4. 安装小程序开发工具
+
+> 不建议使用 VS Code 来开发小程序，而是使用微信官方提供的小程序开发工具。
+
+打开连接 <tgx-link href="https://developers.weixin.qq.com/miniprogram/dev/devtools/stable.html">
+https://developers.weixin.qq.com/miniprogram/dev/devtools/stable.html
+</tgx-link>
+下载对应系统的 Stable Build 工具并安装。
+
+## 5. 熟悉开发者工具 5 个部分
+
+- 菜单栏。提供所有功能的设置
+- 工具栏。提供编译、控制界面显隐等功能
+- 模拟器。可以展示开发时的页面
+- 代码编辑区。编辑小程序代码
+- 调试区。用于开发调试
