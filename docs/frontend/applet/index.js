@@ -8,5 +8,9 @@ module.exports = [
   {
     title: '小程序 简介',
     path: '/frontend/applet/about-applet'
+  },
+  {
+    title: '小程序 代码组成',
+    path: '/frontend/applet/applet-compose'
   }
 ]
