@@ -3,7 +3,7 @@ home: true
 heroImage: /img/logo.png
 heroText: 一个普通上班族的网络日志
 tagline: 经验 +1
-actionText: bo ki →
+actionText: 开始阅读 →
 actionLink: /frontend/vue2/source-integration
 features:
   - title: 学不可以已
