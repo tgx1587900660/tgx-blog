@@ -10,11 +10,14 @@
   <body>
     <script>
       var uname = 'global uname'
+
       var obj = {
         uname: 'obj uname',
+
         getUname: function () {
           return this.uname
         },
+
         innerObj: {
           uname: 'innerObj uname',
           getUname: function () {
@@ -24,18 +27,23 @@
             return function () {
               return this.uname
             }
+          },
+          zhizhen: {
+            arrFn: () => this
           }
         }
       }
 
       const res1 = obj.getUname()
-      console.log(res1) // obj uname
+      // console.log(res1) // obj uname
 
       const res2 = obj.innerObj.getUname()
-      console.log(res2) // innerObj uname
+      // console.log(res2) // innerObj uname
 
       const res3 = obj.innerObj.getOwnUname()()
-      console.log(res3) // global uname (因为这里返回的就是一个函数, 相当于在全局定义的一个函数)
+      // console.log(res3) // global uname (因为这里返回的就是一个函数, 相当于在全局定义的一个函数)
+
+      console.log(obj.innerObj.zhizhen.arrFn()) // Window (不管几层，this始终指向它外层的那个对象)
     </script>
   </body>
 </html>
