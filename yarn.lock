@@ -346,7 +346,7 @@
     vue "^3.2.33"
     vue-router "^4.0.14"
 
-"@vuepress/core@2.0.0-beta.43":
+"@vuepress/core@2.0.0-beta.43", "@vuepress/core@2.0.0-beta.44":
   version "2.0.0-beta.43"
   resolved "https://registry.npmmirror.com/@vuepress/core/-/core-2.0.0-beta.43.tgz#e452fbed38b11cc080201a2b790ef0c64f3740bb"
   integrity sha512-WvphpFV7ctoCcsNzvKyj+U2kgr28AZkoWEYIvqOv60KlBozAuQVDD8k47yZ+XKt+778OcJ3QqKzNDJnRps9sQw==
@@ -474,6 +474,15 @@
     "@vuepress/core" "2.0.0-beta.43"
     prismjs "^1.27.0"
 
+"@vuepress/plugin-register-components@^2.0.0-beta.44":
+  version "2.0.0-beta.44"
+  resolved "https://registry.npmmirror.com/@vuepress/plugin-register-components/-/plugin-register-components-2.0.0-beta.44.tgz#fa430f06911dbc6ccafaee6c3c804f5968354846"
+  integrity sha512-ZlhHrzHKhBSbqZfTuYlrhN9ZT9Zt3tsLs2rID2z0GSNqkPn7UqpQdbz9WII5pv2XV4k1gmRLdLQW13wD/DCX2Q==
+  dependencies:
+    "@vuepress/core" "2.0.0-beta.44"
+    "@vuepress/utils" "2.0.0-beta.44"
+    chokidar "^3.5.3"
+
 "@vuepress/plugin-theme-data@2.0.0-beta.43":
   version "2.0.0-beta.43"
   resolved "https://registry.npmmirror.com/@vuepress/plugin-theme-data/-/plugin-theme-data-2.0.0-beta.43.tgz#15aaf2671ac8bc59e0fdb86393f6b05cc80ad750"
@@ -490,6 +499,13 @@
   version "2.0.0-beta.43"
   resolved "https://registry.npmmirror.com/@vuepress/shared/-/shared-2.0.0-beta.43.tgz#18a8d150118ace3499aeb62ef849ecb4c56a67a1"
   integrity sha512-MzO81IMmwmoJiU5g+U3+RhXCsQ5rdv/WQxj8xqozl3hRNpmzmF0Pi/Kc06P+5bZb2kVqv1eZIdQ9U91K9mi8HA==
+  dependencies:
+    "@vue/shared" "^3.2.33"
+
+"@vuepress/shared@2.0.0-beta.44":
+  version "2.0.0-beta.44"
+  resolved "https://registry.npmmirror.com/@vuepress/shared/-/shared-2.0.0-beta.44.tgz#b9008ad17b587a1dca7a020b709e2409da10bce2"
+  integrity sha512-vyvfpnjoTCY7lGkilIUEDGCwG7pH7zLuXBoAb5rpLdCBoRMIEJOtTYAlUeW//jmXrudzbJinyfk1iVt0PBBdDw==
   dependencies:
     "@vue/shared" "^3.2.33"
 
@@ -537,6 +553,22 @@
     chalk "^4.1.2"
     debug "^4.3.4"
     fs-extra "^10.0.1"
+    globby "^11.0.4"
+    hash-sum "^2.0.0"
+    ora "^5.4.1"
+    upath "^2.0.1"
+
+"@vuepress/utils@2.0.0-beta.44":
+  version "2.0.0-beta.44"
+  resolved "https://registry.npmmirror.com/@vuepress/utils/-/utils-2.0.0-beta.44.tgz#3b13cb2925ef455a763077a0dfc475bcbc5c5ede"
+  integrity sha512-PsJcA3J5s3vkUcBX3o5QslziQoZ+6QjOg/rUE2Dp9f7ZdopbewE9kkoTjTETcyLf/fdrKeR4kXXFv7pxuE8hEg==
+  dependencies:
+    "@types/debug" "^4.1.7"
+    "@types/fs-extra" "^9.0.13"
+    "@vuepress/shared" "2.0.0-beta.44"
+    chalk "^4.1.2"
+    debug "^4.3.4"
+    fs-extra "^10.1.0"
     globby "^11.0.4"
     hash-sum "^2.0.0"
     ora "^5.4.1"
@@ -982,7 +1014,7 @@ fraction.js@^4.2.0:
   resolved "https://registry.npmmirror.com/fraction.js/-/fraction.js-4.2.0.tgz#448e5109a313a3527f5a3ab2119ec4cf0e0e2950"
   integrity sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==
 
-fs-extra@^10.0.1:
+fs-extra@^10.0.1, fs-extra@^10.1.0:
   version "10.1.0"
   resolved "https://registry.npmmirror.com/fs-extra/-/fs-extra-10.1.0.tgz#02873cfbc4084dde127eaa5f9905eef2325d1abf"
   integrity sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==

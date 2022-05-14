@@ -4,6 +4,8 @@
 const { defaultTheme } = require('@vuepress/theme-default')
 // 引入插件
 const { backToTopPlugin } = require('@vuepress/plugin-back-to-top')
+const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
+const { path } = require('@vuepress/utils')
 
 // 引入 工具函数
 const { getRandomElement, getCurrentTime } = require('./utils')
@@ -74,30 +76,26 @@ module.exports = {
     // 是否在滚动页面时实时更新 URL 值
     activeHeaderLinks: false,
 
-    // 最后更新时间
-    lastUpdated: '上次更新',
+    // 最后更新时间 和 贡献者
+    lastUpdatedText: '上次更新',
+    contributorsText: '贡献者',
 
-    // 是否开启页面底部的 下一篇 链接
-    nextLinks: true,
-    // 是否开启页面底部的 上一篇 链接
-    prevLinks: true,
-
-    // 仓库链接文字
+    // 仓库配置
     repoLabel: 'Gitee 仓库',
-    // 仓库地址
-    repo: 'https://gitee.com/tgx-1587900660'
+    repo: 'https://gitee.com/tgx-1587900660',
+    editLink: false
   }),
 
   // 注册插件
   plugins: [
     // 1. 返回顶部 插件
-    backToTopPlugin()
+    backToTopPlugin(),
     // 2. 最后更新时间 插件
     // ['@vuepress/last-updated', { transformer: timestamp => getCurrentTime(timestamp) }],
     // // 3. 放大页面中的图片 插件
     // '@vuepress/medium-zoom'
+    registerComponentsPlugin({
+      componentsDir: path.resolve(__dirname, './components')
+    })
   ]
-
-  // 浏览器兼容性设置：开发模式时 舍弃 IE, 提升性能, 减小体积
-  // evergreen: !ctx.isProd
 }
