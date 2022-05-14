@@ -26,19 +26,16 @@ const AboutMeDonationSidebar = require('../../about-me/donation/index.js')
 module.exports = [
   {
     text: '前端学习',
-    items: [
+    children: [
       // 1️. 如果 link 为 '/test/', vuepress 会去 docs/test 文件夹中查找 README.md
       // 2. 如果 link 为 '/test/README', 会404出错(即使有 README.md 文件)
       // 3. 如果 link 为 '/test/README.md', 会404出错(即使有 README.md 文件)
       // 4. 如果 link 为 '/test/test-001', vuepress 会去 docs/test 文件夹中查找 test-001.md
       // 5. 如果 link 为 '/test/test-001.md', vuepress 会去 docs/test 文件夹中查找 test-001.md
-
       // 为了可读性, 我们将采取 方案4 来管理文章链接
       // { text: 'test', link: '/test/test-001' },
-
       // （这里提供一个示例写法）
-      // { text: 'Vue2', link: '/frontend/vue2/source-integration' },
-
+      // { text: 'Vue2', link: '/frontend/vue2/source-integration' }
       { text: 'Vue2', link: FrontendVue2Sidebar[0].path },
       { text: 'Vue3', link: FrontendVue3Sidebar[0].path },
       { text: 'TypeScript', link: FrontendTypeScriptSidebar[0].path },
@@ -52,7 +49,7 @@ module.exports = [
   },
   {
     text: '后端学习',
-    items: [
+    children: [
       { text: 'Node.js', link: BackendNodeSidebar[0].path },
       { text: 'DataBase', link: BackendDataBaseSidebar[0].path },
       { text: 'Packages', link: BackendPackagesSidebar[0].path }
@@ -60,13 +57,13 @@ module.exports = [
   },
   {
     text: '异常处理',
-    items: [{ text: 'Powershell', link: ExceptionPowershellSidebar[0].path }]
+    children: [{ text: 'Powershell', link: ExceptionPowershellSidebar[0].path }]
   },
   {
     text: '联系我',
-    items: [
+    children: [
       { text: '联系我', link: AboutMeInfoSidebar[0].path },
-      { text: 'd 我', link: AboutMeDonationSidebar[0].path }
+      { text: 'D 我', link: AboutMeDonationSidebar[0].path }
     ]
   }
 ]

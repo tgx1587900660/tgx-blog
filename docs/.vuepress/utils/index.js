@@ -26,7 +26,22 @@ function getCurrentTime(dateStr) {
   return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
 }
 
+// 3. 提取 数组 item 项中 path 的函数
+/**
+ * 将
+ * [
+ *   { title: '资源整合', path: '/xxx1' },
+ *   { title: '使用 vuepress 搭建个人博客', path: '/xxx2' }
+ * ]
+ * 变成
+ * ['/xxx1', '/xxx2']
+ */
+function getDocumentUrl(array) {
+  return array.map(item => item.path)
+}
+
 module.exports = {
   getRandomElement,
-  getCurrentTime
+  getCurrentTime,
+  getDocumentUrl
 }

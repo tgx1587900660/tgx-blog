@@ -1,16 +1,20 @@
-// vuepress 的文档地址 https://vuepress.vuejs.org/zh/config/
+// vuepress 2.x 的文档地址 https://v2.vuepress.vuejs.org/zh/
 
-// 引入 配置函数, 用于判断当前环境是 '开发模式' 还是 '发布模式'
-const { defineConfig } = require('vuepress/config')
+// 引入主题
+const { defaultTheme } = require('@vuepress/theme-default')
+// 引入插件
+const { backToTopPlugin } = require('@vuepress/plugin-back-to-top')
 
 // 引入 工具函数
 const { getRandomElement, getCurrentTime } = require('./utils')
 
 // 引入 菜单
-const { nav, sidebar } = require('./menus/index.js')
+const { navbar, sidebar } = require('./menus/index.js')
 
 // 直接导出一个 '对象' 和 'defineConfig返回的对象' 效果一样
-module.exports = defineConfig(ctx => ({
+module.exports = {
+  // 站点语言
+  // lang: '',
   // 部署站点的基准路径, 默认是 /
   base: '/tgx-blog/',
 
@@ -35,11 +39,16 @@ module.exports = defineConfig(ctx => ({
     ]
   ],
 
-  // 开发服务器地址, 默认是 0.0.0.0
-  host: 'localhost',
-
-  // 指定 build 的输出目录, 默认打包到 docs/.vuepress/dist 下
+  // 指定 build 的输出目录, 默认打包到 docs/.vuepress 里面
   dest: './dist', // 现在会打包到与 docs 平级的目录下
+  // 指定临时文件目录
+  temp: './.temp',
+  // 指定缓存目录
+  cache: './.cache',
+
+  // 开发服务器地址和端口, 默认是 0.0.0.0:8080
+  host: 'localhost',
+  port: '8080',
 
   // markdown 相关配置
   markdown: {
@@ -48,12 +57,12 @@ module.exports = defineConfig(ctx => ({
   },
 
   // vuepress 默认主题 的配置
-  themeConfig: {
+  theme: defaultTheme({
     // 左上角网站 Logo
     logo: '/img/logo.png',
 
     // 顶部导航栏
-    nav,
+    navbar,
     // 侧边栏菜单
     sidebar,
 
@@ -77,21 +86,18 @@ module.exports = defineConfig(ctx => ({
     repoLabel: 'Gitee 仓库',
     // 仓库地址
     repo: 'https://gitee.com/tgx-1587900660'
-  },
+  }),
 
   // 注册插件
   plugins: [
     // 1. 返回顶部 插件
-    '@vuepress/back-to-top',
+    backToTopPlugin()
     // 2. 最后更新时间 插件
-    ['@vuepress/last-updated', { transformer: timestamp => getCurrentTime(timestamp) }],
-    // 3. 放大页面中的图片 插件
-    '@vuepress/medium-zoom'
-  ],
-
-  // 额外监听的文件（无效，导航菜单变更，这里还是得手动重启，原因未知）
-  extraWatchFiles: ['.vuepress/menus/**'],
+    // ['@vuepress/last-updated', { transformer: timestamp => getCurrentTime(timestamp) }],
+    // // 3. 放大页面中的图片 插件
+    // '@vuepress/medium-zoom'
+  ]
 
   // 浏览器兼容性设置：开发模式时 舍弃 IE, 提升性能, 减小体积
-  evergreen: !ctx.isProd
-}))
+  // evergreen: !ctx.isProd
+}

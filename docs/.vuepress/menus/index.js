@@ -1,7 +1,7 @@
-const nav = require('./nav.js')
+const navbar = require('./navbar.js')
 const sidebar = require('./sidebar.js')
 
 module.exports = {
-  nav,
+  navbar,
   sidebar
 }

@@ -1,5 +1,8 @@
 // 左侧菜单 配置文件
 
+// 引入工具函数
+const { getDocumentUrl } = require('../utils/index.js')
+
 // 引入 frontend 模块的侧边导航菜单
 const FrontendVue2Sidebar = require('../../frontend/vue2/index.js')
 const FrontendVue3Sidebar = require('../../frontend/vue3/index.js')
@@ -24,34 +27,114 @@ const AboutMeInfoSidebar = require('../../about-me/info/index.js')
 const AboutMeDonationSidebar = require('../../about-me/donation/index.js')
 
 module.exports = {
-  // 键名：是文档路径标识 ('/frontend/vue2'表示在 与 .vuepress 平级的 frontend/vue2 文件夹中查找对应的 .md 文档)
-  // 键值：是一个数组，里面的每一个对象表示一篇 .md 文档
-
-  //（这里提供一个示例写法）
-  // '/frontend/vue2': [
-  //   {
-  //     title: '资源整合', // 设置一级标题 (vuepress 会从 .md 文档中自动提取 二级标题)
-  //     path: '/frontend/vue2/source-integration' // 对应的文章路径 (同 nav 里面的 link, 采取方案4)
-  //   }
-  // ],
-
   // 前端学习区域
-  '/frontend/vue2': FrontendVue2Sidebar,
-  '/frontend/vue3': FrontendVue3Sidebar,
-  '/frontend/typescript': FrontendTypeScriptSidebar,
-  '/frontend/javascript': FrontendJavaScriptSidebar,
-  '/frontend/tools': FrontendToolsSidebar,
-  '/frontend/packages': FrontendPackagesSidebar,
-  '/frontend/applet': FrontendAppletSidebar,
-  '/frontend/browser': FrontendBrowserSidebar,
-  '/frontend/interview': FrontendInterviewSidebar,
+  '/frontend/vue2': [
+    {
+      text: 'Vue2',
+      collapsible: true,
+      children: getDocumentUrl(FrontendVue2Sidebar)
+    }
+    // TODO: 后续整合 vue3 目录到这里...
+  ],
+  '/frontend/vue3': [
+    {
+      text: 'Vue3',
+      collapsible: true,
+      children: getDocumentUrl(FrontendVue3Sidebar)
+    }
+  ],
+  '/frontend/typescript': [
+    {
+      text: 'TypeScript',
+      collapsible: true,
+      children: getDocumentUrl(FrontendTypeScriptSidebar)
+    }
+  ],
+  '/frontend/javascript': [
+    {
+      text: 'Javascript',
+      collapsible: true,
+      children: getDocumentUrl(FrontendJavaScriptSidebar)
+    }
+  ],
+  '/frontend/tools': [
+    {
+      text: 'Tools',
+      collapsible: true,
+      children: getDocumentUrl(FrontendToolsSidebar)
+    }
+  ],
+  '/frontend/packages': [
+    {
+      text: 'Packages',
+      collapsible: true,
+      children: getDocumentUrl(FrontendPackagesSidebar)
+    }
+  ],
+  '/frontend/applet': [
+    {
+      text: 'Applet',
+      collapsible: true,
+      children: getDocumentUrl(FrontendAppletSidebar)
+    }
+  ],
+  '/frontend/browser': [
+    {
+      text: 'Browser',
+      collapsible: true,
+      children: getDocumentUrl(FrontendBrowserSidebar)
+    }
+  ],
+  '/frontend/interview': [
+    {
+      text: 'Interview',
+      collapsible: true,
+      children: getDocumentUrl(FrontendInterviewSidebar)
+    }
+  ],
   // 后端学习区域
-  '/backend/node': BackendNodeSidebar,
-  '/backend/packages': BackendPackagesSidebar,
-  '/backend/database': BackendDataBaseSidebar,
+  '/backend/node': [
+    {
+      text: 'Node',
+      collapsible: true,
+      children: getDocumentUrl(BackendNodeSidebar)
+    }
+  ],
+  '/backend/packages': [
+    {
+      text: 'Packages',
+      collapsible: true,
+      children: getDocumentUrl(BackendPackagesSidebar)
+    }
+  ],
+  '/backend/database': [
+    {
+      text: 'DataBase',
+      collapsible: true,
+      children: getDocumentUrl(BackendDataBaseSidebar)
+    }
+  ],
   // 异常处理区域
-  '/exception/powershell': ExceptionPowershellSidebar,
+  '/exception/powershell': [
+    {
+      text: 'Powershell',
+      collapsible: true,
+      children: getDocumentUrl(ExceptionPowershellSidebar)
+    }
+  ],
   // 联系我区域
-  '/about-me/info': AboutMeInfoSidebar,
-  '/about-me/donation': AboutMeDonationSidebar
+  '/about-me/info': [
+    {
+      text: '联系我',
+      collapsible: true,
+      children: getDocumentUrl(AboutMeInfoSidebar)
+    }
+  ],
+  '/about-me/donation': [
+    {
+      text: 'D 我',
+      collapsible: true,
+      children: getDocumentUrl(AboutMeDonationSidebar)
+    }
+  ]
 }
