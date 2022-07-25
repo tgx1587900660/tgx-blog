@@ -13,10 +13,9 @@ const { getRandomElement, getCurrentTime } = require('./utils')
 // 引入 菜单
 const { navbar, sidebar } = require('./menus/index.js')
 
-// 直接导出一个 '对象' 和 'defineConfig返回的对象' 效果一样
 module.exports = {
   // 站点语言
-  // lang: '',
+  lang: 'zh-CN',
   // 部署站点的基准路径, 默认是 /
   base: '/tgx-blog/',
 
@@ -34,8 +33,7 @@ module.exports = {
       // link 标签具有以下属性
       {
         rel: 'shortcut icon',
-        // 路径指向 .vuepress/public
-        // href: '/xiao.ico'
+        // 路径指向 docs/.vuepress/public
         href: getRandomElement(['/tang.ico', '/gan.ico', '/xiao.ico']) // 随机取一个 favicon
       }
     ]

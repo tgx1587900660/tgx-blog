@@ -346,7 +346,17 @@
     vue "^3.2.33"
     vue-router "^4.0.14"
 
-"@vuepress/core@2.0.0-beta.43", "@vuepress/core@2.0.0-beta.44":
+"@vuepress/client@2.0.0-beta.44":
+  version "2.0.0-beta.44"
+  resolved "https://registry.npmmirror.com/@vuepress/client/-/client-2.0.0-beta.44.tgz#4e23e7b022df1848642137d016f67f0734ae20bb"
+  integrity sha512-lSZrdqZIYujiNYDKtUuuBUZYNeiLAI0b49ABnDNx1p0ScCpTE7y0GY38imwzwUYzhDwa+O/QZMubQFiExDR1BQ==
+  dependencies:
+    "@vue/devtools-api" "^6.1.4"
+    "@vuepress/shared" "2.0.0-beta.44"
+    vue "^3.2.33"
+    vue-router "^4.0.15"
+
+"@vuepress/core@2.0.0-beta.43":
   version "2.0.0-beta.43"
   resolved "https://registry.npmmirror.com/@vuepress/core/-/core-2.0.0-beta.43.tgz#e452fbed38b11cc080201a2b790ef0c64f3740bb"
   integrity sha512-WvphpFV7ctoCcsNzvKyj+U2kgr28AZkoWEYIvqOv60KlBozAuQVDD8k47yZ+XKt+778OcJ3QqKzNDJnRps9sQw==
@@ -355,6 +365,19 @@
     "@vuepress/markdown" "2.0.0-beta.43"
     "@vuepress/shared" "2.0.0-beta.43"
     "@vuepress/utils" "2.0.0-beta.43"
+    gray-matter "^4.0.3"
+    toml "^3.0.0"
+    vue "^3.2.33"
+
+"@vuepress/core@2.0.0-beta.44":
+  version "2.0.0-beta.44"
+  resolved "https://registry.npmmirror.com/@vuepress/core/-/core-2.0.0-beta.44.tgz#88e5643467691d5f992ddb3611d7eaf5c86be727"
+  integrity sha512-BcQcIqWHn3+8UHwSWGZfLYk37TdKmOWSxFjijAP1dfqyRHLocO85+7uKRf7W8lAqMXYTDprnXmrnKLLrdqTYQg==
+  dependencies:
+    "@vuepress/client" "2.0.0-beta.44"
+    "@vuepress/markdown" "2.0.0-beta.44"
+    "@vuepress/shared" "2.0.0-beta.44"
+    "@vuepress/utils" "2.0.0-beta.44"
     gray-matter "^4.0.3"
     toml "^3.0.0"
     vue "^3.2.33"
@@ -370,6 +393,19 @@
     markdown-it "^13.0.0"
     markdown-it-anchor "^8.4.1"
     markdown-it-emoji "^2.0.0"
+    mdurl "^1.0.1"
+
+"@vuepress/markdown@2.0.0-beta.44":
+  version "2.0.0-beta.44"
+  resolved "https://registry.npmmirror.com/@vuepress/markdown/-/markdown-2.0.0-beta.44.tgz#20f519eec0a2a6e36e2b1a4797828d1c8d87e9fc"
+  integrity sha512-Gk8b3vd9ixK6nUEGO7TYX5smA+EadbLUX9xQaD3Orfr2Xsid7bN/9OzaYcYt7FCf7aZa1oTxnfUtyIbnsAhAtA==
+  dependencies:
+    "@types/markdown-it" "^12.2.3"
+    "@vuepress/shared" "2.0.0-beta.44"
+    "@vuepress/utils" "2.0.0-beta.44"
+    markdown-it "^13.0.1"
+    markdown-it-anchor "^8.6.3"
+    markdown-it-emoji "^2.0.2"
     mdurl "^1.0.1"
 
 "@vuepress/plugin-active-header-links@2.0.0-beta.43":
@@ -1249,7 +1285,7 @@ magic-string@^0.25.7:
   dependencies:
     sourcemap-codec "^1.4.8"
 
-markdown-it-anchor@^8.4.1:
+markdown-it-anchor@^8.4.1, markdown-it-anchor@^8.6.3:
   version "8.6.4"
   resolved "https://registry.npmmirror.com/markdown-it-anchor/-/markdown-it-anchor-8.6.4.tgz#affb8aa0910a504c114e9fcad53ac3a5b907b0e6"
   integrity sha512-Ul4YVYZNxMJYALpKtu+ZRdrryYt/GlQ5CK+4l1bp/gWXOG2QWElt6AqF3Mih/wfUKdZbNAZVXGR73/n6U/8img==
@@ -1259,12 +1295,12 @@ markdown-it-container@^3.0.0:
   resolved "https://registry.npmmirror.com/markdown-it-container/-/markdown-it-container-3.0.0.tgz#1d19b06040a020f9a827577bb7dbf67aa5de9a5b"
   integrity sha512-y6oKTq4BB9OQuY/KLfk/O3ysFhB3IMYoIWhGJEidXt1NQFocFK2sA2t0NYZAMyMShAGL6x5OPIbrmXPIqaN9rw==
 
-markdown-it-emoji@^2.0.0:
+markdown-it-emoji@^2.0.0, markdown-it-emoji@^2.0.2:
   version "2.0.2"
   resolved "https://registry.npmmirror.com/markdown-it-emoji/-/markdown-it-emoji-2.0.2.tgz#cd42421c2fda1537d9cc12b9923f5c8aeb9029c8"
   integrity sha512-zLftSaNrKuYl0kR5zm4gxXjHaOI3FAOEaloKmRA5hijmJZvSjmxcokOLlzycb/HXlUFWzXqpIEoyEMCE4i9MvQ==
 
-markdown-it@^13.0.0:
+markdown-it@^13.0.0, markdown-it@^13.0.1:
   version "13.0.1"
   resolved "https://registry.npmmirror.com/markdown-it/-/markdown-it-13.0.1.tgz#c6ecc431cacf1a5da531423fc6a42807814af430"
   integrity sha512-lTlxriVoy2criHP0JKRhO2VDG9c2ypWCsT237eDiLqi09rmbKoUetyGHq2uOIRoRS//kfoJckS0eUzzkDR+k2Q==
@@ -1633,6 +1669,13 @@ vue-router@^4.0.14:
   integrity sha512-xa+pIN9ZqORdIW1MkN2+d9Ui2pCM1b/UMgwYUCZOiFYHAvz/slKKBDha8DLrh5aCG/RibtrpyhKjKOZ85tYyWg==
   dependencies:
     "@vue/devtools-api" "^6.0.0"
+
+vue-router@^4.0.15:
+  version "4.1.2"
+  resolved "https://registry.npmmirror.com/vue-router/-/vue-router-4.1.2.tgz#ae08f63c9610afa6bff6743e8f128b7054d4c9f5"
+  integrity sha512-5BP1qXFncVRwgV/XnqzsKApdMjQPqWIpoUBdL1ynz8HyLxIX/UDAx7Ql2BjmA5CXT/p61JfZvkpiFWFpaqcfag==
+  dependencies:
+    "@vue/devtools-api" "^6.1.4"
 
 vue@^3.2.33:
   version "3.2.33"
