@@ -27,23 +27,23 @@ export default {
     },
     width: {
       type: [Number, String],
-      default: value => {
+      default: ({ width: value }) => {
         // 只限定宽度，不限定高度。因为 img 标签会自动设置图片的高度
         if (!value) {
           return 738
         } else {
-          return typeof value === 'number' ? value : parseInt(value)
+          return typeof value === 'number' ? value : parseInt(value, 10)
         }
       }
     },
     height: {
       type: [Number, String],
-      default: value => {
+      default: ({ height: value }) => {
         // 如果没传，就不设置该属性
         if (!value) {
           return undefined
         } else {
-          return typeof value === 'number' ? value : parseInt(value)
+          return typeof value === 'number' ? value : parseInt(value, 10)
         }
       }
     }

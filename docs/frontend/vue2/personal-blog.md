@@ -1,8 +1,10 @@
-# 使用 <tgx-link href="https://vuepress.vuejs.org/zh/">vuepress</tgx-link> 搭建个人博客
+# 使用 vuepress 搭建个人博客
 
 ::: tip 起因
+
 以前做笔记都是写在书本上，但随着新技术的探索，知识点不断增多，本子上根本写不下。
 且笔记本太厚不好携带。因此有了搭建博客的想法。
+
 :::
 
 ## 1.技术选型
@@ -11,9 +13,8 @@
 相比 Jekyll、Hugo、Hexo，我选择了 vuepress。如果你也具有以下需求，可以考虑使用它。
 :::
 
-- 想要快速上手。在最短的时间内完成博客搭建
-- 注重内容。专注于文章内容，而非花哨的页面
-- 简洁清爽。vuepress 自带主题简洁美观，阅读舒适
+- 想要快速上手。在短时间内完成博客搭建
+- 注重内容。专注于文档内容，而非花哨的页面
 - 多端适配。开发部署后，不管是手机、平板、还是 PC 端都可以随时查看
 
 ## 2.开始搭建
@@ -43,18 +44,18 @@ npm init -y
 ### 3.安装 vuepress
 
 ::: tip 说明
-vuepress 局部安装就好，在这里我用了 cnpm 来安装。
+vuepress 局部安装就好，在这里我用了 cnpm 来安装，你可以直接使用 npm 安装。
 :::
 
 ```xml
 cnpm install -D vuepress
 
 
-<!-- 此时 package.json 会多出这个 -->
+<!-- 此时 package.json 会多出这个(日后可能版本会变更，这里以 1.9.7 为例) -->
 {
-    "devDependencies": {
-        "vuepress": "^1.9.7"
-    }
+  "devDependencies": {
+    "vuepress": "^1.9.7"
+  }
 }
 ```
 
@@ -103,31 +104,18 @@ npm run dev
 ### 6.定制博客内容
 
 ::: tip 说明
-打开 vuepress 说明文档，打开
-<tgx-link href="https://vuepress.vuejs.org/zh/guide/basic-config.html">指南</tgx-link>
-查看详细文档。要想定制 `.vuepress/config.js` 内容，
-就要查看 <tgx-link href="https://vuepress.vuejs.org/zh/config/">配置和默认主题</tgx-link>。在这里，我就不当复读机了，
-但请你一定要搞明白`config.js`里面的`图片路径`和`文件路径匹配机制`。
+百度搜索并打开 vuepress 中文文档，找到 `指南` 查看详细文档。要想定制 `.vuepress/config.js` 内容，
+就要找到 `默认主题配置` 对应的文档。在这里，我就不当复读机了，但请你一定要搞明白`config.js`里面的`图片路径`和`文件路径匹配机制`。
 
 值得一提的是，当你修改`vuepress的默认配置文件`后，需要重新`npm run dev`启动一下项目，才能生效。
 因为我们的开发服务器是基于配置文件运行的，如果不重启项目，它依然使用上一次的配置文件，而不会发生更新。
 :::
 
-```xml
-npm run dev
-
-<!--
-VuePress 会在 http://localhost:8080 启动一个热重载的开发服务器。
-打开浏览器访问即可
--->
-```
-
-- 可以参考一下我的部分配置。不用担心写错配置，你应该大胆尝试，用多了就熟练了。
+- 可以参考一下我的部分配置。
 
 ::: details 点击查看代码
 
 ```js
-// vuepress 的文档地址 https://vuepress.vuejs.org/zh/config/
 module.exports = {
   // 部署站点的基准路径, 默认是 /
   base: '/tgx-blog/',
