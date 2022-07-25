@@ -51,10 +51,7 @@ module.exports = {
   port: '8080',
 
   // markdown 相关配置
-  markdown: {
-    // 给 .md 文件中每个代码块显示行号
-    lineNumbers: true
-  },
+  markdown: {},
 
   // vuepress 默认主题 的配置
   theme: defaultTheme({
@@ -92,6 +89,7 @@ module.exports = {
     // ['@vuepress/last-updated', { transformer: timestamp => getCurrentTime(timestamp) }],
     // // 3. 放大页面中的图片 插件
     // '@vuepress/medium-zoom'
+    // 4. 注册vue组件 插件
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components')
     })

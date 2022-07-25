@@ -1,6 +1,6 @@
 <!-- 自定义的 a 链接组件 -->
 <template>
-  <a class="tgx-link" :title="localHref" target="_blank" :href="localHref">
+  <a class="tgx-link" target="_blank" :title="localHref" :href="localHref">
     <slot name="default">链接名称</slot>
   </a>
 </template>
@@ -26,4 +26,4 @@ export default {
 }
 </script>
 
-<style lang='css' scoped></style>
+<style lang="css" scoped></style>
