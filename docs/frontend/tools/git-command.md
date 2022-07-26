@@ -83,7 +83,7 @@ git branch -D 分支名 (强制删除)
 <!-- 案例 -->
 <!-- 分支名为 telectron_dev, 我要删了它 -->
 git branch -d telectron_dev
-git branch -D telectron_dev (强制删除)
+git branch -D telectron_dev (强制删除，通常是有些需求写完了，又被废弃时使用)
 ```
 
 ## 5. 加入、取出缓存区
@@ -98,7 +98,7 @@ git branch -D telectron_dev (强制删除)
 改完之后再切回来`git stash pop`粘贴之前的小需求，继续开发
 :::
 
-> git stash 和 git stash pop 用得较少，基本上都要执行一次。也不推荐用，因为开发一段时间之后，经常会忘掉 git stash 里面还有内容
+> git stash 和 git stash pop 用得较少，基本上都要执行一次。因为开发一段时间之后，经常会忘掉 git stash 里面还有内容
 
 ```xml
 <!-- 相当于 剪切 本次修改内容 -->
@@ -150,7 +150,12 @@ git branch -a
 :::
 
 ```xml
+<!--
+我现在在远程仓库手动创了一个分支 dev_tgx,
+我先用 git fetch 取过来，再用 git checkout 直接切过去
+-->
 git fetch
+git checkout dev_tgx
 ```
 
 ## 10. 只提取某一次 commit 内容
@@ -182,7 +187,7 @@ git cherry-pick 921dc370
 git checkout -b telectron_dev
 
 
-<!-- 首次推送这个分支 -->
+<!-- 首次推送这个分支（线上没有 telectron_dev 分支） -->
 git push -u origin telectron_dev
 <!-- 线上有 telectron_dev 分支后推送 -->
 git push
