@@ -2,7 +2,7 @@
 
 ## 1. 什么是路由？
 
-::: tip 路由分类
+::: tip 说明
 路由分为 **前端路由** 和 **后端路由**
 :::
 
@@ -26,7 +26,7 @@
   <a href="#/one"></a>
   <a href="#/two"></a>
   ```
-- 第二步：在页面放置一个动态组件，给一个动态组件名，例如
+- 第二步：在页面放置一个动态组件，给一个动态组件名，例如：
   ```xml
   <!-- comName 是 vue 组件的名字 -->
   <component :is="comName"></component>
@@ -73,24 +73,24 @@ vue-router 是 vue 项目中的 **前端路由解决方案**。只需简单配�
 - 嵌套路由中 **children 节点** 内某个规则 path 如果为空 ""，则称为 **默认子路由**
 - 给路由规则 **开启 props 传参**，就可以在 **组件** 中拿到 **动态路由参数**，例如
 
-```js
-// 第一步：在 路由规则中 写一条规则
-routes: [
-    ...
-    { path: '/instance/:objId', component: InstanceDetail, props: true }
-    ...
-]
+  ```js
+  // 第一步：在 路由规则router.js中 写一条规则
+  routes: [
+      ...
+      { path: '/instance/:objId', component: InstanceDetail, props: true }
+      ...
+  ]
 
-// 第二步：在 InstanceDetail 组件中 直接用 props 接收
-<script>
-    export default {
-        ...
-        props: ['objId'], // objId 就是路由中的动态参数
-        data() {}
-        ...
-    }
-</script>
-```
+  // 第二步：在 InstanceDetail 组件中 直接用 props 接收
+  <script>
+      export default {
+          ...
+          props: ['objId'], // objId 就是路由中的动态参数
+          data() {}
+          ...
+      }
+  </script>
+  ```
 
 ### 3. vue-router 的导航模式
 

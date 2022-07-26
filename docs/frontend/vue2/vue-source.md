@@ -26,10 +26,9 @@
 - 对象的访问情况，可以通过 Object.defineProperty 方法的 getter 捕获
 - 对象的变化情况，可以通过 Object.defineProperty 方法的 setter 捕获
 - Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。
-  <tgx-link href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">点击查看详情</tgx-link>
 
 - Vue 封装了一个 `Observer 类` 来让某个数据变得 “可观测”，内部用到了 Object.defineProperty() 方法
-  - 不足：直接给对象添加属性，新增的这个属性无法变成 `可观测`
+  - 不足：直接给对象添加/删除属性，则这个属性无法变成 `可观测`
 - Vue 封装了一个 `Dep 类` 来收集某个 `依赖` 对应的 `依赖者`
   - 依赖 可以看成是 数据
   - 依赖者 可以看成是 组件
@@ -74,7 +73,8 @@
 
 ### 2. 为什么要有 虚拟 DOM？
 
-- 当数据变化时，利用 虚拟 DOM 来进行对比，找出变化的地方，用来更新真实的网页 DOM
+- 目的是为了让 **js 的计算性能** 来换取 **dom 的操作性能**（减少回流和重绘）
+- 当数据变化时，利用 虚拟 DOM 进行对比，找出变化的地方，用最少次数来更新真实的网页 DOM
 - 对比 DOM 变化的过程就是 `DOM-Diff` 算法的过程
 
 ### 3. `DOM-Diff` 算法 具体做了什么？
@@ -95,7 +95,6 @@
 
 - AST（AbstractSyntaxTree） 是抽象语法树，可以利用 js 对象来描述一个 html 节点（DOM 节点）
 - 解析模版，就是利用正则表达式来匹配 template 中的字符串，解析出 html 、文本、过滤器这些内容，转化为 AST
--
 
 :::
 

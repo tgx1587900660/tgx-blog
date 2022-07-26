@@ -117,4 +117,4 @@
 - 节点管理：<tgx-link href="https://github.com/TencentBlueKing/bk-nodeman">https://github.com/TencentBlueKing/bk-nodeman</tgx-link>
 - 流程服务：<tgx-link href="https://github.com/TencentBlueKing/bk-itsm">https://github.com/TencentBlueKing/bk-itsm</tgx-link>
 - 开发框架和 SDK：<tgx-link href="https://github.com/orgs/TencentBlueKing/repositories">https://github.com/orgs/TencentBlueKing/repositories</tgx-link>
-- PaaS平台: <tgx-link href="https://github.com/Tencent/bk-PaaS">https://github.com/Tencent/bk-PaaS</tgx-link>
+- PaaS 平台: <tgx-link href="https://github.com/Tencent/bk-PaaS">https://github.com/Tencent/bk-PaaS</tgx-link>
