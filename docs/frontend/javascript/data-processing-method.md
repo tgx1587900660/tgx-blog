@@ -191,7 +191,7 @@ console.log('result:', result)
 
 const arr = [1, 2, 3, 4]
 
-// arr.reduce((累加的结果, 当前循环项) => 累加的计算表达式, 初始值)
+// arr.reduce((当前累加的结果, 当前循环项) => 累加的计算表达式, 初始值)
 const result = arr.reduce((sum, item) => sum += item * 10, 0)
 
 console.log('result:', result)
@@ -308,7 +308,7 @@ console.log(getCurrentTime(dt)) // 2020-10-14 12:14:59
 
 :::
 
-### 4. 手写深拷贝
+### 4. 手写深拷贝（面试专用）
 
 ::: details 点击查看代码
 
