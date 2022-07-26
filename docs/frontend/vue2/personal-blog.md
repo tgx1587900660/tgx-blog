@@ -116,6 +116,7 @@ npm run dev
 ::: details 点击查看代码
 
 ```js
+// 1.9.7版本的配置（日后可能会变动） 
 module.exports = {
   // 部署站点的基准路径, 默认是 /
   base: '/tgx-blog/',
@@ -218,19 +219,18 @@ module.exports = {
 ### 1. 正常流程
 
 ::: tip 说明
-码云 Gitee 网速更快，方便访问，所以我选择它的 Git pages 服务，部署在 Gitee 上。
-这是 Gitee 提供的服务，可以直接部署静态网页到线上，从而让所有人访问，并不需要你自己购买服务器。
+码云 Gitee 提供了一个 Git pages 服务，可以把静态页面直接部署在 Gitee 上。以实现让所有人访问，且不需要你自己购买服务器。
 
-假设我的仓库地址是 **https://gitee.com/tgx-1587900660/tgx-blog**
+假设我的项目仓库地址是 **https://gitee.com/tgx-1587900660/tgx-blog**
 
-那么使用了它的 Git pages 服务后，就会自动生成一个在线地址，
+那么使用了 Git pages 服务后，就会自动生成一个在线地址，
 
 形如：**https://tgx-1587900660.gitee.io/tgx-blog** 就可以让所有人访问了
 :::
 
 - 第一步：本地项目与云端仓库建立链接
 
-  - 首先，我们的项目实在本地搭建好的，要使用 Gitee 服务，就要在线上先创建一个仓库
+  - 首先，我们的项目在本地搭建好，要使用 Gitee 服务，就要在线上先创建一个仓库
   - 接着，让`线上仓库`与`本地仓库`建立连接（在新建线上仓库时，gitee 会有提示，它会让你在本地目录中运行 2 条终端命令，与远程仓库建立连接）
 
   ```xml {1-2}
@@ -239,7 +239,7 @@ module.exports = {
 
 
   <!-- 例如：我的仓库地址如下，末尾 tgx-blog 是云端项目名 (那.vuepress/config.js中的
-  base 配置就是 '/tgx-blog/'  可以参考 第2节的第6点定制博客内容 的示例代码 ) -->
+  base 配置就是 '/tgx-blog/' -->
   https://gitee.com/tgx-1587900660/tgx-blog
   ```
 
@@ -261,10 +261,11 @@ module.exports = {
 - 第三步：开启 Gitee pages 服务
 
   - 进入你线上码云项目仓库
-  - 看到 `代码`、`Issues`、`Pull Requests`、`Wiki`、`统计` 平级的 tab 栏后面有个 **服务**
-  - 点开 `服务` 里面的 `Gitee Pages`
+  - 看到与 `代码`、`Issues`、`Pull Requests`、`Wiki`、`统计` 平级的 tab 栏后面有个 **服务**
+  - 点开 **服务** 里面的 `Gitee Pages`
   - 部署分支：选择 master 分支 (我就只有一个 master 分支)
   - 部署目录：填写 dist 四个字母 **(不要加 / 这类路径，不然会 404 或丢失样式)**
+  - 网站生成：点击部署，等待生成在线地址
 
 - 第四步：打开自己的网站，PC、手机都可以访问
 
@@ -272,7 +273,7 @@ module.exports = {
 
 - 错误一：部署后样式丢失了，点击链接 404 了
   - 检查你开启 Gitee pages 服务的时候 **部署目录** 是否填对了
-  - 检测你的 `.vuepress.config` 里面的 `base` 是否设对了
+  - 检测你的 `.vuepress.config` 里面的 `base` 属性是否设对了
 - 错误二：`npm run dev` 正常，`npm run build` 报错
   ::: tip 报错说明
   我以前学习 node.js 时，跟着老师学习系统环境变量时，设置过一个 `NODE_ENV=development`
