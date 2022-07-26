@@ -33,24 +33,22 @@ let s: symbol = Symbol()
 
 ### 2. 复杂数据类型定义
 
-::: tip 关键字 type
-
-- 使用关键字 type 可以复用 **所有变量** 类型
-  ```ts
-  type customType = (number | string)[]
-  ```
-
-:::
+- 2.1 类型别名：type
+  - 使用关键字 type 可以复用 **所有变量** 类型
+    ```ts
+    // customType 是自定义的变量名
+    type customType = (number | string)[]
+    ```
 
 ::: details 点击查看 数组 类型定义
 
 ```ts
 // 1. 只包含数字的数组（2种方法都可以）
-let arr: number[] = [1, 2, 3]
+let arr: number[] = [1, 2, 3] // 推荐
 let arr1: Array<number> = [1, 2, 3]
 
 // 2. 联合类型：数组中可以包含 number 或 string 类型（2种方法都可以）
-let arr3: (number | string)[] = [1, 'sdfd', 2]
+let arr3: (number | string)[] = [1, 'sdfd', 2] // 推荐
 let arr4: Array<number | string> = [1, 'sdfd', 2]
 
 // 3. 类型别名：使用 关键字 type 给复杂的类型起别名
@@ -98,32 +96,30 @@ mySlice(1, 2) // start:1 end:2
 
 :::
 
-::: tip 关键字 interface
+- 2.2 接口：interface
 
-- 使用关键字 interface 可以复用 **对象变量** 的类型
+  - 使用关键字 interface 可以复用 **对象变量** 的类型
 
-  ```ts
-  // 普通定义
-  interface MyPerson {
-    name: string
-    age: number
-    sayHi(): void
-  }
+    ```ts
+    // 普通定义
+    interface MyPerson {
+      name: string
+      age: number
+      sayHi(): void
+    }
 
-  // 继承
-  interface MyPerson2 extends MyPerson {
-    sex: string
-  }
+    // 继承
+    interface MyPerson2 extends MyPerson {
+      sex: string
+    }
 
-  const person: MyPerson2 = {
-    name: 'zs',
-    age: 18,
-    sayHi() {},
-    sex: '男'
-  }
-  ```
-
-:::
+    const person: MyPerson2 = {
+      name: 'zs',
+      age: 18,
+      sayHi() {},
+      sex: '男'
+    }
+    ```
 
 ::: details 点击查看 对象 类型定义
 
@@ -236,7 +232,7 @@ console.log(Direction.down) // down
 ::: details 点击查看 类型断言语法
 
 ```ts{7}
-// 语法如下：
+// 语法有 2 种，如下：
 // 1. 值 as 类型 （推荐写法）
 interface Foo {
   bar: number
@@ -844,7 +840,7 @@ type Type3 = Props[keyof Props] // string | number | boolean 类型
     - 不会被编译成 js 文件，只提供类型定义
     - 作用：为 js 提供类型信息
 
-### 1. 如果导入某个包后，没有代码提示？
+### 1. 导入某个包后，没有代码提示？
 
 1. 访问 <tgx-link href="https://www.typescriptlang.org/dt/search?search=">类型声明地址</tgx-link> 搜索对应的包名
 2. 复制下载命令，并在项目中下载 这个包 对应的声明文件
