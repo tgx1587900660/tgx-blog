@@ -2,13 +2,14 @@
 
 // 引入主题
 const { defaultTheme } = require('@vuepress/theme-default')
+
 // 引入插件
 const { backToTopPlugin } = require('@vuepress/plugin-back-to-top')
 const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
-const { path } = require('@vuepress/utils')
 
 // 引入 工具函数
-const { getRandomElement, getCurrentTime } = require('./utils')
+const { path } = require('@vuepress/utils')
+const { getRandomElement } = require('./utils')
 
 // 引入 菜单
 const { navbar, sidebar } = require('./menus/index.js')

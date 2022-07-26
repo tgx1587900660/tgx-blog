@@ -123,7 +123,7 @@ path 模块是 Node.js 官方提供的、用来处理文件路径的模块。它
 ### 1. path.join() 方法使用
 
 ::: tip 说明
-\_\_dirname 是 node 提供的一个成员，用来表示当前文件所处的目录，常与 path.join() 方法一起使用
+\_\_dirname 是 node 提供的成员，用来表示当前文件所处的目录，常与 path.join() 方法一起使用
 :::
 
 ::: details 点击查看用法示例
@@ -214,7 +214,7 @@ server.listen(80, () => {
 
 ::: tip 说明
 
-querystring 模块是 Node.js 官方提供的、用来处理字符串格式数据的模块。
-<tgx-link href="/backend/node/express">这篇文章</tgx-link> 的【Express 中间件】中用到了 querystring 模块
+- querystring 模块是 Node.js 官方提供的、用来处理字符串格式数据的模块。
+- <tgx-link href="/backend/node/express">这篇文章</tgx-link> 的【Express 中间件】中用到了 querystring 模块
 
 :::
