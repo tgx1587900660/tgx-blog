@@ -122,10 +122,4 @@ npm install -g live-server
 
 - 第二步：使用<tgx-link href="https://www.npmjs.com/package/live-server">（点击查看具体使用文档）</tgx-link>
 
-::: details 点击查看 使用案例
-
-```js
-// 直接在要打开的 .html 文件的目录下 打开终端并运行命令： live-server
-```
-
-:::
+  - 直接在要打开的 .html 文件的目录下 打开终端并运行命令： live-server

@@ -25,15 +25,13 @@
 
 打开连接 <tgx-link href="https://mp.weixin.qq.com/">https://mp.weixin.qq.com/</tgx-link> 申请一个小程序个人开发账号，并登录，可看到如下页面：
 
-<tgx-img src="/frontend/applet//about-applet/applet-manage.png" title="小程序后台管理示意图" alt="小程序后台管理示意图"></tgx-img>
+<tgx-img src="/frontend/applet/about-applet/applet-manage.png" title="小程序后台管理示意图" alt="小程序后台管理示意图"></tgx-img>
 
 ## 4. 安装小程序开发工具
 
 > 不建议使用 VS Code 来开发小程序，而是使用微信官方提供的小程序开发工具。
 
-打开连接 <tgx-link href="https://developers.weixin.qq.com/miniprogram/dev/devtools/stable.html">
-https://developers.weixin.qq.com/miniprogram/dev/devtools/stable.html
-</tgx-link>
+打开连接 <tgx-link href="https://developers.weixin.qq.com/miniprogram/dev/devtools/stable.html">https://developers.weixin.qq.com/miniprogram/dev/devtools/stable.html</tgx-link>
 下载对应系统的 Stable Build 工具并安装。
 
 ## 5. 熟悉开发者工具 5 个部分
