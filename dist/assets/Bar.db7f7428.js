@@ -1,0 +1,1 @@
+import{_ as e,o as r,c as a}from"./app.e5f32f9f.js";const c={},o={class:"Bar"};function _(s,t){return r(),a("div",o," --------------------------- \u8FD9\u91CC\u662F Foo/Bar.vue \u7EC4\u4EF6\u7684\u5185\u5BB9 --------------------------- ")}var f=e(c,[["render",_],["__file","Bar.vue"]]);export{f as default};

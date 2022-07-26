@@ -1,0 +1,1 @@
+import{_ as e,o,c as t}from"./app.e5f32f9f.js";const n={},r={class:"OtherComponent"};function c(_,s){return o(),t("div",r," ---------------- \u8FD9\u91CC\u662F OtherComponent.vue \u7EC4\u4EF6\u7684\u5185\u5BB9 --------------------- ")}var m=e(n,[["render",c],["__file","OtherComponent.vue"]]);export{m as default};
