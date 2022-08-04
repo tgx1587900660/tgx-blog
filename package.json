@@ -1,13 +1,12 @@
 {
   "name": "vuepress-blog",
   "version": "2.0.0",
-  "description": "my-first-blog",
+  "description": "我的第一个博客",
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
   },
-  "keywords": [],
   "author": "telectron",
   "license": "ISC",
   "devDependencies": {
