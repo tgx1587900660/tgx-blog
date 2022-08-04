@@ -24,7 +24,6 @@ const ExceptionPowershellSidebar = require('../../exception/powershell/index.js'
 
 // 引入 about-me 模块的侧边栏导航菜单
 const AboutMeInfoSidebar = require('../../about-me/info/index.js')
-const AboutMeDonationSidebar = require('../../about-me/donation/index.js')
 
 module.exports = {
   // 前端学习区域
@@ -123,18 +122,11 @@ module.exports = {
     }
   ],
   // 联系我区域
-  '/about-me/info': [
+  '/about-me': [
     {
-      text: '联系我',
+      text: 'about me',
       collapsible: true,
       children: getDocumentUrl(AboutMeInfoSidebar)
-    }
-  ],
-  '/about-me/donation': [
-    {
-      text: 'D 我',
-      collapsible: true,
-      children: getDocumentUrl(AboutMeDonationSidebar)
     }
   ]
 }

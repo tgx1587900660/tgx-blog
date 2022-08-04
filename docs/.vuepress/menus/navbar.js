@@ -21,7 +21,6 @@ const ExceptionPowershellSidebar = require('../../exception/powershell/index.js'
 
 // 引入 about-me 模块的侧边栏导航菜单
 const AboutMeInfoSidebar = require('../../about-me/info/index.js')
-const AboutMeDonationSidebar = require('../../about-me/donation/index.js')
 
 module.exports = [
   {
@@ -61,9 +60,6 @@ module.exports = [
   },
   {
     text: '联系我',
-    children: [
-      { text: '联系我', link: AboutMeInfoSidebar[0].path },
-      { text: 'D 我', link: AboutMeDonationSidebar[0].path }
-    ]
+    link: AboutMeInfoSidebar[0].path
   }
 ]

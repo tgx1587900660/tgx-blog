@@ -14,15 +14,13 @@ const { navbar, sidebar } = require('./menus/index.js')
 module.exports = {
   // 部署站点的基准路径, 默认是 /
   base: '/tgx-blog/',
-  // 左上角的标题
   title: 'telectron 的网络日志',
-  // 网站的 SEO 描述
-  description: '唐干宵的网络日志|博客，telectron 的网络日志|博客，谭竿霄的网络日志|博客',
+  description: '唐干宵的网络日志，telectron 的网络日志，谭竿霄的网络日志',
 
   // 需要被注入到 <head> 标签的内容(路径指向 docs/.vuepress/public)
   head: [['link', { rel: 'shortcut icon', href: getRandomElement(['/tang.ico', '/gan.ico', '/xiao.ico']) }]],
 
-  // 指定 build 的输出目录, 默认打包到 docs/.vuepress 里面
+  // 指定打包路径 (默认打包到 docs/.vuepress 下)
   dest: './dist', // 现在会打包到与 docs 平级的目录下
 
   // 指定临时文件和缓存目录
@@ -41,9 +39,11 @@ module.exports = {
     tip: '说明',
     warning: '警告',
     danger: '危险',
+    notFound: ['这里什么都没有', '我们怎么到这来了？', '这是一个 404 页面', '看起来我们进入了错误的链接'],
+    backToHome: '返回首页',
     toggleColorMode: '点击切换颜色模式',
     lastUpdatedText: '上次更新',
-    contributorsText: '作者',
+    contributorsText: '贡献者',
     repoLabel: 'Gitee 仓库',
     repo: 'https://gitee.com/tgx-1587900660',
     editLink: false

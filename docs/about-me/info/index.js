@@ -1,8 +1,12 @@
-// me 栏目侧边导航目录
+// 联系我 栏目侧边导航目录
 
 module.exports = [
   {
-    title: '如何联系我',
+    title: 'contact to me',
     path: '/about-me/info/my-profile'
+  },
+  {
+    title: 'donation to me',
+    path: '/about-me/info/donation'
   }
 ]
