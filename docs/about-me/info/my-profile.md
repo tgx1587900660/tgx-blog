@@ -1,5 +1,5 @@
 # contact to me
 
-> 扫描二维码添加我
+> 如有要事，请扫描二维码添加我
 
-<tgx-img src="/img/my_wx.jpg" width="100" title="加我微信" alt="微信二维码"></tgx-img>
+<img src="../img/my_wx.jpg" title="contact to me" alt="微信二维码" width="200">

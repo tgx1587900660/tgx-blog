@@ -1,6 +1,5 @@
 # donation to me
 
-> 扫描二维码赞赏我
+> 如有帮到你，感谢扫描二维码赞赏我
 
-<img src="../img/my_wx.jpg" title="donation to me" alt="logo" width="200">
-<!-- <tgx-img src="/img/my_wx.jpg" width="300" title="donation to me" alt="logo"></tgx-img> -->
+<img src="../img/my_appreciation.png" title="donation to me" alt="赞赏码" width="200">
