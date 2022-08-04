@@ -1,5 +1,11 @@
 node_modules
+
+# edit files
 .vscode
+
+# vuepress files
 .cache
 .temp
-# test
+
+# yarn files
+yarn-error.log
