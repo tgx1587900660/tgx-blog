@@ -4,15 +4,16 @@
 const { getDocumentUrl } = require('../utils/index.js')
 
 // 引入 frontend 模块的侧边导航菜单
-const FrontendVue2Sidebar = require('../../frontend/vue2/index.js')
-const FrontendVue3Sidebar = require('../../frontend/vue3/index.js')
-const FrontendTypeScriptSidebar = require('../../frontend/typescript/index.js')
-const FrontendJavaScriptSidebar = require('../../frontend/javascript/index.js')
-const FrontendToolsSidebar = require('../../frontend/tools/index.js')
-const FrontendPackagesSidebar = require('../../frontend/packages/index.js')
-const FrontendAppletSidebar = require('../../frontend/applet/index.js')
-const FrontendBrowserSidebar = require('../../frontend/browser/index.js')
-const FrontendInterviewSidebar = require('../../frontend/interview/index.js')
+const FrontendVue2Sidebar = require('../../frontend/vue/vue2/index.js') // Vue
+const FrontendVue3Sidebar = require('../../frontend/vue/vue3/index.js') // Vue
+
+const FrontendTypeScriptSidebar = require('../../frontend/typescript/index.js') // TypeScript
+const FrontendJavaScriptSidebar = require('../../frontend/javascript/index.js') //JavaScript
+const FrontendToolsSidebar = require('../../frontend/tools/index.js') // Tools
+const FrontendPackagesSidebar = require('../../frontend/packages/index.js') // Packages
+const FrontendAppletSidebar = require('../../frontend/applet/index.js') // 小程序
+const FrontendBrowserSidebar = require('../../frontend/browser/index.js') // 通用知识
+const FrontendInterviewSidebar = require('../../frontend/interview/index.js') // 面试题
 
 // 引入 backend 模块的侧边导航菜单
 const BackendNodeSidebar = require('../../backend/node/index.js')
@@ -27,15 +28,12 @@ const AboutMeInfoSidebar = require('../../about-me/info/index.js')
 
 module.exports = {
   // 前端学习区域
-  '/frontend/vue2': [
+  '/frontend/vue': [
     {
       text: 'Vue2',
       collapsible: true,
       children: getDocumentUrl(FrontendVue2Sidebar)
-    }
-    // TODO: 后续整合 vue3 目录到这里...
-  ],
-  '/frontend/vue3': [
+    },
     {
       text: 'Vue3',
       collapsible: true,

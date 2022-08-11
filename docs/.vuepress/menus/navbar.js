@@ -1,8 +1,7 @@
 // 右上角菜单 配置文件
 
 // 引入 frontend 模块的侧边导航菜单
-const FrontendVue2Sidebar = require('../../frontend/vue2/index.js')
-const FrontendVue3Sidebar = require('../../frontend/vue3/index.js')
+const FrontendVueSidebar = require('../../frontend/vue/index.js')
 const FrontendTypeScriptSidebar = require('../../frontend/typescript/index.js')
 const FrontendJavaScriptSidebar = require('../../frontend/javascript/index.js')
 const FrontendToolsSidebar = require('../../frontend/tools/index.js')
@@ -35,8 +34,7 @@ module.exports = [
       // { text: 'test', link: '/test/test-001' },
       // （这里提供一个示例写法）
       // { text: 'Vue2', link: '/frontend/vue2/source-integration' }
-      { text: 'Vue2', link: FrontendVue2Sidebar[0].path },
-      { text: 'Vue3', link: FrontendVue3Sidebar[0].path },
+      { text: 'Vue', link: FrontendVueSidebar[0].path },
       { text: 'TypeScript', link: FrontendTypeScriptSidebar[0].path },
       { text: 'JavaScript', link: FrontendJavaScriptSidebar[0].path },
       { text: 'Tools', link: FrontendToolsSidebar[0].path },
@@ -55,7 +53,7 @@ module.exports = [
     ]
   },
   {
-    text: '异常处理',
+    text: '问题处理',
     children: [{ text: 'Powershell', link: ExceptionPowershellSidebar[0].path }]
   },
   {
