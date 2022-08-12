@@ -2,12 +2,8 @@
 
 module.exports = [
   {
-    title: '资源整合',
-    path: '/frontend/vue/vue2/source-integration'
-  },
-  {
-    title: '使用 vuepress 搭建个人博客',
-    path: '/frontend/vue/vue2/personal-blog'
+    title: 'Vue 源码学习',
+    path: '/frontend/vue/vue2/vue-source'
   },
   {
     title: 'Vue 冷门知识复习',
@@ -24,9 +20,5 @@ module.exports = [
   {
     title: 'Vue-Router 知识复习',
     path: '/frontend/vue/vue2/vue-router'
-  },
-  {
-    title: 'Vue 源码学习',
-    path: '/frontend/vue/vue2/vue-source'
   }
 ]

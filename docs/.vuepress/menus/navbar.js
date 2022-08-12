@@ -1,13 +1,13 @@
 // 右上角菜单 配置文件
 
 // 引入 frontend 模块的侧边导航菜单
+const FrontendSkillsSidebar = require('../../frontend/skills/index.js')
 const FrontendVueSidebar = require('../../frontend/vue/index.js')
 const FrontendTypeScriptSidebar = require('../../frontend/typescript/index.js')
 const FrontendJavaScriptSidebar = require('../../frontend/javascript/index.js')
 const FrontendToolsSidebar = require('../../frontend/tools/index.js')
 const FrontendPackagesSidebar = require('../../frontend/packages/index.js')
 const FrontendAppletSidebar = require('../../frontend/applet/index.js')
-const FrontendBrowserSidebar = require('../../frontend/browser/index.js')
 const FrontendInterviewSidebar = require('../../frontend/interview/index.js')
 
 // 引入 backend 模块的侧边导航菜单
@@ -34,13 +34,13 @@ module.exports = [
       // { text: 'test', link: '/test/test-001' },
       // （这里提供一个示例写法）
       // { text: 'Vue2', link: '/frontend/vue2/source-integration' }
+      { text: '通用知识', link: FrontendSkillsSidebar[0].path },
       { text: 'Vue', link: FrontendVueSidebar[0].path },
       { text: 'TypeScript', link: FrontendTypeScriptSidebar[0].path },
       { text: 'JavaScript', link: FrontendJavaScriptSidebar[0].path },
       { text: 'Tools', link: FrontendToolsSidebar[0].path },
       { text: 'Packages', link: FrontendPackagesSidebar[0].path },
       { text: '小程序', link: FrontendAppletSidebar[0].path },
-      { text: '通用知识', link: FrontendBrowserSidebar[0].path },
       { text: '面试题', link: FrontendInterviewSidebar[0].path }
     ]
   },

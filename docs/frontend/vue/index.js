@@ -3,6 +3,6 @@
 module.exports = [
   {
     title: '资源整合',
-    path: '/frontend/vue/vue2/source-integration'
+    path: '/frontend/vue/vue2/vue-source'
   }
 ]

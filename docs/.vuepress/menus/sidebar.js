@@ -12,7 +12,10 @@ const FrontendJavaScriptSidebar = require('../../frontend/javascript/index.js') 
 const FrontendToolsSidebar = require('../../frontend/tools/index.js') // Tools
 const FrontendPackagesSidebar = require('../../frontend/packages/index.js') // Packages
 const FrontendAppletSidebar = require('../../frontend/applet/index.js') // 小程序
-const FrontendBrowserSidebar = require('../../frontend/browser/index.js') // 通用知识
+
+const FrontendSkillsSidebar = require('../../frontend/skills/skill/index.js') // 通用知识
+const FrontendBrowserSidebar = require('../../frontend/skills/browser/index.js') // 通用知识
+
 const FrontendInterviewSidebar = require('../../frontend/interview/index.js') // 面试题
 
 // 引入 backend 模块的侧边导航菜单
@@ -27,7 +30,21 @@ const ExceptionPowershellSidebar = require('../../exception/powershell/index.js'
 const AboutMeInfoSidebar = require('../../about-me/info/index.js')
 
 module.exports = {
-  // 前端学习区域
+  /* 前端学习 区域 */
+  // 通用知识 侧边栏配置
+  '/frontend/skill': [
+    {
+      text: 'Skills',
+      collapsible: true,
+      children: getDocumentUrl(FrontendSkillsSidebar)
+    },
+    {
+      text: 'Browser',
+      collapsible: true,
+      children: getDocumentUrl(FrontendBrowserSidebar)
+    }
+  ],
+  // Vue 侧边栏配置
   '/frontend/vue': [
     {
       text: 'Vue2',
@@ -40,6 +57,7 @@ module.exports = {
       children: getDocumentUrl(FrontendVue3Sidebar)
     }
   ],
+  // TypeScript 侧边栏配置
   '/frontend/typescript': [
     {
       text: 'TypeScript',
@@ -47,6 +65,7 @@ module.exports = {
       children: getDocumentUrl(FrontendTypeScriptSidebar)
     }
   ],
+  // Javascript 侧边栏配置
   '/frontend/javascript': [
     {
       text: 'Javascript',
@@ -54,6 +73,7 @@ module.exports = {
       children: getDocumentUrl(FrontendJavaScriptSidebar)
     }
   ],
+  // Tools 侧边栏配置
   '/frontend/tools': [
     {
       text: 'Tools',
@@ -61,6 +81,7 @@ module.exports = {
       children: getDocumentUrl(FrontendToolsSidebar)
     }
   ],
+  // Packages 侧边栏配置
   '/frontend/packages': [
     {
       text: 'Packages',
@@ -68,6 +89,7 @@ module.exports = {
       children: getDocumentUrl(FrontendPackagesSidebar)
     }
   ],
+  // 小程序 侧边栏配置
   '/frontend/applet': [
     {
       text: 'Applet',
@@ -75,13 +97,7 @@ module.exports = {
       children: getDocumentUrl(FrontendAppletSidebar)
     }
   ],
-  '/frontend/browser': [
-    {
-      text: 'Browser',
-      collapsible: true,
-      children: getDocumentUrl(FrontendBrowserSidebar)
-    }
-  ],
+  // 面试题 侧边栏配置
   '/frontend/interview': [
     {
       text: 'Interview',
@@ -89,7 +105,9 @@ module.exports = {
       children: getDocumentUrl(FrontendInterviewSidebar)
     }
   ],
-  // 后端学习区域
+
+  /* 后端学习 区域 */
+  // Node 侧边栏配置
   '/backend/node': [
     {
       text: 'Node',
@@ -97,13 +115,7 @@ module.exports = {
       children: getDocumentUrl(BackendNodeSidebar)
     }
   ],
-  '/backend/packages': [
-    {
-      text: 'Packages',
-      collapsible: true,
-      children: getDocumentUrl(BackendPackagesSidebar)
-    }
-  ],
+  // DataBase 侧边栏配置
   '/backend/database': [
     {
       text: 'DataBase',
@@ -111,7 +123,16 @@ module.exports = {
       children: getDocumentUrl(BackendDataBaseSidebar)
     }
   ],
-  // 异常处理区域
+  // Packages 侧边栏配置
+  '/backend/packages': [
+    {
+      text: 'Packages',
+      collapsible: true,
+      children: getDocumentUrl(BackendPackagesSidebar)
+    }
+  ],
+
+  /* 异常处理区域 */
   '/exception/powershell': [
     {
       text: 'Powershell',
@@ -119,7 +140,8 @@ module.exports = {
       children: getDocumentUrl(ExceptionPowershellSidebar)
     }
   ],
-  // 联系我区域
+
+  /* 联系我区域 */
   '/about-me': [
     {
       text: 'about me',
