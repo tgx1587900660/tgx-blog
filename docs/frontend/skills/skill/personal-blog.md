@@ -256,7 +256,8 @@ module.exports = {
   ```
 
   - 以下是打包后的目录结构
-    <tgx-img src="/vue2/personal-blog/vuepress_catalogue.png" alt="目录结构" title="目录结构" width="300"></tgx-img>
+
+    <img src="./img/vuepress_catalogue.png" alt="目录结构" title="目录结构" width="300">
 
 - 第三步：开启 Gitee pages 服务
 

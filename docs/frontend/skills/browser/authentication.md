@@ -38,10 +38,9 @@
   - 6. 当服务端接收到请求后，首先拿着 cookie 信息找到对应的 SessionId，再返回对应的用户信息
   - 7. 只要处于登录状态，且 cookie 和 SessionId 配对成功，说明身份认证成功了
 
-<tgx-img title="Session 认证原理图"
+<img title="Session 认证原理图"
     alt="Session 认证原理图"
-    src="/browser/authentication/session-auth.png">
-</tgx-img>
+    src="./img/session-auth.png" />
 
 要在 express 项目中使用 Session 认证机制，请查看
 <tgx-link href="/backend/packages/third-party-packages">这篇文章</tgx-link>
@@ -80,10 +79,7 @@ JWT（即 JSON Web Token）是目前最流行的 **跨域认证解决方案**。
   - 5. 服务器就会拿到 这个 Token 字符串 进行解密，还原成 用户信息对象
   - 6. 解密验证成功后，才返回对应的响应内容
 
-<tgx-img title="JWT 认证原理图"
-    alt="JWT 认证原理图"
-    src="/browser/authentication/token-auth.png">
-</tgx-img>
+<img src="./img/token-auth.png" title="JWT 认证原理图" alt="JWT 认证原理图" />
 
 ### 2. JWT 的 3 个组成部分
 

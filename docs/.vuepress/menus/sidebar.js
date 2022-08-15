@@ -29,6 +29,7 @@ const ExceptionPowershellSidebar = require('../../exception/powershell/index.js'
 // 引入 about-me 模块的侧边栏导航菜单
 const AboutMeInfoSidebar = require('../../about-me/info/index.js')
 
+// 属性名是字符串，表示路径，属性值是数组，有几个成员，就有几个折叠栏
 module.exports = {
   /* 前端学习 区域 */
   // 通用知识 侧边栏配置

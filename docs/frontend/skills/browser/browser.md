@@ -17,10 +17,9 @@
 - js 代码在浏览器被加载之后，本质上只是一些字符串。浏览器利用了 **JavaScript 解析引擎** 来解析这些字符串，从而实现运行 js 代码的功能
 - 每个浏览器都有自己的 JavaScript 解析引擎 ，目前，**性能最好的解析引擎是 V8**
 
-<tgx-img src="/browser/browser/browser-principle.png" 
+<img src="./img/browser-principle.png" 
     alt="浏览器为什么能运行 JavaScript示意图" 
-    title="浏览器为什么能运行 JavaScript示意图">
-</tgx-img>
+    title="浏览器为什么能运行 JavaScript示意图" />
 
 ## 2. JS 为什么能操作 DOM 和 BOM ?
 
@@ -30,10 +29,9 @@
 
 :::
 
-<tgx-img src="/browser/browser/browser-dom-bom.png" 
+<img src="./img/browser-dom-bom.png" 
     alt="JS 为什么能操作 DOM 和 BOM示意图" 
-    title="JS 为什么能操作 DOM 和 BOM示意图">
-</tgx-img>
+    title="JS 为什么能操作 DOM 和 BOM示意图" />
 
 ## 3. 浏览器中的 JS 运行环境
 
@@ -48,10 +46,7 @@
   - V8 解析引擎
   - 内置 API
 
-<tgx-img src="/browser/browser/environment.png" 
-    alt="JS 运行环境示意图" 
-    title="JS 运行环境示意图">
-</tgx-img>
+<img src="./img/environment.png" alt="JS 运行环境示意图" title="JS 运行环境示意图" />
 
 ## 4. 浏览器的调试工具
 
