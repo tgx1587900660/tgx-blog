@@ -1,34 +1,5 @@
 // 左侧菜单 配置文件
 
-// 引入工具函数
-const { getDocumentUrl } = require('../utils/index.js')
-
-// 引入 frontend 模块的侧边导航菜单
-const FrontendVue2Sidebar = require('../../frontend/vue/vue2/index.js') // Vue
-const FrontendVue3Sidebar = require('../../frontend/vue/vue3/index.js') // Vue
-
-const FrontendTypeScriptSidebar = require('../../frontend/typescript/index.js') // TypeScript
-const FrontendJavaScriptSidebar = require('../../frontend/javascript/index.js') //JavaScript
-const FrontendToolsSidebar = require('../../frontend/tools/index.js') // Tools
-const FrontendPackagesSidebar = require('../../frontend/packages/index.js') // Packages
-const FrontendAppletSidebar = require('../../frontend/applet/index.js') // 小程序
-
-const FrontendSkillsSidebar = require('../../frontend/skills/skill/index.js') // 通用知识
-const FrontendBrowserSidebar = require('../../frontend/skills/browser/index.js') // 通用知识
-
-const FrontendInterviewSidebar = require('../../frontend/interview/index.js') // 面试题
-
-// 引入 backend 模块的侧边导航菜单
-const BackendNodeSidebar = require('../../backend/node/index.js')
-const BackendDataBaseSidebar = require('../../backend/database/index.js')
-const BackendPackagesSidebar = require('../../backend/packages/index.js')
-
-// 引入 exception 模块的侧边导航菜单
-const ExceptionPowershellSidebar = require('../../exception/powershell/index.js')
-
-// 引入 about-me 模块的侧边栏导航菜单
-const AboutMeInfoSidebar = require('../../about-me/info/index.js')
-
 // 属性名是字符串，表示路径，属性值是数组，有几个成员，就有几个折叠栏
 module.exports = {
   /* 前端学习 区域 */
@@ -37,12 +8,21 @@ module.exports = {
     {
       text: 'Skills',
       collapsible: true,
-      children: getDocumentUrl(FrontendSkillsSidebar)
+      children: [
+        //
+        '/frontend/skills/skill/source-integration.md',
+        '/frontend/skills/skill/personal-blog.md'
+      ]
     },
     {
       text: 'Browser',
       collapsible: true,
-      children: getDocumentUrl(FrontendBrowserSidebar)
+      children: [
+        //
+        '/frontend/skills/browser/browser.md',
+        '/frontend/skills/browser/dev-web.md',
+        '/frontend/skills/browser/authentication.md'
+      ]
     }
   ],
   // Vue 侧边栏配置
@@ -50,12 +30,18 @@ module.exports = {
     {
       text: 'Vue2',
       collapsible: true,
-      children: getDocumentUrl(FrontendVue2Sidebar)
+      children: [
+        '/frontend/vue/vue2/vue-source.md',
+        '/frontend/vue/vue2/unlikely-knowledge.md',
+        '/frontend/vue/vue2/vue-questions-answers.md',
+        '/frontend/vue/vue2/component-package-principle.md',
+        '/frontend/vue/vue2/vue-router.md'
+      ]
     },
     {
       text: 'Vue3',
       collapsible: true,
-      children: getDocumentUrl(FrontendVue3Sidebar)
+      children: ['/frontend/vue/vue3/vue3-change-details.md', '/frontend/vue/vue3/vue3-study.md']
     }
   ],
   // TypeScript 侧边栏配置
@@ -63,7 +49,7 @@ module.exports = {
     {
       text: 'TypeScript',
       collapsible: true,
-      children: getDocumentUrl(FrontendTypeScriptSidebar)
+      children: ['/frontend/typescript/typescript.md']
     }
   ],
   // Javascript 侧边栏配置
@@ -71,7 +57,14 @@ module.exports = {
     {
       text: 'Javascript',
       collapsible: true,
-      children: getDocumentUrl(FrontendJavaScriptSidebar)
+      children: [
+        '/frontend/javascript/data-processing-method.md',
+        '/frontend/javascript/restructure.md',
+        '/frontend/javascript/modularity-standard.md',
+        '/frontend/javascript/promise.md',
+        '/frontend/javascript/async-await.md',
+        '/frontend/javascript/event-loop.md'
+      ]
     }
   ],
   // Tools 侧边栏配置
@@ -79,7 +72,14 @@ module.exports = {
     {
       text: 'Tools',
       collapsible: true,
-      children: getDocumentUrl(FrontendToolsSidebar)
+      children: [
+        '/frontend/tools/git-command.md',
+        '/frontend/tools/webpack-study.md',
+        '/frontend/tools/vite-study.md',
+        '/frontend/tools/eslint-upgrade.md',
+        '/frontend/tools/vant-theme.md',
+        '/frontend/tools/special-needs.md'
+      ]
     }
   ],
   // Packages 侧边栏配置
@@ -87,7 +87,7 @@ module.exports = {
     {
       text: 'Packages',
       collapsible: true,
-      children: getDocumentUrl(FrontendPackagesSidebar)
+      children: ['/frontend/packages/third-party-packages']
     }
   ],
   // 小程序 侧边栏配置
@@ -95,7 +95,12 @@ module.exports = {
     {
       text: 'Applet',
       collapsible: true,
-      children: getDocumentUrl(FrontendAppletSidebar)
+      children: [
+        //
+        '/frontend/applet/learning-path.md',
+        '/frontend/applet/about-applet.md',
+        '/frontend/applet/applet-compose.md'
+      ]
     }
   ],
   // 面试题 侧边栏配置
@@ -103,7 +108,7 @@ module.exports = {
     {
       text: 'Interview',
       collapsible: true,
-      children: getDocumentUrl(FrontendInterviewSidebar)
+      children: ['/frontend/interview/interview.md']
     }
   ],
 
@@ -113,7 +118,12 @@ module.exports = {
     {
       text: 'Node',
       collapsible: true,
-      children: getDocumentUrl(BackendNodeSidebar)
+      children: [
+        //
+        '/backend/node/node.md',
+        '/backend/node/module-loading.md',
+        '/backend/node/express.md'
+      ]
     }
   ],
   // DataBase 侧边栏配置
@@ -121,7 +131,12 @@ module.exports = {
     {
       text: 'DataBase',
       collapsible: true,
-      children: getDocumentUrl(BackendDataBaseSidebar)
+      children: [
+        //
+        '/backend/database/database.md',
+        '/backend/database/mysql.md',
+        '/backend/database/sql.md'
+      ]
     }
   ],
   // Packages 侧边栏配置
@@ -129,7 +144,12 @@ module.exports = {
     {
       text: 'Packages',
       collapsible: true,
-      children: getDocumentUrl(BackendPackagesSidebar)
+      children: [
+        //
+        '/backend/packages/package-knowledge.md',
+        '/backend/packages/yarn-useage.md',
+        '/backend/packages/third-party-packages.md'
+      ]
     }
   ],
 
@@ -138,7 +158,7 @@ module.exports = {
     {
       text: 'Powershell',
       collapsible: true,
-      children: getDocumentUrl(ExceptionPowershellSidebar)
+      children: ['/exception/powershell/security-error.md']
     }
   ],
 
@@ -147,7 +167,7 @@ module.exports = {
     {
       text: 'about me',
       collapsible: true,
-      children: getDocumentUrl(AboutMeInfoSidebar)
+      children: ['/about-me/info/my-profile.md', '/about-me/info/donation.md']
     }
   ]
 }
