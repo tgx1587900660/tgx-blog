@@ -169,7 +169,8 @@ export default {
   - 如果 A 作为根节点要 **共享数据**，则所有子组件可以接受
 
 :::
-<tgx-img src="/vue3/vue3-study/data-emit.png" alt="组件关系示意图" title="组件关系示意图" width="500"></tgx-img>
+
+<img src="./img/data-emit.png" alt="组件关系示意图" title="组件关系示意图" width="500" />
 
 ### 6. Vuex 共享数据
 

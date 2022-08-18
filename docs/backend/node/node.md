@@ -17,7 +17,7 @@
 - 要想用 js 做前端开发，就要学习 浏览器 的 内置 API
 - 要想用 js 做后端开发，就要学习 Node 的 内置 API
 
-<tgx-img src="/node/node/node-environment.png" alt="JS 运行环境示意图" title="JS 运行环境示意图" width="740"></tgx-img>
+<img src="./img/node-environment.png" alt="JS 运行环境示意图" title="JS 运行环境示意图" width="740" />
 
 ## 2. 怎么样学习 Node.js ?
 

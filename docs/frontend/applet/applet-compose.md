@@ -14,7 +14,7 @@
 默认生成的小程序项目中有 7 个部分
 :::
 
-<tgx-img src="/frontend/applet/applet-compose/applet-compose-1.png"></tgx-img>
+<img style="border: 1px solid #42b983;" src="./img/applet-compose-1.png" />
 
 ### 2. 页面组成结构
 
@@ -22,7 +22,7 @@
 小程序的每个页面由 4 部分组成，最终这 4 个文件会被编译成一个完整页面
 :::
 
-<tgx-img src="/frontend/applet/applet-compose/applet-compose-2.png"></tgx-img>
+<img style="border: 1px solid #42b983;" src="./img/applet-compose-2.png" />
 
 ## 2. JSON 配置文件
 
@@ -40,7 +40,7 @@ JSON 是一种数据个数，一般作为配置文件出现在各类语言当中
 
 :::
 
-<tgx-img src="/frontend/applet/applet-compose/applet-compose-json.png"></tgx-img>
+<img style="border: 1px solid #42b983;" src="./img/applet-compose-json.png" />
 
 ### 2. app.json 文件的节点作用
 
@@ -50,7 +50,7 @@ JSON 是一种数据个数，一般作为配置文件出现在各类语言当中
 
 :::
 
-<tgx-img src="/frontend/applet/applet-compose/applet-compose-app.json.png"></tgx-img>
+<img style="border: 1px solid #42b983;" src="./img/applet-compose-app.json.png" />
 
 ### 3. project.config.json 文件
 
@@ -63,7 +63,7 @@ JSON 是一种数据个数，一般作为配置文件出现在各类语言当中
 - setting 中保存的是 **小程序开发工具** 里面的项目设置
 - 可以在 setting 中 添加节点 "checkSiteMap": true(或者 false), 来控制调试台是否报黄色的警告
 
-<tgx-img src="/frontend/applet/applet-compose/applet-compose-project.json.png"></tgx-img>
+<img style="border: 1px solid #42b983;" src="./img/applet-compose-project.json.png" />
 
 ### 4. sitemap.json 文件
 
@@ -76,7 +76,7 @@ sitemap.json 可以配置搜索相关
 - rules 数组可配置页面的 SEO，`action` 用来配置页面是否被搜索，`allow` 表示可以被搜索，`disallow` 表示不被搜索
 - page 用来指定哪些页面可以被搜索，`*` 表示匹配所有页面
 
-<tgx-img src="/frontend/applet/applet-compose/applet-compose-sitemap.json.png"></tgx-img>
+<img style="border: 1px solid #42b983;" src="./img/applet-compose-sitemap.json.png" />
 
 ### 5. 页面中的 .json 配置文件
 
@@ -88,4 +88,4 @@ sitemap.json 可以配置搜索相关
 
 - 例如：头部导航的颜色覆盖，可以设置 "navigationBarBackgroundColor": "#00b26a" 覆盖
 
-<tgx-img src="/frontend/applet/applet-compose/applet-compose-page.json.png"></tgx-img>
+<img style="border: 1px solid #42b983;" src="./img/applet-compose-page.json.png" />

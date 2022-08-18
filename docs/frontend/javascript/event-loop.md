@@ -48,11 +48,10 @@
 
 :::
 
-<tgx-img src="/javascript/event-loop/eventloop.png" 
+<img src="./img/eventloop.png" 
     alt="同步任务和异步任务的执行过程" 
     title="同步任务和异步任务的执行过程"
-    width="740">
-</tgx-img>
+    width="740" />
 
 - 执行过程如下
   1. 同步任务由 **JavaScript 主线程** 次序执行
@@ -69,12 +68,11 @@
 
 :::
 
-<tgx-img src="/javascript/event-loop/macrotask-microtask.png" 
+<img src="./img/macrotask-microtask.png" 
     alt="宏任务 和 微任务 的执行顺序" 
     title="宏任务 和 微任务 的执行顺序"
     width="740"
-    height="300">
-</tgx-img>
+    height="300" />
 
 ## 5. 案例分析
 
@@ -92,11 +90,7 @@
 
 :::
 
-<tgx-img src="/javascript/event-loop/example1.png" 
-    alt="案例分析" 
-    title="案例分析"
-    width="740">
-</tgx-img>
+<img src="./img/example1.png" alt="案例分析" title="案例分析" width="740" />
 
 ### 2. 案例二
 

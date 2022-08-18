@@ -12,7 +12,7 @@
 
 :::
 
-<tgx-img src="/tools/webpack-study/loader-study.png" title="loader 调用过程示意图" alt="loader 调用过程示意图"></tgx-img>
+<img src="./img/loader-study.png" title="loader 调用过程示意图" alt="loader 调用过程示意图" />
 
 > webpack 是前端工程化的一个具体的解决方案。它可以实现前端工程化的四大原则
 
