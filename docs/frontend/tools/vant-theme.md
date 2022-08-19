@@ -2,8 +2,7 @@
 
 ::: tip 专栏说明
 
-这里总结了移动端 Vant UI 组件库的自定义主题定制操作。
-<tgx-link href="https://vant-contrib.gitee.io/vant/v2/#/zh-CN/theme">查看官网主题定制步骤</tgx-link>
+这里总结了移动端 Vant UI 组件库的自定义主题定制操作。<tgx-link href="https://vant-contrib.gitee.io/vant/v2/#/zh-CN/theme">查看官网主题定制步骤</tgx-link>
 
 :::
 
