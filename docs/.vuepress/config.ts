@@ -1,6 +1,7 @@
 import { defineUserConfig } from '@vuepress/cli'
 import { defaultTheme } from '@vuepress/theme-default'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { searchPlugin } from '@vuepress/plugin-search'
 
 // 引入 工具函数
 import { path } from '@vuepress/utils'
@@ -52,6 +53,8 @@ export default defineUserConfig({
     // 将 components 目录下的所有文件注册为组件
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components')
-    })
+    }),
+    // 提供文档搜索功能
+    searchPlugin({})
   ]
 })
