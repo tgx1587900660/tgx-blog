@@ -17,17 +17,17 @@
 
 - 微信扫码体验小程序：
 
-  <img style="border: 1px solid #42b983;" src="./img/applet-use1.png" width="250" title="小程序二维码" alt="小程序二维码" />
+  <img src="./img/applet-use1.png" width="250" title="小程序二维码" alt="小程序二维码" />
 
 - 以下展示了小程序的基本功能，常用的内容是：组件 和 接口
 
-  <img style="border: 1px solid #42b983;" src="./img/applet-use2.png" width="300" title="小程序基本功能示意图" alt="小程序基本功能示意图" />
+  <img src="./img/applet-use2.png" width="300" title="小程序基本功能示意图" alt="小程序基本功能示意图" />
 
 ## 3. 申请小程序开发账号
 
 打开连接 <tgx-link href="https://mp.weixin.qq.com/">https://mp.weixin.qq.com/</tgx-link> 申请一个小程序个人开发账号，并登录，可看到如下页面：
 
-<img style="border: 1px solid #42b983;" src="./img/applet-manage.png" title="小程序后台管理示意图" alt="小程序后台管理示意图" />
+<img src="./img/applet-manage.png" title="小程序后台管理示意图" alt="小程序后台管理示意图" />
 
 ## 4. 安装小程序开发工具
 

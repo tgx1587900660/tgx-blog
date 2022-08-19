@@ -43,7 +43,7 @@ export default defineUserConfig({
     lastUpdatedText: '上次更新',
     contributorsText: '贡献者',
     repoLabel: 'Gitee 仓库',
-    repo: 'https://gitee.com/tgx-1587900660',
+    repo: 'https://gitee.com/tgx-1587900660/tgx-blog',
     editLink: false
   }),
 

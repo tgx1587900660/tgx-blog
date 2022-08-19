@@ -257,7 +257,7 @@ module.exports = {
 
   - 以下是打包后的目录结构
 
-    <img src="./img/vuepress_catalogue.png" alt="目录结构" title="目录结构" width="300">
+    <img src="./img/vuepress_catalogue.png" alt="目录结构" title="目录结构">
 
 - 第三步：开启 Gitee pages 服务
 
