@@ -1,5 +1,7 @@
 // 右上角菜单 配置文件
-module.exports = [
+import type { NavbarConfig } from '@vuepress/theme-default'
+
+export const navbar: NavbarConfig = [
   {
     text: '前端学习',
     children: [

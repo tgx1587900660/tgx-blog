@@ -1,17 +1,15 @@
-// 引入 vuepress默认主题
-const { defaultTheme } = require('@vuepress/theme-default')
-
-// 引入 vuepress插件
-const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
+import { defineUserConfig } from '@vuepress/cli'
+import { defaultTheme } from '@vuepress/theme-default'
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 
 // 引入 工具函数
-const { path } = require('@vuepress/utils')
-const { getRandomElement } = require('./utils')
+import { path } from '@vuepress/utils'
+import { getRandomElement } from './utils'
 
 // 引入 左侧和顶部菜单
-const { navbar, sidebar } = require('./menus/index.js')
+import { navbar, sidebar } from './configs'
 
-module.exports = {
+export default defineUserConfig({
   // 部署站点的基准路径, 默认是 /
   base: '/tgx-blog/',
   title: 'telectron 的网络日志',
@@ -29,7 +27,7 @@ module.exports = {
 
   // 开发服务器地址和端口, 默认是 0.0.0.0:8080
   host: 'localhost',
-  port: '8080',
+  port: 8090,
 
   // vuepress 默认主题 的配置
   theme: defaultTheme({
@@ -56,4 +54,4 @@ module.exports = {
       componentsDir: path.resolve(__dirname, './components')
     })
   ]
-}
+})

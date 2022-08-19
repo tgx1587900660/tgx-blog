@@ -1,7 +1,9 @@
 // 左侧菜单 配置文件
 
 // 属性名是字符串，表示路径，属性值是数组，有几个成员，就有几个折叠栏
-module.exports = {
+import type { SidebarConfig } from '@vuepress/theme-default'
+
+export const sidebar: SidebarConfig = {
   /* 前端学习 区域 */
   // 通用知识 侧边栏配置
   '/frontend/skill': [
