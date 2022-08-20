@@ -51,7 +51,11 @@ export const sidebar: SidebarConfig = {
     {
       text: 'TypeScript',
       collapsible: true,
-      children: ['/frontend/typescript/typescript.md']
+      children: [
+        //
+        '/frontend/typescript/ts-application.md',
+        '/frontend/typescript/typescript.md'
+      ]
     }
   ],
   // Javascript 侧边栏配置

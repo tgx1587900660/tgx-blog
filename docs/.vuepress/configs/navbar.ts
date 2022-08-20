@@ -13,7 +13,7 @@ export const navbar: NavbarConfig = [
       // 5. 如果 link 为 '/test/test-001.md', vuepress 会去 docs/test 文件夹中查找 test-001.md
       { text: '通用知识', link: '/frontend/skills/skill/source-integration.md' },
       { text: 'Vue', link: '/frontend/vue/vue2/vue-source.md' },
-      { text: 'TypeScript', link: '/frontend/typescript/typescript.md' },
+      { text: 'TypeScript', link: '/frontend/typescript/ts-application.md' },
       { text: 'JavaScript', link: '/frontend/javascript/data-processing-method.md' },
       { text: 'Tools', link: '/frontend/tools/git-command.md' },
       { text: 'Packages', link: '/frontend/packages/third-party-packages.md' },
