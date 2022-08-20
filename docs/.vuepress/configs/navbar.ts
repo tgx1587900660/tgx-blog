@@ -31,10 +31,7 @@ export const navbar: NavbarConfig = [
   },
   {
     text: '问题处理',
-    children: [
-      //
-      { text: 'Powershell', link: '/exception/powershell/security-error.md' }
-    ]
+    link: '/exception/powershell/security-error.md'
   },
   {
     text: '联系我',

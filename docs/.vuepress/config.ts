@@ -45,7 +45,8 @@ export default defineUserConfig({
     contributorsText: '贡献者',
     repoLabel: 'Gitee 仓库',
     repo: 'https://gitee.com/tgx-1587900660/tgx-blog',
-    editLink: false
+    editLink: false,
+    sidebarDepth: 2
   }),
 
   // 插件
