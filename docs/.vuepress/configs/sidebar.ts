@@ -82,9 +82,16 @@ export const sidebar: SidebarConfig = {
         '/frontend/tools/git-command.md',
         '/frontend/tools/webpack-study.md',
         '/frontend/tools/vite-study.md',
-        '/frontend/tools/eslint-upgrade.md',
         '/frontend/tools/vant-theme.md',
         '/frontend/tools/special-needs.md'
+      ]
+    },
+    {
+      text: '代码规范',
+      collapsible: true,
+      children: [
+        '/frontend/tools/husky-usage.md',
+        '/frontend/tools/eslint-upgrade.md',
       ]
     }
   ],
