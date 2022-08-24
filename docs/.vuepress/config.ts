@@ -1,14 +1,14 @@
-import { defineUserConfig } from '@vuepress/cli'
-import { defaultTheme } from '@vuepress/theme-default'
-import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
-import { searchPlugin } from '@vuepress/plugin-search'
+import { defineUserConfig } from '@vuepress/cli';
+import { defaultTheme } from '@vuepress/theme-default';
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
+import { searchPlugin } from '@vuepress/plugin-search';
 
 // 引入 工具函数
-import { path } from '@vuepress/utils'
-import { getRandomElement } from './utils'
+import { path } from '@vuepress/utils';
+import { getRandomElement } from './utils';
 
 // 引入 左侧和顶部菜单
-import { navbar, sidebar } from './configs'
+import { navbar, sidebar } from './configs';
 
 export default defineUserConfig({
   // 部署站点的基准路径, 默认是 /
@@ -17,7 +17,15 @@ export default defineUserConfig({
   description: '唐干宵的网络日志， telectron 的网络日志， 谭竿霄的网络日志',
 
   // 需要被注入到 <head> 标签的内容(路径指向 docs/.vuepress/public)
-  head: [['link', { rel: 'shortcut icon', href: getRandomElement(['/tang.ico', '/gan.ico', '/xiao.ico']) }]],
+  head: [
+    [
+      'link',
+      {
+        rel: 'shortcut icon',
+        href: getRandomElement(['/tang.ico', '/gan.ico', '/xiao.ico']),
+      },
+    ],
+  ],
 
   // 指定打包路径 (默认打包到 docs/.vuepress 下)
   dest: './dist', // 现在会打包到与 docs 平级的目录下
@@ -38,7 +46,12 @@ export default defineUserConfig({
     tip: '说明',
     warning: '警告',
     danger: '危险',
-    notFound: ['这里什么都没有', '我们怎么到这来了？', '这是一个 404 页面', '看起来我们进入了错误的链接'],
+    notFound: [
+      '这里什么都没有',
+      '我们怎么到这来了？',
+      '这是一个 404 页面',
+      '看起来我们进入了错误的链接',
+    ],
     backToHome: '返回首页',
     toggleColorMode: '点击切换颜色模式',
     lastUpdatedText: '上次更新',
@@ -46,16 +59,16 @@ export default defineUserConfig({
     repoLabel: 'Gitee 仓库',
     repo: 'https://gitee.com/tgx-1587900660/tgx-blog',
     editLink: false,
-    sidebarDepth: 2
+    sidebarDepth: 2,
   }),
 
   // 插件
   plugins: [
     // 将 components 目录下的所有文件注册为组件
     registerComponentsPlugin({
-      componentsDir: path.resolve(__dirname, './components')
+      componentsDir: path.resolve(__dirname, './components'),
     }),
     // 提供文档搜索功能
-    searchPlugin({})
-  ]
-})
+    searchPlugin({}),
+  ],
+});
