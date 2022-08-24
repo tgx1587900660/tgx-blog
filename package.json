@@ -7,19 +7,22 @@
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "prepare": "husky install",
-    "test-pre-commit": "echo \"pre-commit is running success!\""
+    "test-pre-commit": "echo \"pre-commit is running success!\"",
+    "pre-commit": "lint-staged"
   },
   "author": "telectron",
   "license": "ISC",
   "devDependencies": {
     "@vuepress/plugin-register-components": "^2.0.0-beta.49",
     "@vuepress/plugin-search": "^2.0.0-beta.49",
+    "eslint": "^8.22.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "vuepress": "^2.0.0-beta.49"
   },
   "lint-staged": {
-    "docs/**/*.{js,jsx,ts,tsx,md,html,css}": "prettier --config .prettierrc.js",
-    "src/**/*.{js,jsx,ts,tsx,md,html,css}": "prettier --config .prettierrc.js"
+    "test/**/*.{js,ts}": [
+      "eslint"
+    ]
   }
 }

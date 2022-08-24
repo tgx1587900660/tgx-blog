@@ -1,12 +1,12 @@
 # packages files
-node_modules
+node_modules/
 
 # edit files
 .vscode
 
 # vuepress files
-.cache
-.temp
+.cache/
+.temp/
 
 # yarn files
 yarn-error.log

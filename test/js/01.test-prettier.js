@@ -1,8 +1,6 @@
-const a =    {0: 'asd',
-}
-let b = 2;
+const a = { 0: 'asd' }
+let b = 2
+console.log(a)
+console.log(b)
 
-
-// 预期格式化之后 会变成：
-// const a = { 0: 'asd' }
-// let b = 2
+// "docs/**/*.{js,jsx,ts,tsx,md,html,css}": "prettier --config .prettierrc.js",
