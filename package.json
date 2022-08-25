@@ -7,8 +7,7 @@
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "prepare": "husky install",
-    "test-pre-commit": "echo \"pre-commit is running success!\"",
-    "pre-commit": "lint-staged"
+    "test-pre-commit": "echo \"pre-commit is running success!\""
   },
   "author": "telectron",
   "license": "ISC",

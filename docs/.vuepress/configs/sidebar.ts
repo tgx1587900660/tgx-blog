@@ -87,10 +87,10 @@ export const sidebar: SidebarConfig = {
       ]
     },
     {
-      text: '代码规范',
+      text: '代码规范相关',
       collapsible: true,
       children: [
-        '/frontend/tools/husky-usage.md',
+        '/frontend/tools/code-lint-usage.md',
         '/frontend/tools/eslint-upgrade.md',
       ]
     }
