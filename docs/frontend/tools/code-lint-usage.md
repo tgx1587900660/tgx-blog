@@ -74,7 +74,7 @@
 
 ### 4.1 安装使用 husky
 
-- 安装 husky 依赖包，终端运行以下命令：
+- 第一步：安装 husky 依赖包，终端运行以下命令：
 
 > 请注意依赖包的版本，可以自行指定对应版本
 
@@ -96,7 +96,7 @@ npm install husky -D
   </CodeGroupItem>
 </CodeGroup>
 
-- 安装完毕后，在 package.json 中添加两个脚本 `prepare` 和 `test-pre-commit`。做完这些后，package.json 如下：
+- 第二步：在 package.json 中添加两个脚本 `prepare` 和 `test-pre-commit`。做完这些后，package.json 如下：
 
 > `prepare` 是为了生成 .husky 目录，`test-pre-commit` 是为了测试钩子是否成功触发。
 > 其中，第 10 行 echo 是输出语句，这句话，相当于 console.log("\\"pre-commit is running success!\\"")
@@ -128,7 +128,7 @@ npm install husky -D
 
 :::
 
-- 终端运行以下命令，生成 .husky 文件夹：
+- 第三步：终端运行以下命令，生成 .husky 文件夹：
 
 > 以下 3 个命令之一被运行后，项目根目录(与 package.json 同级)会多出一个文件夹 .husky
 
@@ -160,7 +160,7 @@ npx husky install
   </CodeGroupItem>
 </CodeGroup>
 
-- 创建钩子，终端运行以下命令：
+- 第四步：创建钩子，终端运行以下命令：
 
 ```shell:no-line-numbers
 # 该命令的意思是：在 .husky 目录下创建一个文件 pre-commit，里面包含一条命令 npm test
@@ -171,7 +171,7 @@ npx husky add .husky/pre-commit "npm test"
 
 <img src="./img/husky-pre-commit.png" title="husky目录文件示意图" alt="husky目录文件示意图" />
 
-- 手动定制 .husky/pre-commit 文件的内容，把 npm test 改成如下：
+- 第五步：手动定制 .husky/pre-commit 文件的内容，把 npm test 改成如下：
 
 ```bash
 #!/usr/bin/env sh
@@ -181,7 +181,7 @@ npx husky add .husky/pre-commit "npm test"
 yarn run test-pre-commit
 ```
 
-- 测试 pre-commit 钩子是否成功运行，终端运行以下命令：
+- 第六步：测试 pre-commit 钩子是否成功运行，终端运行以下命令：
 
 ```bash
 git add .husky/pre-commit
@@ -305,8 +305,8 @@ npm install lint-staged -D
 
 :::
 
-
 - 第三步：修改 .husky/pre-commit 的文件内容，如下：
+
 ```bash
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
@@ -321,4 +321,41 @@ yarn run lint-staged
 
 到此为止，我们就完成了所有配置，接下来测试即可。
 
-- 第四步：测试
+- 第四步：测试 git commit 成功与否
+
+  - 1. 确保与 package.json 平级的目录下创建了一个 test 文件夹
+  - 2. 在 test 文件夹下创建一个 test-eslint.js 文件
+  - 3. 写入不规范和规范的代码分别测试：
+
+    ::: details 点击查看 test-eslint.js 文件内容
+
+    ```js
+    // 不规范的代码，会提交失败
+    // const a = {
+    //   0: 'asd',
+    // }
+    // let b = 2;
+    // let c = 0
+    // console.log(a);
+    // console.log(b);
+
+    // ----------------------------------------
+
+    // 规范的代码，会提交成功
+    const a = {
+      0: 'asd'
+    }
+    let b = 2
+    console.log(a)
+    console.log(b)
+    ```
+
+    :::
+
+  - 4. 终端运行命令：git add test/test-eslint.js
+  - 5. 终端运行命令：git commit -m "测试能否提交成功"
+  - 6. 可以看到终端分别会有失败和成功的结果
+
+
+
+到此为止，我们就实现了目标需求。
