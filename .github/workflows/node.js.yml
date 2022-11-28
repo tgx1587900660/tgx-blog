@@ -32,4 +32,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # 部署目录为 VuePress 的默认输出目录
-          publish_dir: ./dist
+          publish_dir: dist
