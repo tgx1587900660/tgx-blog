@@ -39,7 +39,7 @@ jobs:
       - run: npm test --if-present
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # 部署目录为 VuePress 的默认输出目录
