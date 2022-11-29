@@ -27,9 +27,6 @@ export default defineUserConfig({
     ],
   ],
 
-  // 指定打包路径 (默认打包到 docs/.vuepress 下)
-  dest: './dist', // 现在会打包到与 docs 平级的目录下
-
   // 指定临时文件和缓存目录
   temp: './.temp',
   cache: './.cache',
