@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 扁平数组处理成属性结构
+      const arr = [
+        { id: 1, name: '1234', parentId: null },
+        { id: 2, name: '1234', parentId: 1 },
+        { id: 3, name: '1234', parentId: 1 },
+        { id: 4, name: '1234', parentId: 1 },
+        { id: 5, name: '1234', parentId: 1 },
+        { id: 5, name: '1234', parentId: 3 },
+        { id: 5, name: '1234', parentId: 3 },
+        { id: 5, name: '1234', parentId: 3 },
+        { id: 5, name: '1234', parentId: 3 }
+      ]
+
+      function transTree(list, rootValue) {
+        const newList = []
+
+        // 2. 对传入的数据进行格式化
+        list.forEach(item => {
+          // 3. 判断每一项的 parentId 是否等于传入的顶级 parentId 一致
+          if (item.parentId === rootValue) {
+            // 4. 如果有一致的数据，在将当前这一项的 id 作为顶级对象传入 transTree
+            const children = transTree(list, item.id)
+            // 5. 判断返回的 children 进行判断
+            if (children.length) {
+              item.children = children
+            }
+            // 6. 最终直接将当前数据 push 到 newList 即可
+            newList.push(item)
+          }
+        })
+
+        return newList
+      }
+
+      // 1. 调用封装的 transTree，传递需要格式化的数据以及最顶级的 parentId: null 作为入口，开始进行遍历
+      const treeData = transTree(arr, null)
+      console.log(treeData)
+
+    </script>
+  </body>
+</html>
