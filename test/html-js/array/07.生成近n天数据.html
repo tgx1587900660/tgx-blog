@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function initDate(n) {
+        const check = []
+        for (let i = 0; i < n; i++) {
+          const now = new Date()
+          // 24 * 3600 * 1000 就是计算一天的时间
+          const date = new Date(now.getTime() - i * 24 * 3600 * 1000)
+          const year = date.getFullYear()
+          let month = date.getMonth() + 1
+          month = month > 9 ? month : `0${month}`
+          let day = date.getDate()
+          day = day > 9 ? day : `0${day}`
+          check.push({
+            statisticsDate: `${year}-${month}-${day}`,
+            num: 0
+          })
+        }
+        return check
+      }
+      const nearly7Days = initDate(7)
+      const nearly30Days = initDate(30)
+      console.log('nearly7Days :>> ', nearly7Days)
+      console.log('nearly30Days :>> ', nearly30Days)
+    </script>
+  </body>
+</html>

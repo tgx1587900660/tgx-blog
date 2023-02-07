@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr1 = [
+        { statisticsDate: '2023-02-07', num: 0 },
+        { statisticsDate: '2023-02-06', num: 0 },
+        { statisticsDate: '2023-02-05', num: 0 },
+        { statisticsDate: '2023-02-04', num: 0 },
+        { statisticsDate: '2023-02-03', num: 0 },
+        { statisticsDate: '2023-02-02', num: 0 },
+        { statisticsDate: '2023-02-01', num: 0 }
+      ]
+      const arr2 = [
+        { num: 2, statisticsDate: '2023-02-01' },
+        { num: 1, statisticsDate: '2023-02-06' },
+        { num: 1, statisticsDate: '2023-02-07' }
+      ]
+
+      // 合并数组函数, list 是所有列表, key 是合并用的关键字
+      function merge(list, key) {
+        const result = {}
+        for (let i = 0; i < list.length; i++) {
+          const cur = list[i]
+          const existed = result[cur[key]]
+          if (existed) {
+            Object.assign(existed, cur)
+          } else {
+            result[cur[key]] = Object.assign({}, cur)
+          }
+        }
+        return Object.values(result)
+      }
+      const newArr = merge([...arr1, ...arr2], 'statisticsDate')
+      console.log(newArr)
+
+      // 结果如下：
+      // const result = [
+      //   { statisticsDate: '2023-02-07', num: 1 },
+      //   { statisticsDate: '2023-02-06', num: 1 },
+      //   { statisticsDate: '2023-02-05', num: 0 },
+      //   { statisticsDate: '2023-02-04', num: 0 },
+      //   { statisticsDate: '2023-02-03', num: 0 },
+      //   { statisticsDate: '2023-02-02', num: 0 },
+      //   { statisticsDate: '2023-02-01', num: 2 }
+      // ]
+    </script>
+  </body>
+</html>
