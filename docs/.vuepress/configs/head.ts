@@ -9,9 +9,9 @@ export const head: HeadConfig[] = [
       type: 'image/ico',
       sizes: '32x32',
       href: getRandomElement([
-        '/icons/tang.ico',
-        '/icons/gan.ico',
-        '/icons/xiao.ico'
+        './icons/tang.ico',
+        './icons/gan.ico',
+        './icons/xiao.ico'
       ])
     }
   ]
