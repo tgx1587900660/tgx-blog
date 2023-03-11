@@ -1,4 +1,8 @@
 // 1. 传入一个数组, 随机返回它的某一个元素
+/**
+ * 入参: ['/tang.ico', '/gan.ico', '/xiao.ico']
+ * 出参: '/gan.ico' 或 '/tang.ico'
+ */
 export function getRandomElement(arr: string[]): string {
   const min = 0
   const max = arr.length - 1
