@@ -7,9 +7,9 @@ export const head: HeadConfig[] = [
     {
       rel: 'shortcut icon',
       href: getRandomElement([
-        '/shortcut/tang.ico',
-        '/shortcut/gan.ico',
-        '/shortcut/xiao.ico'
+        './shortcut/tang.ico',
+        './shortcut/gan.ico',
+        './shortcut/xiao.ico'
       ])
     }
   ]

@@ -13,8 +13,7 @@ export default defineUserConfig({
   // 部署站点的基准路径, 默认是 /
   base: '/tgx-blog/',
   title: 'telectron 的网络日志',
-  description: '唐干宵的网络日志， telectron 的网络日志， 谭竿霄的网络日志',
-
+  description: '唐干宵的博客, 唐干宵的网络日志, 谭竿霄的网络日志',
   // 需要被注入到 <head> 标签的内容(路径指向 docs/.vuepress/public)
   head,
 

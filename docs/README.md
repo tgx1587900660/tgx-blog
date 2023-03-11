@@ -5,7 +5,7 @@ home: true
 heroImage: /img/home.jpg # 会去 .vuepress/public 目录找
 # heroImageDark: /img/logo.png # 夜间模式的封面
 
-heroText: teletron 的网络日志
+heroText: telectron 的网络日志
 tagline: 经验 +1
 
 # 首页按钮组
