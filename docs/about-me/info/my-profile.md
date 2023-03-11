@@ -1,5 +1,9 @@
-# contact to me
+# 要联系我
 
-> 如有要事，请扫描二维码添加我
+> 咨询问题，扫描二维码添加好友，我是：
+>
+> 1. 一名超级靠谱的前端开发工程师
+> 2. 一名超级耐心的摄影师，ps 爱好者
+> 3. 一名超级自律的健身爱好者
 
-<img src="../img/my_wx.jpg" title="contact to me" alt="微信二维码" width="200">
+<img src="../img/my_wx.jpg" title="联系我" alt="微信二维码" width="200">

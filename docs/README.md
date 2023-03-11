@@ -19,14 +19,14 @@ actions:
   #   type: secondary
 
 features:
-  - title: 简单
-    details: 山不在高，有仙则名，水不在深，有龙则灵。
+  - title: ''
+    details: 认识世界，跨越困难，感受生活
 
-  - title: 求是
-    details: 吾尝终日而思矣，不如须臾之所学也。
+  - title: ''
+    details: 受尽苦难而不厌，此乃修罗之道
 
-  - title: 可靠
-    details: 蚓无爪牙之利，筋骨之强，上食埃土，下饮黄泉，用心一也。
+  - title: ''
+    details: 吾尝终日而思矣，不如须臾之所学也
 
 footer: Copyright © 2021-08-25 作者：telectron（唐干宵）
 ---

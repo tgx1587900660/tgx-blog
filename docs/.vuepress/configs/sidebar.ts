@@ -43,7 +43,10 @@ export const sidebar: SidebarConfig = {
     {
       text: 'Vue3',
       collapsible: true,
-      children: ['/frontend/vue/vue3/vue3-change-details.md', '/frontend/vue/vue3/vue3-study.md']
+      children: [
+        '/frontend/vue/vue3/vue3-change-details.md',
+        '/frontend/vue/vue3/vue3-study.md'
+      ]
     }
   ],
   // TypeScript 侧边栏配置
@@ -91,7 +94,7 @@ export const sidebar: SidebarConfig = {
       collapsible: true,
       children: [
         '/frontend/tools/code-lint-usage.md',
-        '/frontend/tools/eslint-upgrade.md',
+        '/frontend/tools/eslint-upgrade.md'
       ]
     }
   ],
@@ -170,7 +173,7 @@ export const sidebar: SidebarConfig = {
   '/exception/powershell': [
     {
       text: 'Powershell',
-      collapsible: true,
+      collapsible: false,
       children: ['/exception/powershell/security-error.md']
     }
   ],
@@ -178,8 +181,8 @@ export const sidebar: SidebarConfig = {
   /* 联系我区域 */
   '/about-me': [
     {
-      text: 'about me',
-      collapsible: true,
+      text: '关于我',
+      collapsible: false,
       children: ['/about-me/info/my-profile.md', '/about-me/info/donation.md']
     }
   ]
