@@ -27,7 +27,7 @@ export default defineUserConfig({
 
   // vuepress 默认主题 的配置
   theme: defaultTheme({
-    logo: '/img/logo.png',
+    logo: '/img/home.jpg',
     navbar,
     sidebar,
     tip: '说明',
