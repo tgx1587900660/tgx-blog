@@ -6,6 +6,8 @@
 
 ```xml
 git push
+或
+git push origin master
 ```
 
 ### 2. 推送代码到 Gitee
