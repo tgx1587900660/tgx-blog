@@ -3,7 +3,7 @@ home: true
 
 # 封面
 heroImage: /img/logo.jpg # 会去 .vuepress/public 目录找
-# heroImageDark: /img/logo.png # 夜间模式的封面
+heroImageDark: /img/logo1.png # 夜间模式的封面
 
 heroText: telectron 的网络日志
 tagline: 经验 +1
@@ -20,13 +20,13 @@ actions:
 
 features:
   - title: ''
-    details: 认识世界，跨越困难，感受生活
+    details: 受尽苦难而不厌
 
   - title: ''
-    details: 受尽苦难而不厌，此乃修罗之道
+    details: 终日而思，不如须臾之所学
 
   - title: ''
-    details: 吾尝终日而思矣，不如须臾之所学也
+    details: 用耳去听，用心去感受
 
 footer: Copyright © 2021-08-25 作者：telectron（唐干宵）
 ---

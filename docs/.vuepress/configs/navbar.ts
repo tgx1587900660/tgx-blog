@@ -11,10 +11,17 @@ export const navbar: NavbarConfig = [
       // 3. 如果 link 为 '/test/README.md', 会404出错(即使有 README.md 文件)
       // 4. 如果 link 为 '/test/test-001', vuepress 会去 docs/test 文件夹中查找 test-001.md
       // 5. 如果 link 为 '/test/test-001.md', vuepress 会去 docs/test 文件夹中查找 test-001.md
-      { text: '通用知识', link: '/frontend/skills/skill/source-integration.md' },
-      { text: 'Vue', link: '/frontend/vue/vue2/vue-source.md' },
+      {
+        text: '通用知识',
+        link: '/frontend/skills/skill/source-integration.md'
+      },
+      { text: 'Vue2', link: '/frontend/vue/vue2/unlikely-knowledge.md' },
+      { text: 'Vue3', link: '/frontend/vue/vue3/vue3-change-details.md' },
       { text: 'TypeScript', link: '/frontend/typescript/ts-application.md' },
-      { text: 'JavaScript', link: '/frontend/javascript/data-processing-method.md' },
+      {
+        text: 'JavaScript',
+        link: '/frontend/javascript/data-processing-method.md'
+      },
       { text: 'Tools', link: '/frontend/tools/git-command.md' },
       { text: 'Packages', link: '/frontend/packages/third-party-packages.md' },
       { text: '小程序', link: '/frontend/applet/learning-path.md' },

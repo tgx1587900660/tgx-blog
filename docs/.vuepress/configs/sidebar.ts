@@ -33,11 +33,11 @@ export const sidebar: SidebarConfig = {
       text: 'Vue2',
       collapsible: true,
       children: [
-        '/frontend/vue/vue2/vue-source.md',
         '/frontend/vue/vue2/unlikely-knowledge.md',
         '/frontend/vue/vue2/vue-questions-answers.md',
         '/frontend/vue/vue2/component-package-principle.md',
-        '/frontend/vue/vue2/vue-router.md'
+        '/frontend/vue/vue2/vue-router.md',
+        '/frontend/vue/vue2/vue-source.md'
       ]
     },
     {
@@ -79,7 +79,7 @@ export const sidebar: SidebarConfig = {
   // Tools 侧边栏配置
   '/frontend/tools': [
     {
-      text: 'Tools',
+      text: '工具使用',
       collapsible: true,
       children: [
         '/frontend/tools/git-command.md',
