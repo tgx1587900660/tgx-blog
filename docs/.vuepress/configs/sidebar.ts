@@ -8,7 +8,7 @@ export const sidebar: SidebarConfig = {
   // 通用知识 侧边栏配置
   '/frontend/skill': [
     {
-      text: 'Skills',
+      text: '资源与技术',
       collapsible: true,
       children: [
         //
@@ -17,7 +17,7 @@ export const sidebar: SidebarConfig = {
       ]
     },
     {
-      text: 'Browser',
+      text: '技术文章',
       collapsible: true,
       children: [
         //

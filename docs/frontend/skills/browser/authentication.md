@@ -42,10 +42,6 @@
     alt="Session 认证原理图"
     src="./img/session-auth.png" />
 
-要在 express 项目中使用 Session 认证机制，请查看
-<tgx-link href="/backend/packages/third-party-packages">这篇文章</tgx-link>
-的 【express-session 中间件】 用法
-
 ## 3. JWT 认证机制
 
 ::: tip 说明
@@ -94,6 +90,16 @@ JWT（即 JSON Web Token）是目前最流行的 **跨域认证解决方案**。
 - Payload 部分才是真正的用户信息，它是用户信息经过加密之后生成的字符串。
 - Header 和 Signature 是安全性相关的部分，只是为了保证 Token 的安全性。
 
-要在 express 项目中使用 JWT 认证机制，请查看
-<tgx-link href="/backend/packages/third-party-packages">这篇文章</tgx-link>
-的 【jsonwebtoken 和 express-jwt】 用法
+## 4. 面试题
+
+#### 1. 现在要新开发一个系统，需要认证方案，给你来选型，你会怎么选？
+
+- 答：我选用 JWT 认证方式，这是目前主流的身份认证方案。因为目前为了提升开发效率，一般采用前后端分离开发模式，所以难免会有跨域请求问题。然而 Session 认证机制中， Cookie 默认不支持跨域访问，当涉及到前端跨域请求后端接口的时候，需要做很多额外的配置，才能实现跨域 Session 认证，比较麻烦，而 JWT 认证机制就不存在这个问题。
+
+#### 2. 既然说到了跨域，那你说下怎么解决跨域问题？
+
+- 答：解决跨域问题方式很多。项目中常用的有 2 种
+
+  - 1. 服务端开启 **跨域资源共享 CORS**
+  - 2. **proxy 代理解决**：原理是只有浏览器端有跨域问题，服务端不存在跨域问题。
+       <img src="./img/proxy.png" alt="proxy 代理解决跨域问题示意图" title="proxy 代理解决跨域问题示意图" width="740" />
