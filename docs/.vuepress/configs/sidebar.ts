@@ -119,14 +119,6 @@ export const sidebar: SidebarConfig = {
       ]
     }
   ],
-  // 面试题 侧边栏配置
-  '/frontend/interview': [
-    {
-      text: 'Interview',
-      collapsible: true,
-      children: ['/frontend/interview/interview.md']
-    }
-  ],
 
   /* 后端学习 区域 */
   // Node 侧边栏配置

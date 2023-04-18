@@ -10,7 +10,6 @@
 
 - 浏览器：是 js 的 **前端运行环境**
 - Node：是 js 的 **后端运行环境**
-- <tgx-link href="/frontend/skills/browser/browser">这篇文章</tgx-link> 有 浏览器运行环境 相关知识
 
 :::
 

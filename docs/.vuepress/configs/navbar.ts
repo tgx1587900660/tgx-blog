@@ -12,20 +12,56 @@ export const navbar: NavbarConfig = [
       // 4. 如果 link 为 '/test/test-001', vuepress 会去 docs/test 文件夹中查找 test-001.md
       // 5. 如果 link 为 '/test/test-001.md', vuepress 会去 docs/test 文件夹中查找 test-001.md
       {
-        text: '技术文章',
-        link: '/frontend/skills/skill/source-integration.md'
+        text: '资源&文章',
+        children: [
+          {
+            text: '技术整合',
+            link: '/frontend/skills/skill/source-integration.md'
+          }
+        ]
       },
-      { text: 'Vue2', link: '/frontend/vue/vue2/unlikely-knowledge.md' },
-      { text: 'Vue3', link: '/frontend/vue/vue3/vue3-change-details.md' },
-      { text: 'TypeScript', link: '/frontend/typescript/ts-application.md' },
       {
-        text: 'JavaScript',
-        link: '/frontend/javascript/data-processing-method.md'
+        text: '原生语言',
+        children: [
+          {
+            text: 'TypeScript',
+            link: '/frontend/typescript/ts-application.md'
+          },
+          {
+            text: 'JavaScript',
+            link: '/frontend/javascript/data-processing-method.md'
+          }
+          // ...
+        ]
       },
-      { text: 'Tools', link: '/frontend/tools/git-command.md' },
-      { text: 'Packages', link: '/frontend/packages/third-party-packages.md' },
-      { text: '小程序', link: '/frontend/applet/learning-path.md' },
-      { text: '面试题', link: '/frontend/interview/interview.md' }
+      {
+        text: '框架',
+        children: [
+          { text: 'Vue2', link: '/frontend/vue/vue2/unlikely-knowledge.md' },
+          { text: 'Vue3', link: '/frontend/vue/vue3/vue3-change-details.md' }
+          // ...
+        ]
+      },
+      {
+        text: '工具&库',
+        children: [
+          { text: 'Git', link: '/frontend/tools/git-command.md' },
+          { text: 'Webpack', link: '/frontend/tools/webpack-study.md' },
+          { text: 'Vite', link: '/frontend/tools/vite-study.md' },
+          { text: 'Vant', link: '/frontend/tools/vant-theme.md' }
+          // ...
+        ]
+      },
+      {
+        text: '未分类',
+        children: [
+          {
+            text: 'Packages',
+            link: '/frontend/packages/third-party-packages.md'
+          },
+          { text: '小程序', link: '/frontend/applet/learning-path.md' }
+        ]
+      }
     ]
   },
   {
