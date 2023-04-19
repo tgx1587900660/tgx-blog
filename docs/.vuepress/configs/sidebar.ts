@@ -90,7 +90,7 @@ export const sidebar: SidebarConfig = {
   ],
   '/frontend/packages': [
     {
-      text: 'Packages',
+      text: '前端依赖包相关',
       collapsible: true,
       children: ['/frontend/packages/third-party-packages']
     }
@@ -111,37 +111,44 @@ export const sidebar: SidebarConfig = {
   // 后端学习 区域
   '/backend/node': [
     {
-      text: 'Node',
+      text: 'Node 基础知识',
       collapsible: true,
       children: [
-        //
         '/backend/node/node.md',
         '/backend/node/module-loading.md',
         '/backend/node/express.md'
+        // ...
+      ]
+    },
+    {
+      text: 'Node 相关工具',
+      collapsible: true,
+      children: [
+        '/backend/node/package-knowledge.md',
+        '/backend/node/yarn-useage.md'
+        // ...
       ]
     }
   ],
   '/backend/database': [
     {
-      text: 'DataBase',
+      text: '数据库相关',
       collapsible: true,
       children: [
-        //
         '/backend/database/database.md',
         '/backend/database/mysql.md',
         '/backend/database/sql.md'
+        // ...
       ]
     }
   ],
   '/backend/packages': [
     {
-      text: 'Packages',
+      text: '后端依赖包相关',
       collapsible: true,
       children: [
-        //
-        '/backend/packages/package-knowledge.md',
-        '/backend/packages/yarn-useage.md',
         '/backend/packages/third-party-packages.md'
+        // ...
       ]
     }
   ],

@@ -213,7 +213,34 @@ server.listen(80, () => {
 
 ::: tip 说明
 
-- querystring 模块是 Node.js 官方提供的、用来处理字符串格式数据的模块。
-- <tgx-link href="/backend/node/express">这篇文章</tgx-link> 的【Express 中间件】中用到了 querystring 模块
+- querystring 模块是 Node.js 内置的、用来处理字符串数据格式的模块, 与 fs, path 模块类似。
+
+:::
+
+::: details 点击查看 如何在 Express 中使用 querystring 模块
+
+```js
+const qs = require('querystring')
+
+// 自定义一个处理数据的中间件 customBodyParser
+const customBodyParser = (req, res, next) => {
+  // 1. 当客户端发送数据时触发 data 事件，监听并拼接客户端发来的数据
+  let str = ''
+  req.on('data', chunk => {
+    // 数据是分片发送的，可能需要多次接收
+    str += chunk
+  })
+
+  // 2. 当数据发送完成时触发 end 事件
+  req.on('end', () => {
+    // qs.parse 方法 可以把字符串解析为对象
+    req.body = qs.parse(str)
+  })
+
+  next()
+}
+
+module.exports = customBodyParser
+```
 
 :::

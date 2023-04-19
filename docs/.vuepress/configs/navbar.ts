@@ -55,7 +55,7 @@ export const navbar: NavbarConfig = [
         text: '未分类',
         children: [
           {
-            text: 'Packages',
+            text: '依赖包',
             link: '/frontend/packages/third-party-packages.md'
           },
           { text: '小程序', link: '/frontend/applet/learning-path.md' }
@@ -67,8 +67,8 @@ export const navbar: NavbarConfig = [
     text: '后端学习',
     children: [
       { text: 'Node.js', link: '/backend/node/node.md' },
-      { text: 'DataBase', link: '/backend/database/database.md' },
-      { text: 'Packages', link: '/backend/packages/package-knowledge.md' }
+      { text: '数据库', link: '/backend/database/database.md' },
+      { text: '依赖包', link: '/backend/packages/third-party-packages.md' }
     ]
   },
   {

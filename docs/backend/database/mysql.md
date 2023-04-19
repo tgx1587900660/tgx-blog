@@ -1,13 +1,14 @@
-# MySQL 数据库 相关知识
+# MySQL 数据库
 
 ::: tip 栏目说明
 
 本栏目收集了一些 MySQL 数据库 的相关知识。
 
-- 可以使用 **图形化软件** 点点点来操作数据库表
-- 也可以使用 **SQL 编程语言** 代码形式来操作数据库表
-
 :::
+
+- 要操作数据库，通常有 2 种方式
+  - 使用 **图形化软件** 点击界面直接操作数据库
+  - 使用 **SQL 编程语言** 代码形式来操作数据库表
 
 ## 1. 使用 图形化软件 操作数据库相关
 
@@ -17,13 +18,13 @@
 
 :::
 
-### 1. dateType 数据类型说明
+### dateType 数据类型说明
 
 - ① int 整数
 - ② varchar(len) 字符串
 - ③ tinyint(1) 布尔值
 
-### 2. 字段的特殊标识说明
+### 字段的特殊标识说明
 
 - ① PK（Primary Key）主键、唯一标识
 - ② NN（Not Null）值不允许为空
@@ -35,7 +36,6 @@
 ::: tip 说明
 
 - sql 是一门编程语言，专门用来操作数据库
-- sql 语法相关 <tgx-link href="/backend/database/sql">点击这里</tgx-link>
-- 要在 node 项目中使用 sql 语句操作 MySQL 数据库，查看 <tgx-link href="/backend/packages/third-party-packages">这篇文章</tgx-link> 的【mysql 中间件】章节
+- 要在 node 项目中使用 sql 语句操作 MySQL 数据库，通常会借助某些中间件，例如 `mysql`，这里的 `mysql` 指的是一个 node 第三方模块，是用来简化操作 MySQL 数据库的一个依赖包
 
 :::
