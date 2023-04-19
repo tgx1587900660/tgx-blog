@@ -1,4 +1,4 @@
-# 浏览器 与 JavaScript
+# 浏览器 与 JavaScript 的关系
 
 ::: tip 栏目说明
 

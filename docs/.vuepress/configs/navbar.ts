@@ -12,11 +12,11 @@ export const navbar: NavbarConfig = [
       // 4. 如果 link 为 '/test/test-001', vuepress 会去 docs/test 文件夹中查找 test-001.md
       // 5. 如果 link 为 '/test/test-001.md', vuepress 会去 docs/test 文件夹中查找 test-001.md
       {
-        text: '资源&文章',
+        text: 'Telectron',
         children: [
           {
-            text: '技术整合',
-            link: '/frontend/skills/skill/source-integration.md'
+            text: '资源',
+            link: '/frontend/source/project/source-integration.md'
           }
         ]
       },
@@ -37,8 +37,7 @@ export const navbar: NavbarConfig = [
       {
         text: '框架',
         children: [
-          { text: 'Vue2', link: '/frontend/vue/vue2/unlikely-knowledge.md' },
-          { text: 'Vue3', link: '/frontend/vue/vue3/vue3-change-details.md' }
+          { text: 'Vue', link: '/frontend/vue/vue2/unlikely-knowledge.md' }
           // ...
         ]
       },
@@ -78,6 +77,6 @@ export const navbar: NavbarConfig = [
   },
   {
     text: '联系我',
-    link: '/about-me/info/my-profile.md'
+    link: '/about-me/my-profile.md'
   }
 ]

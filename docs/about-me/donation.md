@@ -12,4 +12,4 @@
 >
 > 连医生都说我很健康。
 
-<img src="../img/my_appreciation.jpg" title="向他致谢" alt="赞赏码" width="200">
+<img src="./img/my_appreciation.jpg" title="致谢" alt="赞赏码" width="200">

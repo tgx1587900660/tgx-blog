@@ -2,8 +2,6 @@ import { defineUserConfig } from '@vuepress/cli'
 import { defaultTheme } from '@vuepress/theme-default'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { searchPlugin } from '@vuepress/plugin-search'
-
-// 引入 工具函数
 import { path } from '@vuepress/utils'
 
 // 引入 左侧和顶部菜单

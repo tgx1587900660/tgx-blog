@@ -1,12 +1,12 @@
-# 资源整合
-
-## 1. 公司项目
+# 项目经历
 
 ::: tip 说明
 
-在此补充一部分个人的项目经历。
+本栏目收录一些我参与过的项目，包括公司项目、我的个人项目
 
 :::
+
+## 《一》公司项目
 
 1. 蓝鲸 MagicBox UI 库（开源，2021.4-2022.4）
 
@@ -43,13 +43,7 @@
    - 技术栈： jQuery + html + javascript + css
    - 项目描述：一个校园导航网站。方便本校学生访问校园资讯，在宿舍进行校园网络连接认证。
 
-## 2. 个人项目
-
-::: tip 说明
-
-这里是我在学习新技术时，写过的一些练习项目。
-
-:::
+## 《二》个人项目
 
 1. 博客（现在看到的页面）：
 
@@ -94,27 +88,3 @@
      <tgx-link href="https://gitee.com/tgx-1587900660/echart_usage">
      https://gitee.com/tgx-1587900660/echart_usage
      </tgx-link>
-
-## 3. 收藏的开源项目
-
-::: tip 说明
-
-平时工作中，我会借鉴他们的源码，学习编码思路。这些开源项目，代码考虑周全，设计巧妙，值得学习。
-
-:::
-
-- 腾讯蓝鲸配置平台：<tgx-link href="https://github.com/Tencent/bk-cmdb">https://github.com/Tencent/bk-cmdb</tgx-link>
-- 腾讯蓝鲸 PaaS 平台：<tgx-link href="https://github.com/Tencent/bk-PaaS">https://github.com/Tencent/bk-PaaS</tgx-link>
-- 腾讯蓝鲸容器管理平台：<tgx-link href="https://github.com/Tencent/bk-bcs">https://github.com/Tencent/bk-bcs</tgx-link>
-- 腾讯蓝鲸作业平台：<tgx-link href="https://github.com/Tencent/bk-job">https://github.com/Tencent/bk-job</tgx-link>
-- 腾讯蓝鲸蓝盾（CI）：<tgx-link href="https://github.com/Tencent/bk-ci">https://github.com/Tencent/bk-ci</tgx-link>
-- 腾讯蓝鲸容器管理平台 SaaS：<tgx-link href="https://github.com/Tencent/bk-bcs-saas">https://github.com/Tencent/bk-bcs-saas</tgx-link>
-- 标准运维：<tgx-link href="https://github.com/Tencent/bk-sops">https://github.com/Tencent/bk-sops</tgx-link>
-- 日志平台：<tgx-link href="https://github.com/TencentBlueKing/bk-log">https://github.com/TencentBlueKing/bk-log</tgx-link>
-- 用户管理：<tgx-link href="https://github.com/TencentBlueKing/bk-user">https://github.com/TencentBlueKing/bk-user</tgx-link>
-- 权限中心：<tgx-link href="https://github.com/TencentBlueKing/bk-iam">https://github.com/TencentBlueKing/bk-iam</tgx-link>
-- 权限中心 SaaS：<tgx-link href="https://github.com/TencentBlueKing/bk-iam-saas">https://github.com/TencentBlueKing/bk-iam-saas</tgx-link>
-- 节点管理：<tgx-link href="https://github.com/TencentBlueKing/bk-nodeman">https://github.com/TencentBlueKing/bk-nodeman</tgx-link>
-- 流程服务：<tgx-link href="https://github.com/TencentBlueKing/bk-itsm">https://github.com/TencentBlueKing/bk-itsm</tgx-link>
-- 开发框架和 SDK：<tgx-link href="https://github.com/orgs/TencentBlueKing/repositories">https://github.com/orgs/TencentBlueKing/repositories</tgx-link>
-- PaaS 平台: <tgx-link href="https://github.com/Tencent/bk-PaaS">https://github.com/Tencent/bk-PaaS</tgx-link>

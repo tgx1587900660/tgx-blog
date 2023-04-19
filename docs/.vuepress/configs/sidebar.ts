@@ -4,30 +4,31 @@
 import type { SidebarConfig } from '@vuepress/theme-default'
 
 export const sidebar: SidebarConfig = {
-  /* 前端学习 区域 */
-  // 通用知识 侧边栏配置
-  '/frontend/skill': [
+  // 前端学习 区域
+  '/frontend/source': [
     {
-      text: '资源与技术',
+      text: '项目资源收录',
       collapsible: true,
       children: [
-        //
-        '/frontend/skills/skill/source-integration.md',
-        '/frontend/skills/skill/personal-blog.md'
+        '/frontend/source/project/source-integration.md',
+        '/frontend/source/project/project-collection.md'
+        // ...
       ]
     },
     {
-      text: '技术文章',
+      text: '技术文章收录',
       collapsible: true,
       children: [
-        //
-        '/frontend/skills/browser/browser.md',
-        '/frontend/skills/browser/dev-web.md',
-        '/frontend/skills/browser/authentication.md'
+        '/frontend/source/article/personal-blog.md',
+        '/frontend/source/article/browser.md',
+        '/frontend/source/article/dev-web.md',
+        '/frontend/source/article/authentication.md',
+        '/frontend/source/article/code-lint-usage.md',
+        '/frontend/source/article/eslint-upgrade.md'
+        // ...
       ]
     }
   ],
-  // Vue 侧边栏配置
   '/frontend/vue': [
     {
       text: 'Vue2',
@@ -49,7 +50,6 @@ export const sidebar: SidebarConfig = {
       ]
     }
   ],
-  // TypeScript 侧边栏配置
   '/frontend/typescript': [
     {
       text: 'TypeScript',
@@ -61,7 +61,6 @@ export const sidebar: SidebarConfig = {
       ]
     }
   ],
-  // Javascript 侧边栏配置
   '/frontend/javascript': [
     {
       text: 'Javascript',
@@ -76,7 +75,6 @@ export const sidebar: SidebarConfig = {
       ]
     }
   ],
-  // Tools 侧边栏配置
   '/frontend/tools': [
     {
       text: '工具使用',
@@ -88,17 +86,8 @@ export const sidebar: SidebarConfig = {
         '/frontend/tools/vant-theme.md',
         '/frontend/tools/special-needs.md'
       ]
-    },
-    {
-      text: '代码规范相关',
-      collapsible: true,
-      children: [
-        '/frontend/tools/code-lint-usage.md',
-        '/frontend/tools/eslint-upgrade.md'
-      ]
     }
   ],
-  // Packages 侧边栏配置
   '/frontend/packages': [
     {
       text: 'Packages',
@@ -106,7 +95,6 @@ export const sidebar: SidebarConfig = {
       children: ['/frontend/packages/third-party-packages']
     }
   ],
-  // 小程序 侧边栏配置
   '/frontend/applet': [
     {
       text: 'Applet',
@@ -120,8 +108,7 @@ export const sidebar: SidebarConfig = {
     }
   ],
 
-  /* 后端学习 区域 */
-  // Node 侧边栏配置
+  // 后端学习 区域
   '/backend/node': [
     {
       text: 'Node',
@@ -134,7 +121,6 @@ export const sidebar: SidebarConfig = {
       ]
     }
   ],
-  // DataBase 侧边栏配置
   '/backend/database': [
     {
       text: 'DataBase',
@@ -147,7 +133,6 @@ export const sidebar: SidebarConfig = {
       ]
     }
   ],
-  // Packages 侧边栏配置
   '/backend/packages': [
     {
       text: 'Packages',
@@ -161,21 +146,21 @@ export const sidebar: SidebarConfig = {
     }
   ],
 
-  /* 异常处理区域 */
-  '/exception/powershell': [
+  // 异常处理区域 exception
+  '/exception': [
     {
-      text: 'Powershell',
+      text: '终端',
       collapsible: false,
       children: ['/exception/powershell/security-error.md']
     }
   ],
 
-  /* 联系我区域 */
+  // 联系我区域
   '/about-me': [
     {
       text: '关于我',
       collapsible: false,
-      children: ['/about-me/info/my-profile.md', '/about-me/info/donation.md']
+      children: ['/about-me/my-profile.md', '/about-me/donation.md']
     }
   ]
 }
