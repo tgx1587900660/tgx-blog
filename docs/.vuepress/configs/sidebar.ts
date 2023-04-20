@@ -24,8 +24,8 @@ export const sidebar: SidebarConfig = {
         '/frontend/source/article/dev-web.md',
         '/frontend/source/article/authentication.md',
         '/frontend/source/article/code-lint-usage.md',
-        '/frontend/source/article/eslint-upgrade.md'
-        // ...
+        '/frontend/source/article/eslint-upgrade.md',
+        '/frontend/source/article/security-error.md'
       ]
     }
   ],
@@ -39,6 +39,7 @@ export const sidebar: SidebarConfig = {
         '/frontend/vue/vue2/component-package-principle.md',
         '/frontend/vue/vue2/vue-router.md',
         '/frontend/vue/vue2/vue-source.md'
+        // ...
       ]
     },
     {
@@ -47,6 +48,7 @@ export const sidebar: SidebarConfig = {
       children: [
         '/frontend/vue/vue3/vue3-change-details.md',
         '/frontend/vue/vue3/vue3-study.md'
+        // ...
       ]
     }
   ],
@@ -55,9 +57,9 @@ export const sidebar: SidebarConfig = {
       text: 'TypeScript',
       collapsible: true,
       children: [
-        //
         '/frontend/typescript/ts-application.md',
         '/frontend/typescript/typescript.md'
+        // ...
       ]
     }
   ],
@@ -85,6 +87,7 @@ export const sidebar: SidebarConfig = {
         '/frontend/tools/vite-study.md',
         '/frontend/tools/vant-theme.md',
         '/frontend/tools/special-needs.md'
+        // ...
       ]
     }
   ],
@@ -92,18 +95,21 @@ export const sidebar: SidebarConfig = {
     {
       text: '前端依赖包相关',
       collapsible: true,
-      children: ['/frontend/packages/third-party-packages']
+      children: [
+        '/frontend/packages/third-party-packages'
+        // ...
+      ]
     }
   ],
   '/frontend/applet': [
     {
-      text: 'Applet',
+      text: '小程序相关',
       collapsible: true,
       children: [
-        //
         '/frontend/applet/learning-path.md',
         '/frontend/applet/about-applet.md',
         '/frontend/applet/applet-compose.md'
+        // ...
       ]
     }
   ],
@@ -153,21 +159,16 @@ export const sidebar: SidebarConfig = {
     }
   ],
 
-  // 异常处理区域 exception
-  '/exception': [
-    {
-      text: '终端',
-      collapsible: false,
-      children: ['/exception/powershell/security-error.md']
-    }
-  ],
-
   // 联系我区域
   '/about-me': [
     {
-      text: '关于我',
+      text: '优秀的朋友们',
       collapsible: false,
-      children: ['/about-me/my-profile.md', '/about-me/donation.md']
+      children: [
+        '/about-me/friend-link.md',
+        '/about-me/my-profile.md'
+        // ...
+      ]
     }
   ]
 }

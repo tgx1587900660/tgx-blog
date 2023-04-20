@@ -11,7 +11,7 @@ export default defineUserConfig({
   // 部署站点的基准路径, 默认是 /
   base: '/tgx-blog/',
   title: 'telectron 的网络日志',
-  description: '唐干宵的博客, 唐干宵的网络日志, 谭竿霄的博客, 谭竿霄的网络日志',
+  description: '唐干宵的博客|唐干宵的网络日志|谭竿霄的博客|谭竿霄的网络日志|前端技术学习|使用 vuepress 搭建个人博客',
   // 需要被注入到 <head> 标签的内容(路径指向 docs/.vuepress/public)
   head,
 
@@ -36,13 +36,14 @@ export default defineUserConfig({
       '我们怎么到这来了？',
       '这是一个 404 页面',
       '看起来我们进入了错误的链接'
+      // ...
     ],
     backToHome: '返回首页',
     toggleColorMode: '点击切换颜色模式',
     lastUpdatedText: '上次更新',
     contributorsText: '贡献者',
-    repoLabel: 'Gitee 仓库',
-    repo: 'https://gitee.com/tgx-1587900660/tgx-blog',
+    repoLabel: 'Github 仓库',
+    repo: 'https://github.com/tgx1587900660/tgx-blog',
     editLink: false,
     sidebarDepth: 2
   }),

@@ -20,13 +20,13 @@ actions:
 
 features:
   - title: ''
-    details: 受尽苦难而不厌
+    details: 终日而思矣，不如须臾之所学也
 
   - title: ''
-    details: 终日而思，不如须臾之所学
+    details: 受尽苦难而不厌，乃修罗之道
 
   - title: ''
-    details: 用耳去听，用心去感受
+    details: 不可能 这三个字，你说得太多了
 
 footer: Copyright © 2021-08-25 作者：telectron（唐干宵）
 ---

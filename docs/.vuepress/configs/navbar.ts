@@ -14,23 +14,15 @@ export const navbar: NavbarConfig = [
       {
         text: 'Telectron',
         children: [
-          {
-            text: '资源',
-            link: '/frontend/source/project/source-integration.md'
-          }
+          { text: '资源', link: '/frontend/source/project/source-integration.md' }
+          // ...
         ]
       },
       {
         text: '原生语言',
         children: [
-          {
-            text: 'TypeScript',
-            link: '/frontend/typescript/ts-application.md'
-          },
-          {
-            text: 'JavaScript',
-            link: '/frontend/javascript/data-processing-method.md'
-          }
+          { text: 'TypeScript', link: '/frontend/typescript/ts-application.md' },
+          { text: 'JavaScript', link: '/frontend/javascript/data-processing-method.md' }
           // ...
         ]
       },
@@ -52,13 +44,11 @@ export const navbar: NavbarConfig = [
         ]
       },
       {
-        text: '未分类',
+        text: '其他',
         children: [
-          {
-            text: '依赖包',
-            link: '/frontend/packages/third-party-packages.md'
-          },
+          { text: '依赖包', link: '/frontend/packages/third-party-packages.md' },
           { text: '小程序', link: '/frontend/applet/learning-path.md' }
+          // ...
         ]
       }
     ]
@@ -69,14 +59,8 @@ export const navbar: NavbarConfig = [
       { text: 'Node.js', link: '/backend/node/node.md' },
       { text: '数据库', link: '/backend/database/database.md' },
       { text: '依赖包', link: '/backend/packages/third-party-packages.md' }
+      // ...
     ]
   },
-  {
-    text: '问题处理',
-    link: '/exception/powershell/security-error.md'
-  },
-  {
-    text: '联系我',
-    link: '/about-me/my-profile.md'
-  }
+  { text: '友情链接', link: '/about-me/friend-link.md' }
 ]
