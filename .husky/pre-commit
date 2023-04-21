@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# 执行 package.json 中的 test-pre-commit 命令
-# yarn run test-pre-commit
-
 # 执行 package.json 中的 lint-staged 节点命令
 yarn run lint-staged
+
+# 执行 package.json 中的 test-pre-commit 命令
+yarn run test-pre-commit
