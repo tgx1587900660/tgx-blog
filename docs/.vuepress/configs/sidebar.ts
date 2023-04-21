@@ -163,10 +163,18 @@ export const sidebar: SidebarConfig = {
   '/about-me': [
     {
       text: '优秀的朋友们',
-      collapsible: false,
+      collapsible: true,
       children: [
-        '/about-me/friend-link.md',
-        '/about-me/my-profile.md'
+        '/about-me/my-profile.md',
+        '/about-me/friend-link.md'
+        // ...
+      ]
+    },
+    {
+      text: '小作文',
+      collapsible: true,
+      children: [
+        '/about-me/articles/career-planning.md'
         // ...
       ]
     }

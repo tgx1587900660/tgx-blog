@@ -62,5 +62,5 @@ export const navbar: NavbarConfig = [
       // ...
     ]
   },
-  { text: '友情链接', link: '/about-me/friend-link.md' }
+  { text: '个人中心', link: '/about-me/my-profile' }
 ]
