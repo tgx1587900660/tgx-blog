@@ -35,8 +35,11 @@ on: [push]
 
 # jobs字段是主体，表示要执行的一项或多项任务。这里有3步。其中 name 是任务说明，没填就取 job 名
 jobs:
+  # 该 job 的名字
   Demo-Actions1:
-    name: This is Actions1...
+    # 指定 job 名会覆盖 Demo-Actions1
+    name: This is Actions1
+    # 指定运行的环境
     runs-on: ubuntu-latest
     steps:
       - run: echo "这是第一步:Demo-Actions1"
@@ -53,19 +56,24 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
   Demo-Actions2:
     runs-on: ubuntu-latest
+    # 表示依赖，必须要在 Demo-Actions1 执行完之后，在执行该 job
+    needs: Demo-Actions1
     steps:
       - run: echo "这是第二步:Demo-Actions2"
   Demo-Actions3:
     runs-on: ubuntu-latest
+    # 表示依赖，必须要在 Demo-Actions1, Demo-Actions2 执行完之后，在执行该 job
+    needs: [Demo-Actions1, Demo-Actions2]
     steps:
+      - run: echo "这是第三步:Demo-Actions3"
       - name: 打印我的问候
+        # 指定环境变量
         env:
           MY_CONST: Hi! My name is
           FIRST_NAME: Tele
           LAST_NAME: ctron
-        run: echo "这是第三步:Demo-Actions3"
         run: |
-          echo $MY_VAR $FIRST_NAME$LAST_NAME.
+          echo "$MY_CONST $FIRST_NAME$LAST_NAME."
 ```
 
 :::
@@ -73,7 +81,8 @@ jobs:
 > 补充说明及示意图
 
 - jobs 中的 runs-on 字段指定 虚拟机环境为 ubuntu-latest, 是必填字段
-- jobs 中 steps 字段指定每个 Job 的运行步骤，可以包含一个或多个步骤。每个步骤都可以指定某些字段
+- jobs 中的 needs 字段指定 运行顺序，选填。如果不写，就并行运行任务
+- jobs 中 steps 字段指定每个 job 的运行步骤，可以包含一个或多个步骤。每个步骤都可以指定某些字段
   - name: 步骤名称。如果没有指定 name 就直接取 run 的内容
   - run: 该步骤运行的命令
   - env: 该步骤所需的环境变量
