@@ -38,16 +38,8 @@ jobs:
       - name: Build VuePress site
         run: yarn build
       # 部署上线
-      # - name: Deploy to gitHub pages
-      #   uses: crazy-max/ghaction-github-pages@v3
-  My-Job2:
-    name: Deploy to gitHub pages
-    runs-on: ubuntu-latest
-    needs: My-Job1
-    steps:
-      # @see https://github.com/crazy-max/ghaction-github-pages
-      - name: 发布到 GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2
+      - name: Deploy to gitHub pages
+        uses: crazy-max/ghaction-github-pages@v3
         with:
           # 部署到 gh-pages 分支
           target_branch: gh-pages
