@@ -1,5 +1,5 @@
-name: Pack and Go Live
-run-name: 自动打包，并部署上线🚀
+name: Pack And Go Live
+run-name: Pack And Go Live🚀
 
 on:
   push:
