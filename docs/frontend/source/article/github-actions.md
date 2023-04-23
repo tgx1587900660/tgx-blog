@@ -22,8 +22,8 @@
 # workflow 的名字，如果省略该字段，默认为当前 workflow 的文件名
 name: GitHub Actions Demo
 
-# workflow run 的名字
-run-name: ${{ github.actor }} is testing out GitHub Actions... 🚀
+# workflow run 的名字，如果省略该字段，就取 commit 信息
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
 # 触发事件, 这里是指 git push 时触发该 workflow, 事件有很多, push 只是其中之一,更多需要查文档
 # on: [push]
