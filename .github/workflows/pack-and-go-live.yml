@@ -1,5 +1,6 @@
-name: Pack And Go Live
-run-name: Pack And Go Live🚀
+name: GitHub Actions
+
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
 on:
   push:
