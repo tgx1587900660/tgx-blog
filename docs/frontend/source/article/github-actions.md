@@ -23,7 +23,7 @@
 name: GitHub Actions Demo
 
 # workflow run 的名字
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} is testing out GitHub Actions... 🚀
 
 # 触发事件, 这里是指 git push 时触发该 workflow, 事件有很多, push 只是其中之一,更多需要查文档
 # on: [push]
