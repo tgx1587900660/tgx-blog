@@ -1,5 +1,5 @@
-# workflow 的名字，如果省略该字段，默认为当前 workflow 的文件名
-name: GitHub Actions Demo
+# workflow 的名字，需用-分隔，如果省略该字段，默认为当前 workflow 的文件名
+name: GitHub-Actions-Demo
 
 # workflow run 的名字
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
