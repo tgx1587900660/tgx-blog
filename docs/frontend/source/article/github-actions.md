@@ -78,7 +78,7 @@ jobs:
 
 :::
 
-> 补充说明及示意图
+> 补充说明
 
 - jobs 中的 runs-on 字段指定 虚拟机环境为 ubuntu-latest, 是必填字段
 - jobs 中的 needs 字段指定 运行顺序，选填。如果不写，就并行运行任务
@@ -93,4 +93,10 @@ jobs:
 - `${{ github.workspace }}` 取到的值是 `/home/runner/work/tgx-blog/tgx-blog`
 - `${{ job.status }}` 取到的值是 `success`，指该 job 的状态
 
+> 字段的说明图
+
 <img src="./img/github-actions2.jpg" alt="补充说明图" title="补充说明图" />
+
+> needs 字段效果图
+
+<img src="./img/github-actions3.jpg" alt="needs 字段效果图" title="needs 字段效果图" />
