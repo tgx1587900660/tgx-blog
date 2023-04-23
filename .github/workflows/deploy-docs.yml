@@ -1,4 +1,4 @@
-name: docs
+name: Deploy Docs
 
 on:
   push:
@@ -34,14 +34,14 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile
 
-  # My-Job2:
-  #   name: Build-Project
-  #   runs-on: ubuntu-latest
-  #   needs: [My-Job1]
-  #   steps:
-  #     # 打包生成 静态网页
-  #     - name: Build VuePress site
-  #       run: yarn build
+  My-Job2:
+    name: Build-Project
+    runs-on: ubuntu-latest
+    needs: My-Job1
+    steps:
+      # 打包生成 静态网页
+      - name: Build VuePress site
+        run: yarn build
 
   # My-Job3:
   #   name: Deploy To GitHub Pages
