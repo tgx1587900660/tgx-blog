@@ -15,7 +15,7 @@ on: [push]
 # jobs字段是主体，表示要执行的一项或多项任务。这里有3步。其中 name 是任务说明，没填就取 job 名
 jobs:
   Demo-Actions1:
-    name: This is Actions1...
+    name: This is Actions1
     runs-on: ubuntu-latest
     steps:
       - run: echo "这是第一步:Demo-Actions1"
@@ -37,11 +37,11 @@ jobs:
   Demo-Actions3:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "这是第三步:Demo-Actions3"
       - name: 打印我的问候
         env:
           MY_CONST: Hi! My name is
           FIRST_NAME: Tele
           LAST_NAME: ctron
-        run: echo "这是第三步:Demo-Actions3"
         run: |
           echo $MY_VAR $FIRST_NAME$LAST_NAME.
