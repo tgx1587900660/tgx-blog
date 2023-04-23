@@ -1,31 +1,27 @@
-name: docs
+name: Pack and Go Live
+run-name: 自动打包，并部署上线🚀
 
 on:
-  # 每当 push 到 master 分支时触发部署
   push:
     branches: [master]
-  # 手动触发部署
-  workflow_dispatch:
 
 jobs:
-  docs:
+  My-Job1:
+    name: Check-Env-Info
     runs-on: ubuntu-latest
-
     steps:
-      - name: 获取git信息(时间,日志,提交信息...)
+      # 获取 git 日志，用于博客底部更新信息
+      - name: get git info
         uses: actions/checkout@v2
         with:
-          # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
           fetch-depth: 0
-
-      - name: 设置 Node 版本号
+      # 设置 node 的版本
+      - name: set Node version
         uses: actions/setup-node@v1
         with:
-          # 选择要使用的 node 版本
           node-version: '16'
-
       # 缓存 node_modules
-      - name: Cache dependencies
+      - name: Cache Dependencies
         uses: actions/cache@v2
         id: yarn-cache
         with:
@@ -34,17 +30,26 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-
       # 如果缓存没有命中，安装依赖
-      - name: Install dependencies
+      - name: Install Dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile
 
-      # 运行构建脚本
+  My-Job2:
+    name: Build-Project
+    runs-on: ubuntu-latest
+    needs: [My-Job1]
+    steps:
+      # 打包生成 静态网页
       - name: Build VuePress site
         run: yarn build
 
-      # 查看 workflow 的文档来获取更多信息
+  My-Job3:
+    name: Deploy To GitHub Pages
+    runs-on: ubuntu-latest
+    needs: [My-Job1, My-Job2]
+    uses: crazy-max/ghaction-github-pages@v2
+    steps:
       # @see https://github.com/crazy-max/ghaction-github-pages
       - name: 发布到 GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
