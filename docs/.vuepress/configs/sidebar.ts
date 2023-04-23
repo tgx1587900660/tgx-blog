@@ -25,7 +25,8 @@ export const sidebar: SidebarConfig = {
         '/frontend/source/article/authentication.md',
         '/frontend/source/article/code-lint-usage.md',
         '/frontend/source/article/eslint-upgrade.md',
-        '/frontend/source/article/security-error.md'
+        '/frontend/source/article/security-error.md',
+        '/frontend/source/article/github-actions.md'
       ]
     }
   ],
