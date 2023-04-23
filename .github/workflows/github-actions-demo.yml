@@ -1,10 +1,20 @@
+# workflow 的名字，如果省略该字段，默认为当前 workflow 的文件名
 name: GitHub Actions Demo
+# workflow run 的名字
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+# 触发事件, 这里是指 git push 时触发该 workflow, 事件有很多, push 只是其中之一,更多需要查文档
 on: [push]
+# 指定触发事件时，也可以限定分支或标签。以下代码指: 只有在 master 分支 push 时才触发 workflow
+# on:
+#   push:
+#     branches:
+#       - master
+# jobs字段是主体，表示要执行的一项或多项任务。这里有3步，其中 name 是任务说明
 jobs:
-  Explore-GitHub-Actions:
+  Demo-Actions1:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "这是第一步:Demo-Actions2"
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
@@ -16,3 +26,23 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  Demo-Actions2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "这是第二步:Demo-Actions2"
+  Demo-Actions3:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "这是第三步:Demo-Actions3"
+  my-job:
+    name: My Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a greeting
+        env:
+          MY_VAR: Hi there! My name is
+          FIRST_NAME: Mona
+          MIDDLE_NAME: The
+          LAST_NAME: Octocat
+        run: |
+          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
