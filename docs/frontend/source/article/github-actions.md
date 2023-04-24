@@ -99,3 +99,64 @@ jobs:
 > needs 字段效果图
 
 <img src="./img/github-actions3.jpg" alt="needs 字段效果图" title="needs 字段效果图" />
+
+## 3. 实现 Vuepress 自动部署
+
+- 以下是实现自动化部署 Vuepress 博客的完整内容
+
+::: details 点击查看 实现 Vuepress 自动部署 的完整代码
+
+```yml
+name: Deploy Docs
+run-name: ${{ github.actor }} is deploying docs to github pages 🚀
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  My-Job1:
+    name: Build And Deploy Docs
+    runs-on: ubuntu-latest
+    steps:
+      # 获取 git 日志，用于博客底部更新信息
+      - name: get git info
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      # 设置 node 的版本
+      - name: set Node version
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      # 缓存 node_modules
+      - name: Cache Dependencies
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      # 如果缓存没有命中，安装依赖
+      - name: Install Dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn --frozen-lockfile
+      # 打包生成 静态网页
+      - name: Build VuePress site
+        run: yarn build
+      # 部署上线
+      - name: Deploy to gitHub pages
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          # 部署到 gh-pages 分支
+          target_branch: gh-pages
+          # 部署目录为 VuePress 的默认输出目录
+          build_dir: docs/.vuepress/dist
+        env:
+          # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+:::
