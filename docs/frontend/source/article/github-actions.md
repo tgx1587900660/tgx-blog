@@ -1,16 +1,21 @@
 # 利用 Github Actions 自动部署博客
 
-::: tip 背景
+::: tip 读完这篇文章，你将能够：
 
-我用 Vuepress 做了个静态网页博客，源码放在 github 仓库中。我想要：每次写完代码后，只要把代码 push 上去，就能自动更新博客。并且无需购买任何服务器，就能让所有人访问。
+- 1. 初步认识 Github Actions 是什么东西
+- 2. 知道 Github Actions 运行的大概流程
+- 3. 可以免费自动化部署 自己的静态站点
 
 :::
+
+- 我用 Vuepress 做了个静态网页博客，源码放在 github 仓库中。我的目的是想要：每次写完代码后，只要把代码 push 上去，就能自动更新博客。并且无需购买任何服务器，就能让所有人访问。
 
 ## 1. 创建 `workflows` 文件夹
 
 在根目录下创建 `.github/workflows` 文件夹。这个文件夹中存放一些 `workflow` 文件。
 `workflow` 文件采用 YAML 格式，文件名可以任意取，但是后缀名统一为 `.yml`，比如 `foo.yml`。一个库可以有多个 workflow 文件。GitHub 只要发现
 `.github/workflows` 目录里面有 `.yml` 文件，就会自动运行该文件。
+
 <img src="./img/github-actions1.jpg" alt="workflows目录示意图" title="workflows目录示意图" />
 
 ## 2. 创建并书写 `.yml` 内容
@@ -100,13 +105,20 @@ jobs:
 
 <img src="./img/github-actions3.jpg" alt="needs 字段效果图" title="needs 字段效果图" />
 
+- 到此为止，Github Actions 运行的大概流程，就学习完成了。接下来，要完成 Vuepress 的部署实战。
+
 ## 3. 实现 Vuepress 自动部署
 
-- 以下是实现自动化部署 Vuepress 博客的完整内容
+::: tip
 
-::: details 点击查看 实现 Vuepress 自动部署 的完整代码
+在 `github-actions-demo.yml` 平级目录下新建一个 `docs.yml` 文件，并写入以下内容即可
+
+:::
+
+::: details 点击查看 docs.yml 完整代码
 
 ```yml
+# 以下是实现自动化部署 Vuepress 博客的完整内容
 name: Deploy Docs
 run-name: ${{ github.actor }} is deploying docs to github pages 🚀
 
@@ -160,3 +172,7 @@ jobs:
 ```
 
 :::
+
+- 每次 push 代码之后，以下内容就会被重跑
+
+<img src="./img/github-actions4.jpg" alt="对应的action图" title="对应的action图" />
