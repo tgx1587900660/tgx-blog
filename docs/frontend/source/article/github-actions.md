@@ -179,7 +179,7 @@ jobs:
 
 ::: details 点击查看 docs.yml 完整代码
 
-```yml{12-15,22-26,39}
+```yml{12-15,22-26,30,36}
 name: Deploy Docs
 run-name: ${{ github.actor }} is deploying docs to github pages 🚀
 
@@ -209,20 +209,17 @@ jobs:
       # 缓存 node_modules
       - name: Cache Dependencies
         uses: actions/cache@v3
-        id: yarn-cache
+        id: modules-cache
         with:
-          path: |
-            **/node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       # 如果缓存没有命中，安装依赖， cache-hit 是固定值
       - name: Install Dependencies
-        if: ${{ steps.yarn-cache.outputs.cache-hit != 'true' }}
+        if: ${{ steps.modules-cache.outputs.cache-hit != 'true' }}
         run: yarn --frozen-lockfile
       # 打包生成 静态网页
       - name: Build VuePress site
-        run: yarn build
+        run: yarn run build
       # 部署上线
       - name: Deploy to gitHub pages
         uses: crazy-max/ghaction-github-pages@v3
@@ -234,6 +231,7 @@ jobs:
         env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 ```
 
