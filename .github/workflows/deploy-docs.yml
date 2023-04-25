@@ -26,20 +26,20 @@ jobs:
           node-version: ${{ matrix.node-version }}
       # 获取 yarn 的缓存路径
       - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+        id: yarn-cache-dir
+        run: echo "yarn-cache-dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
       # 缓存 node_modules
       - name: Cache Dependencies
         uses: actions/cache@v3
         id: yarn-cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          path: ${{ steps.yarn-cache-dir.outputs.yarn-cache-dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
       # 如果缓存没有命中，安装依赖
       - name: Install Dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        if: ${{ steps.yarn-cache.outputs.cache-hit != 'true' }}
         run: yarn --frozen-lockfile
       # 打包生成 静态网页
       - name: Build VuePress site
