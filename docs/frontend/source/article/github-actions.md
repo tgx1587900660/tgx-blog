@@ -175,11 +175,11 @@ jobs:
 
 :::
 
-- 👇 这是 docs.yml 的 1.0.1 版本，新增了变量的获取、steps 步骤产物的取值
+- 👇 这是 docs.yml 的 1.0.1 版本，新增了 strategy 变量的获取、steps 步骤产物的取值
 
 ::: details 点击查看 docs.yml 完整代码
 
-```yml{12-15,23-39}
+```yml{12-15}
 name: Deploy Docs
 run-name: ${{ github.actor }} is deploying docs to github pages 🚀
 
@@ -206,22 +206,19 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      # 获取 yarn 的缓存路径
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
       # 缓存 node_modules
       - name: Cache Dependencies
         uses: actions/cache@v3
         id: yarn-cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          path: |
+            **/node_modules
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      # 如果缓存没有命中，安装依赖
+      # 如果缓存没有命中，安装依赖， cache-hit 是固定值
       - name: Install Dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        if: ${{ steps.yarn-cache.outputs.cache-hit != 'true' }}
         run: yarn --frozen-lockfile
       # 打包生成 静态网页
       - name: Build VuePress site
