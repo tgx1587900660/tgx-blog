@@ -175,11 +175,11 @@ jobs:
 
 :::
 
-- 👇 这是 docs.yml 的 1.0.1 版本，新增了 strategy 变量的获取、steps 步骤产物的取值
+- 👇 这是 docs.yml 的 1.0.1 版本，新增了 strategy 变量及其获取方式、steps 步骤通过 id 来取值方式
 
 ::: details 点击查看 docs.yml 完整代码
 
-```yml{12-15}
+```yml{12-15,22-26,39}
 name: Deploy Docs
 run-name: ${{ github.actor }} is deploying docs to github pages 🚀
 
