@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-7e24852e","path":"/about-me/friend-link.html","title":"\u53CB\u60C5\u94FE\u63A5","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1682233273000,"contributors":[{"name":"\u5510\u5E72\u5BB5","email":"1587900660@qq.com","commits":2}]},"filePathRelative":"about-me/friend-link.md"}');export{e as data};
