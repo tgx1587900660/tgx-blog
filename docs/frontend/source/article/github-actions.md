@@ -179,7 +179,7 @@ jobs:
 
 ::: details 点击查看 docs.yml 完整代码
 
-```yml{12-15,23-26}
+```yml{12-15,23-39}
 name: Deploy Docs
 run-name: ${{ github.actor }} is deploying docs to github pages 🚀
 
@@ -194,7 +194,7 @@ jobs:
     strategy:
       matrix:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [14.x, 16.x]
     steps:
       # 获取 git 日志，用于博客底部更新信息
       - name: get git info
@@ -210,7 +210,6 @@ jobs:
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
-        run: echo ${{ steps.yarn-cache-dir-path.outputs }}
       # 缓存 node_modules
       - name: Cache Dependencies
         uses: actions/cache@v3
@@ -220,11 +219,6 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-          # path: |
-          #   **/node_modules
-          # key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          # restore-keys: |
-          #   ${{ runner.os }}-yarn-
       # 如果缓存没有命中，安装依赖
       - name: Install Dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
