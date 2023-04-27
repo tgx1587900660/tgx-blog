@@ -163,9 +163,10 @@ export const sidebar: SidebarConfig = {
   // 联系我区域
   '/about-me': [
     {
-      text: '优秀的朋友们',
+      text: '个人中心',
       collapsible: true,
       children: [
+        '/about-me/update-planning.md',
         '/about-me/my-profile.md',
         '/about-me/friend-link.md'
         // ...

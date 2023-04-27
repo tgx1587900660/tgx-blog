@@ -62,5 +62,5 @@ export const navbar: NavbarConfig = [
       // ...
     ]
   },
-  { text: '个人中心', link: '/about-me/my-profile' }
+  { text: '个人中心', link: '/about-me/update-planning.md' }
 ]
