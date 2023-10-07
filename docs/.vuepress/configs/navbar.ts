@@ -62,5 +62,12 @@ export const navbar: NavbarConfig = [
       // ...
     ]
   },
+  {
+    text: '素质拓展',
+    children: [
+      { text: '记忆大师', link: '/quality-expansion/memory-master.md' }
+      // ...
+    ]
+  },
   { text: '个人中心', link: '/about-me/update-planning.md' }
 ]

@@ -160,6 +160,18 @@ export const sidebar: SidebarConfig = {
     }
   ],
 
+  // 素质拓展区域
+  '/quality-expansion': [
+    {
+      text: '记忆大师',
+      collapsible: true,
+      children: [
+        '/quality-expansion/memory-master.md'
+        // ...
+      ]
+    }
+  ],
+
   // 联系我区域
   '/about-me': [
     {
