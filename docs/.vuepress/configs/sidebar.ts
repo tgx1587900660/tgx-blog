@@ -166,7 +166,8 @@ export const sidebar: SidebarConfig = {
       text: '记忆大师',
       collapsible: true,
       children: [
-        '/quality-expansion/memory-master.md'
+        '/quality-expansion/memory-master.md',
+        '/quality-expansion/memory-demo1.md'
         // ...
       ]
     }

@@ -14,7 +14,7 @@ export const navbar: NavbarConfig = [
       {
         text: 'Telectron',
         children: [
-          { text: '资源', link: '/frontend/source/project/source-integration.md' }
+          { text: '资源&技术文章', link: '/frontend/source/project/source-integration.md' }
           // ...
         ]
       },
