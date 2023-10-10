@@ -2,10 +2,10 @@
 home: true
 
 # 封面
-heroImage: /img/logo.jpg # 会去 .vuepress/public 目录找
-heroImageDark: /img/logo1.png # 夜间模式的封面
+heroImage: /img/logo2.jpg # 会去 .vuepress/public 目录找
+heroImageDark: /img/logo2_dark.jpg # 夜间模式的封面
 
-heroText: 谭竿霄的网络日志
+heroText: telectron 的网络日志
 tagline: 功德 +1
 
 # 首页按钮组
@@ -26,7 +26,7 @@ features:
     details: 受尽苦难而不厌，乃修罗之道
 
   - title: ''
-    details: 不可能 这三个字，你说得太多了
+    details: 你我的相遇，是命运的指引
 
 footer: Copyright © 2021-08-25 作者：telectron（唐干宵）
 ---
