@@ -22,7 +22,8 @@ export const navbar: NavbarConfig = [
         text: '原生语言',
         children: [
           { text: 'TypeScript', link: '/frontend/typescript/ts-application.md' },
-          { text: 'JavaScript', link: '/frontend/javascript/data-processing-method.md' }
+          { text: 'JavaScript', link: '/frontend/javascript/data-processing-method.md' },
+          { text: 'CSS', link: '/frontend/css/common-use.md' }
           // ...
         ]
       },

@@ -114,6 +114,16 @@ export const sidebar: SidebarConfig = {
       ]
     }
   ],
+  '/frontend/css': [
+    {
+      text: 'CSS',
+      collapsible: true,
+      children: [
+        '/frontend/css/common-use.md',
+        // ...
+      ]
+    }
+  ],
 
   // 后端学习 区域
   '/backend/node': [
