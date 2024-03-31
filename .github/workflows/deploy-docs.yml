@@ -17,19 +17,23 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
       # 设置 node 的版本
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: pnpm
 
-      # 如果缓存没有命中，安装依赖， cache-hit 是固定值
-      - name: Install Dependencies
-        run: yarn install
+      # 安装依赖
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       # 打包生成 静态网页
-      - name: Build VuePress site
-        run: yarn build
+      - name: Build
+        run: pnpm build
 
       # 部署上线
       - name: Deploy to gitHub pages
