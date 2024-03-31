@@ -28,5 +28,5 @@ features:
   - title: ''
     details: 你我的相遇，是命运的指引
 
-footer: Copyright © 2021-08-25 作者：telectron（唐干宵）
+footer: '版权所有 Copyright © 2021-08-25 作者：telectron（唐干宵）'
 ---
