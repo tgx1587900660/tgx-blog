@@ -1,13 +1,23 @@
-name: Deploy Docs
+name: Deploy-tgx's-vuepress-blog
 run-name: ${{ github.actor }} is deploying docs to github pages 🚀
 
 on:
   push:
     branches: [master]
 
+  # 允许你从 Actions 选项卡手动运行此工作流程
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  My-Job1:
-    name: Build And Deploy Docs
+  # 构建工作
+  build:
+    name: 打包成静态页面
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -15,15 +25,22 @@ jobs:
         node-version: [16.x]
     steps:
       # 获取 git 日志，用于博客底部更新信息
-      - name: get git info
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-      # 设置 node 的版本
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+          fetch-depth: 0 # 如果未启用 lastUpdated，则不需要此步骤
+
+      # 设置 Node
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: yarn # 或 pnpm / yarn
+
+      # 设置 Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
       # 缓存 node_modules
       - name: Cache Dependencies
         uses: actions/cache@v3
@@ -31,21 +48,48 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
       # 如果缓存没有命中，安装依赖， cache-hit 是固定值
       - name: Install Dependencies
         if: ${{ steps.modules-cache.outputs.cache-hit != 'true' }}
         run: yarn --frozen-lockfile
-      # 打包生成 静态网页
-      - name: Build VuePress site
-        run: yarn run build
-      # 部署上线
-      - name: Deploy to gitHub pages
-        uses: crazy-max/ghaction-github-pages@v3
+
+      # 构建静态资源
+      - name: Build with VitePress
+        run: yarn build
+
+      # 上传构建产物
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          # 部署到 gh-pages 分支
-          target_branch: gh-pages
-          # 部署目录为 VuePress 的默认输出目录
-          build_dir: docs/.vuepress/dist
-        env:
-          # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: docs/.vuepress/dist
+
+      # 部署上线
+      # - name: Deploy to gitHub pages
+      #   uses: crazy-max/ghaction-github-pages@v3
+      #   with:
+      #     # 部署到 gh-pages 分支
+      #     target_branch: gh-pages
+      #     # 部署目录为 VuePress 的默认输出目录
+      #     build_dir: docs/.vuepress/dist
+      #   env:
+      #     # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # 部署工作
+  deploy:
+    # 设置环境变量，以便在部署工作中使用
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # 仅在 build(构建工作) 完成后运行
+    needs: build
+    runs-on: ubuntu-latest
+
+    # 部署工作的步骤
+    name: 部署到 GitHub Pages
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
