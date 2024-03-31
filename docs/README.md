@@ -14,9 +14,9 @@ actions:
     link: /frontend/source/project/source-integration.md # 点击按钮去往的文章链接 会去 docs/ 目录下找
     type: primary # 按钮主题
 
-  # - text: 项目简介
-  #   link: /frontend/vue2/source-integration
-  #   type: secondary
+  - text: 新版vitepress入口
+    link: https://tgx1587900660.github.io/tgx-blog-vitepress
+    type: secondary
 
 features:
   - title: ''
