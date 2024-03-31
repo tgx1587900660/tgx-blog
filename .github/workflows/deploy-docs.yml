@@ -6,13 +6,10 @@ on:
     branches: [master]
 
 jobs:
-  My-Job1:
-    name: Build And Deploy Docs
+  doc:
+    name: Build-And-Deploy-Docs
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-        node-version: ['20.x']
+
     steps:
       # 获取 git 日志，用于博客底部更新信息
       - name: get git info
@@ -20,16 +17,19 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Install yarn
+        uses: yarn/action-setup@v2
+
       # 设置 node 的版本
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 20
           cache: yarn
 
       # 如果缓存没有命中，安装依赖， cache-hit 是固定值
       - name: Install Dependencies
-        run: yarn --frozen-lockfile
+        run: yarn install
 
       # 打包生成 静态网页
       - name: Build VuePress site
