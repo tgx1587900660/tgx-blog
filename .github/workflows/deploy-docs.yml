@@ -41,18 +41,22 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # 缓存 node_modules
-      - name: Cache Dependencies
-        uses: actions/cache@v3
-        id: modules-cache
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      # # 缓存 node_modules
+      # - name: Cache Dependencies
+      #   uses: actions/cache@v3
+      #   id: modules-cache
+      #   with:
+      #     path: '**/node_modules'
+      #     key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
-      # 如果缓存没有命中，安装依赖， cache-hit 是固定值
-      - name: Install Dependencies
-        if: ${{ steps.modules-cache.outputs.cache-hit != 'true' }}
-        run: yarn --frozen-lockfile
+      # # 如果缓存没有命中，安装依赖， cache-hit 是固定值
+      # - name: Install Dependencies
+      #   if: ${{ steps.modules-cache.outputs.cache-hit != 'true' }}
+      #   run: yarn --frozen-lockfile
+
+      # 安装依赖
+      - name: Install dependencies
+        run: yarn install # 或 npm install 或 yarn install
 
       # 构建静态资源
       - name: Build with VitePress
