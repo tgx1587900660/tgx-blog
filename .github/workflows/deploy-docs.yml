@@ -17,15 +17,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install yarn
-        uses: yarn/action-setup@v2
-
       # 设置 node 的版本
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: yarn
 
       # 如果缓存没有命中，安装依赖， cache-hit 是固定值
       - name: Install Dependencies

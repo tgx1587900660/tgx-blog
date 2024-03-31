@@ -1,8 +1,9 @@
-import { defineUserConfig } from '@vuepress/cli'
+import { viteBundler } from '@vuepress/bundler-vite'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { defaultTheme } from '@vuepress/theme-default'
 import { path } from '@vuepress/utils'
+import { defineUserConfig } from 'vuepress'
 
 // 引入 左侧和顶部菜单
 import { head, navbar, sidebar } from './configs'
@@ -56,5 +57,6 @@ export default defineUserConfig({
     }),
     // 提供文档搜索功能
     searchPlugin({})
-  ]
+  ],
+  bundler: viteBundler()
 })
